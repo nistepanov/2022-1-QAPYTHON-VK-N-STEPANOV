@@ -13,10 +13,8 @@ class TestsUIMyTarget(UIElementSearchClass):
         self.search_insert(basic_locators.BasePageLocators.QUERY_PASSWORD, static.PASSWORD, timeout=5)
         self.search_click(basic_locators.BasePageLocators.QUERY_LOGIN_BUTTON, timeout=5)
 
-    @pytest.mark.UI
-    def test_login(self, login):
-
         assert f'data-ga-username="{static.EMAIL}"' in self.driver.page_source
+        assert self.driver.current_url == "https://target.my.com/dashboard"
         assert self.find(basic_locators.BasePageLocators.QUERY_RIGHT_BUTTON, timeout=5)
 
     @pytest.mark.UI
@@ -30,6 +28,7 @@ class TestsUIMyTarget(UIElementSearchClass):
             else:
                 break
 
+        assert self.driver.current_url == "https://target.my.com/"
         assert self.find(basic_locators.BasePageLocators.QUERY_LOGIN_BUTTON_HEAD, timeout=20)
         assert "Войти" in self.find(basic_locators.BasePageLocators.QUERY_LOGIN_BUTTON_HEAD, timeout=20).text
 
@@ -46,9 +45,7 @@ class TestsUIMyTarget(UIElementSearchClass):
             else:
                 break
 
-        self.find(basic_locators.BasePageLocators.QUERY_FIO).clear()
         self.search_insert(basic_locators.BasePageLocators.QUERY_FIO, rand_name, timeout=5)
-        self.find(basic_locators.BasePageLocators.QUERY_PHONE).clear()
         self.search_insert(basic_locators.BasePageLocators.QUERY_PHONE, rand_phone, timeout=5)
         self.search_click(basic_locators.BasePageLocators.QUERY_SUBMIT_BUTTON)
 
@@ -72,10 +69,12 @@ class TestsUIMyTarget(UIElementSearchClass):
         "expected, input",
         [
             pytest.param(
-                "Аудиторные сегменты", basic_locators.BasePageLocators.QUERY_SEGMENTS
+                ["Аудиторные сегменты", "https://target.my.com/segments/segments_list"],
+                basic_locators.BasePageLocators.QUERY_SEGMENTS
             ),
             pytest.param(
-                "У вас еще нет ни одной рекламной кампании.", basic_locators.BasePageLocators.QUERY_STATISTICS
+                ["У вас еще нет ни одной рекламной кампании.", "https://target.my.com/statistics/summary"],
+                basic_locators.BasePageLocators.QUERY_STATISTICS
             ),
         ]
     )
@@ -84,7 +83,8 @@ class TestsUIMyTarget(UIElementSearchClass):
         self.find(basic_locators.BasePageLocators.QUERY_CENTER_WRAP)
         while 1:
             try:
-                assert expected in self.driver.page_source
+                assert expected[0] in self.driver.page_source
+                assert expected[1] == self.driver.current_url
             except:
                 pass
             else:

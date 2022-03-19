@@ -12,4 +12,5 @@ def driver():
     driver.get(static.URL)
 
     yield driver
+    print(1)
     driver.close()

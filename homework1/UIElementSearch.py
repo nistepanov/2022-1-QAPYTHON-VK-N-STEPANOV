@@ -25,7 +25,7 @@ class UIElementSearchClass:
             locator))
 
     def search_insert(self, locator, query, timeout=None):
-        self.find(locator)
+        self.find(locator).clear()
         elem = self.wait(timeout).until(EC.element_to_be_clickable(
             locator))
         elem.send_keys(query)
