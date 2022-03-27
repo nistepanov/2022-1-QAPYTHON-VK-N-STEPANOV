@@ -1,3 +1,5 @@
+allure-pytest==2.8.32
+allure-python-commons==2.8.32
 async-generator==1.10
 attrs==21.4.0
 certifi==2021.10.8
@@ -7,9 +9,13 @@ colorama==0.4.4
 configparser==5.2.0
 crayons==0.4.0
 cryptography==36.0.1
+enum34==1.1.10
+execnet==1.9.0
 h11==0.13.0
 idna==3.3
 iniconfig==1.1.1
+lxml==4.8.0
+namedlist==1.8
 outcome==1.1.0
 packaging==21.3
 pluggy==1.0.0
@@ -19,9 +25,12 @@ pyOpenSSL==22.0.0
 pyparsing==3.0.7
 PySocks==1.7.1
 pytest==7.0.1
+pytest-forked==1.4.0
 pytest-repeat==0.9.1
+pytest-xdist==2.5.0
 requests==2.27.1
 selenium==4.1.2
+six==1.16.0
 sniffio==1.2.0
 sortedcontainers==2.4.0
 tomli==2.0.1
