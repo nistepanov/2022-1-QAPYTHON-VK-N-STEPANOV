@@ -15,12 +15,16 @@ class UIElementSearchClass:
 
     def wait(self, timeout=None):
         if timeout is None:
-            timeout = 15
+            timeout = 40
         return WebDriverWait(self.driver, timeout=timeout)
 
     def find(self, locator, timeout=None):
         self.wait(timeout).until(EC.presence_of_element_located(
             locator))
+        return self.wait(timeout).until(EC.visibility_of_element_located(
+            locator))
+
+    def find_visible(self, locator, timeout=None):
         return self.wait(timeout).until(EC.visibility_of_element_located(
             locator))
 

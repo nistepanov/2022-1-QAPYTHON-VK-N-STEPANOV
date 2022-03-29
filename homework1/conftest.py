@@ -12,4 +12,4 @@ def driver():
     driver.get(static.URL)
 
     yield driver
-    driver.close()
+    driver.quit()
