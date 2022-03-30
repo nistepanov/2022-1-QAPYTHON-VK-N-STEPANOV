@@ -39,10 +39,10 @@ class CampaignPageLocators:
 
 
 class SegmentsPageLocators:
-    QUERY_COUNT_SEGMENTS = (By.XPATH, '//span[contains(@class, "left-nav__count js-nav-item-count")]')
+    QUERY_COUNT_SEGMENTS = (By.XPATH, '//span[contains(@class, "js-nav-item-count")]')
     QUERY_CREATE_SEGMENT_BUTTON = (By.CSS_SELECTOR, 'div.button__text')
     QUERY_CREATE_SEGMENT_LINK = (By.XPATH, "//a[@href='/segments/segments_list/new/']")
-    QUERY_ACTIVE_SEGMENT = (By.XPATH, '//div[contains(@class, "adding-segments-item adding-segments-item_active")]')
+    QUERY_ACTIVE_SEGMENT = (By.XPATH, '//div[contains(@class, "adding-segments-item_active")]')
     QUERY_CHECKBOX = (By.XPATH, '//input[contains(@class, "adding-segments-source__checkbox")]')
     QUERY_ADD_SEGMENT = (By.XPATH, '//div[contains(@class, "adding-segments-modal__btn-wrap")]')
     QUERY_ADD_NAME_SEGMENT = (By.XPATH, '//div[contains(@class, "input_create-segment-form")]//child::input')

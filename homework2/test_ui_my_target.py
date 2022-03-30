@@ -1,6 +1,8 @@
 import time
 
 import allure
+from selenium.common.exceptions import StaleElementReferenceException
+
 from base import BaseCase, BaseCaseLogin
 from homework2.ui.tools.random_generate import RandomGenerate
 from homework2.ui.fixtures import *
@@ -31,7 +33,7 @@ class TestAuthInvalid(BaseCaseLogin):
 class TestCampaign(BaseCase):
 
     @pytest.mark.UI
-    def test_create_traffic_campaign(self, file_path, setup):
+    def test_create_traffic_campaign(self, setup, file_path):
         self.main_page.is_opened()
         self.main_page.go_to_create_campaign()
 
@@ -44,28 +46,19 @@ class TestCampaign(BaseCase):
                 self.campaign_page.insert_link_in_template_campaign()
                 self.campaign_page.select_banner_campaign()
             except:
-               self.driver.refresh()
+                self.driver.refresh()
             else:
                 break
         self.campaign_page.move_to_image_preview_area()
         self.campaign_page.upload_image(file_path)
 
-        company_name = RandomGenerate.generate_random_name()
+        campaign_name = RandomGenerate.generate_random_name()
 
-        self.campaign_page.insert_name_of_campaign(company_name)
+        self.campaign_page.insert_name_of_campaign(campaign_name)
         self.campaign_page.click_button_create_campaign()
         self.campaign_page.wait_for_visible_work_area()
 
-        started = time.time()
-        with allure.step("Ждем пока появится pop-up о создании кампании"):
-            while time.time() - started < 15:
-                try:
-                    assert f'Создана рекламная кампания "{company_name}' in self.driver.page_source
-                except AssertionError:
-                    pass
-                else:
-                    break
-        assert company_name in self.driver.page_source
+        assert campaign_name == self.campaign_page.search_name_of_previously_created_campaign(campaign_name)
         assert "https://target.my.com/dashboard#" == self.driver.current_url
 
 
@@ -74,15 +67,19 @@ class TestSegments(BaseCase):
     @pytest.mark.UI
     def test_create_segment(self, setup):
         self.main_page.is_opened()
-        self.main_page.go_to_segments()
+        try:
+            self.main_page.go_to_segments()
+        except StaleElementReferenceException:
+            self.driver.refresh()
+            self.main_page.go_to_segments()
 
         self.segments_page.is_opened()
 
         count_segments_before_adding_segment = int(self.segments_page.count_segments_at_cur_time())
         if count_segments_before_adding_segment > 0:
-            self.segments_page.create_segment("segment exists")
+            self.segments_page.create_segment_button("segment exists")
         elif count_segments_before_adding_segment == 0:
-            self.segments_page.create_segment("segment not exists")
+            self.segments_page.create_segment_button("segment not exists")
 
         self.segments_page.insert_checkbox()
 
@@ -91,14 +88,16 @@ class TestSegments(BaseCase):
         segment_name = RandomGenerate.generate_random_name()
 
         self.segments_page.insert_segment_name(name=segment_name)
-        self.segments_page.create_segment("segment exists")
+        self.segments_page.create_segment_button("segment exists")
         self.segments_page.wait_for_table_segments()
 
-        assert segment_name in self.driver.page_source
+        assert segment_name == self.segments_page.search_name_of_previously_created_segment(segment_name)
 
         count_segments_after_adding_segment = int(self.segments_page.count_segments_at_cur_time())
 
         assert count_segments_after_adding_segment == count_segments_before_adding_segment + 1
+
+        self.segments_page.delete_previously_created_segment()
 
     @pytest.mark.UI
     def test_delete_segment_by_click_on_cross(self, setup):
@@ -107,6 +106,7 @@ class TestSegments(BaseCase):
 
         self.segments_page.is_opened()
 
+        self.segments_page.create_segment_for_test()
         count_segments_before_delete = int(self.segments_page.count_segments_at_cur_time())
         self.segments_page.click_on_cross()
         self.segments_page.click_on_button_confirm_delete_segment()
@@ -133,6 +133,7 @@ class TestSegments(BaseCase):
 
         self.segments_page.is_opened()
 
+        self.segments_page.create_segment_for_test()
         count_segments_before_delete = int(self.segments_page.count_segments_at_cur_time())
 
         self.segments_page.click_on_checkbox()

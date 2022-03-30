@@ -1,5 +1,6 @@
 import allure
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
 
 from .base_page import BasePage
 from ..locators.my_target_locators.static_locators import CampaignPageLocators
@@ -34,6 +35,11 @@ class CampaignPage(BasePage):
     @allure.step('Генерим рандомное имя кампании')
     def insert_name_of_campaign(self, name):
         self.search_insert(CampaignPageLocators.QUERY_INPUT_NAME_CAMPAIGN, name)
+
+    @allure.step('Ищем в таблице кампаний ранее созданную кампанию')
+    def search_name_of_previously_created_campaign(self, campaign_name):
+        QUERY_PREVIOUSLY_CREATED_CAMPAIGN = (By.XPATH, f"//a[text()='{campaign_name}']")
+        return self.find(QUERY_PREVIOUSLY_CREATED_CAMPAIGN, timeout=20).text
 
     def click_button_create_campaign(self):
         self.search_click(CampaignPageLocators.QUERY_BUTTON_CREATE_CAMPAIGN)
