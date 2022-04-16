@@ -1,6 +1,7 @@
 import time
 
 import allure
+from selenium.common.exceptions import StaleElementReferenceException, ElementClickInterceptedException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
@@ -32,7 +33,7 @@ class BasePage(object):
 
     def wait(self, timeout=None):
         if timeout is None:
-            timeout = 20
+            timeout = 40
         return WebDriverWait(self.driver, timeout=timeout)
 
     @allure.step("Ждем существования и видимости элемента")
@@ -50,11 +51,25 @@ class BasePage(object):
         self.find(locator).clear()
         elem = self.wait(timeout).until(EC.element_to_be_clickable(
             locator))
-        elem.send_keys(query)
+        started = time.time()
+        while time.time() - started < 15:
+            try:
+                elem.send_keys(query)
+            except:
+                pass
+            else:
+                break
 
     @allure.step("Кликаем по полю")
     def search_click(self, locator, timeout=None) -> WebElement:
         self.find(locator, timeout=timeout)
         elem = self.wait(timeout).until(EC.element_to_be_clickable(
             locator))
-        elem.click()
+        started = time.time()
+        while time.time() - started < 15:
+            try:
+                elem.click()
+            except:
+                pass
+            else:
+                break

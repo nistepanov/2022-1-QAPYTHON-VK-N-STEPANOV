@@ -1,11 +1,12 @@
-import time
-
 import allure
+
 from selenium.common.exceptions import StaleElementReferenceException
 
 from base import BaseCase, BaseCaseLogin
 from homework2.ui.tools.random_generate import RandomGenerate
 from homework2.ui.fixtures import *
+
+MAX_RETRY_COUNT = 3
 
 
 class TestAuthInvalid(BaseCaseLogin):
@@ -17,7 +18,6 @@ class TestAuthInvalid(BaseCaseLogin):
 
         assert "Error" == self.auth_invalid_page.find_error_title()
         assert "Invalid login or password" == self.auth_invalid_page.find_error_text()
-        assert "Invalid login or password" in self.driver.page_source
 
     @pytest.mark.UI
     def test_invalid_password(self, setup):
@@ -27,7 +27,6 @@ class TestAuthInvalid(BaseCaseLogin):
 
         assert "Error" == self.auth_invalid_page.find_error_title()
         assert "Invalid login or password" == self.auth_invalid_page.find_error_text()
-        assert "Invalid login or password" in self.driver.page_source
 
 
 class TestCampaign(BaseCase):
@@ -40,15 +39,8 @@ class TestCampaign(BaseCase):
         self.campaign_page.is_opened()
         self.campaign_page.select_traffic_campaign()
 
-        started = time.time()
-        while time.time() - started < 5:
-            try:
-                self.campaign_page.insert_link_in_template_campaign()
-                self.campaign_page.select_banner_campaign()
-            except:
-                self.driver.refresh()
-            else:
-                break
+        self.campaign_page.insert_link_in_template_campaign()
+        self.campaign_page.select_banner_campaign()
         self.campaign_page.move_to_image_preview_area()
         self.campaign_page.upload_image(file_path)
 
@@ -67,11 +59,7 @@ class TestSegments(BaseCase):
     @pytest.mark.UI
     def test_create_segment(self, setup):
         self.main_page.is_opened()
-        try:
-            self.main_page.go_to_segments()
-        except StaleElementReferenceException:
-            self.driver.refresh()
-            self.main_page.go_to_segments()
+        self.main_page.go_to_segments()
 
         self.segments_page.is_opened()
 
@@ -114,10 +102,11 @@ class TestSegments(BaseCase):
         self.segments_page.wait_for_table_segments()
         self.segments_page.wait_for_list_of_segments()
 
-        started = time.time()
         with allure.step("Ждем прогрузки поля с кол-вом активных сегментов"):
-            while time.time() - started < 15:
+            count = 0
+            while count < MAX_RETRY_COUNT:
                 try:
+                    count += 1
                     count_segments_after_delete = int(self.segments_page.count_segments_at_cur_time())
                     assert count_segments_before_delete - count_segments_after_delete == 1
                 except AssertionError:
@@ -140,13 +129,19 @@ class TestSegments(BaseCase):
         self.segments_page.click_on_button_actions()
         self.segments_page.remove_segment_by_actions()
 
-        started = time.time()
-        while time.time() - started < 5:
-            try:
-                count_segments_after_delete = int(self.segments_page.count_segments_at_cur_time())
-                assert count_segments_before_delete - count_segments_after_delete == 1
-            except AssertionError:
-                pass
-            else:
-                break
+        self.segments_page.wait_for_table_segments()
+        self.segments_page.wait_for_list_of_segments()
+
+        with allure.step("Ждем прогрузки поля с кол-вом активных сегментов"):
+            count = 0
+            while count < MAX_RETRY_COUNT:
+                try:
+                    count += 1
+                    count_segments_after_delete = int(self.segments_page.count_segments_at_cur_time())
+                    assert count_segments_before_delete - count_segments_after_delete == 1
+                except AssertionError:
+                    pass
+                else:
+                    break
+
         assert "https://target.my.com/segments/segments_list" == self.driver.current_url
