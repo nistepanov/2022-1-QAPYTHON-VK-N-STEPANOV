@@ -22,8 +22,7 @@ class BaseApi:
         }
 
         additional_headers_for_campaign = {'Host': 'target.my.com', 'Referer':
-            'https://target.my.com/campaign/new', 'Accept-Encoding': 'gzip, deflate, br',
-                                           'Content-Type': 'application/json'}
+            'https://target.my.com/campaign/new'}
 
         headers = {**self.api_client.session.headers, **additional_headers_for_campaign}
         return self.api_client._request(method='POST', location='api/v2/campaigns.json', json=json_data,
@@ -39,16 +38,19 @@ class BaseApi:
                                             cookies=self.api_client.session.cookies)
 
         response_as_dict = ast.literal_eval(response.text)
+        recently_created_campaign = response_as_dict['items'][0]
 
         try:
-            recently_created_campaign = response_as_dict['items'][0]
-            if recently_created_campaign["id"] == id_campaign and recently_created_campaign["name"] == name:
-                return True
-
-        except:
+            assert recently_created_campaign["id"] == id_campaign, "Id кампаний не совпадают!"
+        except AssertionError:
             return False
 
-        return False
+        try:
+            assert recently_created_campaign["name"] == name, "Названия кампаний не совпадают!"
+        except AssertionError:
+            return False
+        else:
+            return True
 
     def delete_campaign(self, id_campaign):
         json_data = [{"id": id_campaign,

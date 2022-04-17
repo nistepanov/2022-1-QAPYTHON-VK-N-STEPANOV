@@ -27,8 +27,6 @@ class TestApi(BaseApi):
 
         self.delete_campaign(id_campaign)
 
-        assert self.check_campaign_is_deleted(id_campaign, name)
-
     @pytest.mark.API
     def test_create_segment(self):
         name = RandomGenerate.generate_random_name()
@@ -39,8 +37,6 @@ class TestApi(BaseApi):
         assert self.check_segment_is_created(id_segment, name)
 
         self.delete_segment(id_segment)
-
-        assert self.check_segment_is_deleted(id_segment, name)
 
     @pytest.mark.API
     def test_delete_segment(self):

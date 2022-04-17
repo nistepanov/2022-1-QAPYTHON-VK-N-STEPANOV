@@ -4,13 +4,7 @@ import requests
 from requests.utils import dict_from_cookiejar
 from requests.cookies import cookiejar_from_dict
 
-
-class InvalidLoginException(Exception):
-    pass
-
-
-class ResponseStatusCodeException(Exception):
-    pass
+from .Exceptions import InvalidLoginException, ResponseStatusCodeException
 
 
 class ApiClient:
@@ -22,7 +16,7 @@ class ApiClient:
         self.session = requests.Session()
 
     def _request(self, method, location, headers=None, data=None, expected_status=200, params=None,
-                 cookies=None, json=None):
+                 cookies=None, json=None, allow_redirects=False):
         if "http" in location:
             url = location
         else:
@@ -30,10 +24,10 @@ class ApiClient:
 
         if cookies is not None:
             response = self.session.request(method=method, url=url, headers=headers, data=data, params=params,
-                                            cookies=cookies, json=json)
+                                            cookies=cookies, json=json, allow_redirects=allow_redirects)
         else:
             response = self.session.request(method=method, url=url, headers=headers, data=data, params=params,
-                                            json=json)
+                                            json=json, allow_redirects=allow_redirects)
 
         try:
             assert response.status_code == expected_status
@@ -68,10 +62,8 @@ class ApiClient:
 
         referer_headers = {'Referer': 'https://target.my.com/'}
         headers = {**self.session.headers, **referer_headers}
-
         response = self._request(method="POST", location=auth_login, headers=headers, params=params,
-                                 data=data)
-
+                                 data=data, allow_redirects=True)
         try:
             z = dict_from_cookiejar(response.cookies)['z']
             mrcu = dict_from_cookiejar(response.history[0].cookies)['mrcu']
