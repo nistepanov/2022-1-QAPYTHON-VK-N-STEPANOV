@@ -2,7 +2,7 @@ import pytest
 
 from mysql.utils.models import *
 from parser_log.parser import *
-from .base import MySqLTest
+from tests.base import MySqLTest
 
 
 class TestCountRequests(MySqLTest):
