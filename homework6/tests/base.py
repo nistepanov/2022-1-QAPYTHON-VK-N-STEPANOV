@@ -8,7 +8,7 @@ class MySqLTest:
         pass
 
     @pytest.fixture(scope='function', autouse=True)
-    def setup(self, mysql_client, file_path):
-        self.mysql = mysql_client
-        self.mysql_builder = MySqlBuilder(mysql_client)
+    def setup(self, mysql_client_fixture, file_path):
+        self.mysql = mysql_client_fixture
+        self.mysql_builder = MySqlBuilder(mysql_client_fixture)
         self.prepare(file_path)

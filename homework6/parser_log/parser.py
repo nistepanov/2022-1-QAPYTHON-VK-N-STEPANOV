@@ -49,7 +49,6 @@ def count_requests_type(builder, path):
                 count['PROPFIND'] = count['PROPFIND'] + 1 if count.get('PROPFIND') else 1
             elif '"VIEW ' in line:
                 count['VIEW'] = count['VIEW'] + 1 if count.get('VIEW') else 1
-
         for key, value in count.items():
             builder.create_count_req_type(key, value)
 

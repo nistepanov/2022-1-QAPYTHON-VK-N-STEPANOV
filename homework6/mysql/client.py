@@ -2,7 +2,7 @@ import sqlalchemy
 from sqlalchemy import inspect
 from sqlalchemy.orm import sessionmaker
 
-from mysql.models import Base
+from mysql.utils.models import Base
 
 
 class MySqlClient:
@@ -13,7 +13,6 @@ class MySqlClient:
         self.password = password
         self.host = '127.0.0.1'
         self.db_name = db_name
-        self.thread = None
 
         self.connection = None
         self.engine = None
@@ -33,11 +32,14 @@ class MySqlClient:
         if fetch:
             return res.fetchall()
 
-    def recreate_db(self):
+    def create_db(self):
         self.connect(db_created=False)
-        if not self.thread:
-            self.execute_query(f'DROP database if exists {self.db_name}', fetch=False)
-            self.execute_query(f'CREATE database {self.db_name}', fetch=False)
+        self.connection.execute(f'CREATE database if not exists {self.db_name}')
+        self.connection.close()
+
+    def drop_db(self):
+        self.connect(db_created=False)
+        self.connection.execute(f'DROP database {self.db_name}')
         self.connection.close()
 
     def create_count_requests(self):
