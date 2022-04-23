@@ -39,7 +39,7 @@ class MySqlClient:
 
     def drop_db(self):
         self.connect(db_created=False)
-        self.connection.execute(f'DROP database {self.db_name}')
+        self.connection.execute(f'DROP database  if exists  {self.db_name}')
         self.connection.close()
 
     def create_count_requests(self):
