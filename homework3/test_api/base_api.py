@@ -9,7 +9,7 @@ class BaseApi:
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, api_client):
         self.api_client = api_client
-        if dict_from_cookiejar(self.api_client.session.cookies) == {}:
+        if not self.api_client.session.cookies:
             self.api_client.set_all_necessary_cookies()
         else:
             pass
@@ -25,8 +25,8 @@ class BaseApi:
             'https://target.my.com/campaign/new'}
 
         headers = {**self.api_client.session.headers, **additional_headers_for_campaign}
+
         return self.api_client._request(method='POST', location='api/v2/campaigns.json', json=json_data,
-                                        cookies=self.api_client.session.cookies,
                                         headers=headers)
 
     def check_campaign_is_created(self, id_campaign, name):
@@ -34,19 +34,18 @@ class BaseApi:
                   'sorting': '-id',
                   'status': 'active'}
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params,
-                                            cookies=self.api_client.session.cookies)
+        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params)
 
         response_as_dict = ast.literal_eval(response.text)
         recently_created_campaign = response_as_dict['items'][0]
 
         try:
-            assert recently_created_campaign["id"] == id_campaign, "Id кампаний не совпадают!"
+            assert recently_created_campaign["id"] == id_campaign, "Ids of campaigns are not equal!"
         except AssertionError:
             return False
 
         try:
-            assert recently_created_campaign["name"] == name, "Названия кампаний не совпадают!"
+            assert recently_created_campaign["name"] == name, "Names of campaigns are not equal!"
         except AssertionError:
             return False
         else:
@@ -64,8 +63,7 @@ class BaseApi:
                   'sorting': '-id',
                   'status': 'deleted'}
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params,
-                                            cookies=self.api_client.session.cookies)
+        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params)
 
         response_as_dict = ast.literal_eval(response.text)
 
@@ -84,14 +82,14 @@ class BaseApi:
             {"object_type": "remarketing_player", "params": {"type": "positive", "left": 365, "right": 0}}]}
 
         response = self.api_client._request(method="POST", location="api/v2/remarketing/segments.json",
-                                            cookies=self.api_client.session.cookies, json=json_data)
+                                            json=json_data)
 
         return response
 
     def check_segment_is_created(self, id_segment, name):
         params = {'sorting': '-id'}
         response = self.api_client._request(method="GET", location="api/v2/remarketing/segments.json",
-                                            cookies=self.api_client.session.cookies, params=params)
+                                            params=params)
         response_as_dict = ast.literal_eval(response.text)
 
         try:
@@ -106,8 +104,7 @@ class BaseApi:
 
     def check_segment_is_deleted(self, id_segment, name):
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json',
-                                            cookies=self.api_client.session.cookies)
+        response = self.api_client._request(method='GET', location='api/v2/campaigns.json')
 
         response_as_dict = ast.literal_eval(response.text)
 
@@ -120,5 +117,4 @@ class BaseApi:
     def delete_segment(self, id_segment):
         json_data = [{"source_id": id_segment, "source_type": "segment"}]
 
-        self.api_client._request(method="POST", location="api/v1/remarketing/mass_action/delete.json",
-                                 cookies=self.api_client.session.cookies, json=json_data)
+        self.api_client._request(method="POST", location="api/v1/remarketing/mass_action/delete.json", json=json_data)

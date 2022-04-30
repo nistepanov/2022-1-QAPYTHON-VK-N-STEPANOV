@@ -9,14 +9,6 @@ from test_api.base_api import BaseApi
 class TestApi(BaseApi):
 
     @pytest.mark.API
-    def test_valid_login(self):
-        assert self.api_client.session.cookies['z']
-        assert self.api_client.session.cookies['mc']
-        assert self.api_client.session.cookies['mrcu']
-        assert self.api_client.session.cookies['sdc']
-        assert self.api_client.session.cookies['csrftoken']
-
-    @pytest.mark.API
     def test_create_campaign(self):
         name = RandomGenerate.generate_random_name()
         response = self.create_campaign(name)

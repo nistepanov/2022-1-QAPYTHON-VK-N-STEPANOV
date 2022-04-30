@@ -15,20 +15,15 @@ class ApiClient:
         self.password = password
         self.session = requests.Session()
 
-    def _request(self, method, location, headers=None, data=None, expected_status=200, params=None,
-                 cookies=None, json=None, allow_redirects=False):
+    def _request(self, method, location, headers=None, data=None, expected_status=200, params=None, json=None,
+                 allow_redirects=False):
         if "http" in location:
             url = location
         else:
             url = urljoin(self.base_url, location)
 
-        if cookies is not None:
-            response = self.session.request(method=method, url=url, headers=headers, data=data, params=params,
-                                            cookies=cookies, json=json, allow_redirects=allow_redirects)
-        else:
-            response = self.session.request(method=method, url=url, headers=headers, data=data, params=params,
-                                            json=json, allow_redirects=allow_redirects)
-
+        response = self.session.request(method=method, url=url, headers=headers, data=data, params=params, json=json,
+                                        allow_redirects=allow_redirects, cookies=self.session.cookies)
         try:
             assert response.status_code == expected_status
 
@@ -38,7 +33,7 @@ class ApiClient:
 
         return response
 
-    def auth_login(self):
+    def auth_login_cookies(self):
         auth_login = 'https://auth-ac.my.com/auth'
 
         self.session.headers = {
@@ -60,32 +55,29 @@ class ApiClient:
             'failure': 'https://account.my.com/login/',
         }
 
-        referer_headers = {'Referer': 'https://target.my.com/'}
-        headers = {**self.session.headers, **referer_headers}
-        response = self._request(method="POST", location=auth_login, headers=headers, params=params,
-                                 data=data, allow_redirects=True)
+        self.session.headers['Referer'] = 'https://target.my.com/'
+
+        self._request(method="POST", location=auth_login, headers=self.session.headers, params=params,
+                      data=data, allow_redirects=True)
+
+    def crsf_token_cookies(self):
+        get_csrf_token_url = 'https://target.my.com/csrf/'
+        response = self._request(method="GET", location=get_csrf_token_url)
+
+        crsftoken_value = dict_from_cookiejar(response.cookies)['csrftoken']
+
+        self.session.headers['X-CSRFToken'] = crsftoken_value
+
+    def set_all_necessary_cookies(self):
+        self.auth_login_cookies()
+        self.crsf_token_cookies()
+
         try:
-            z = dict_from_cookiejar(response.cookies)['z']
-            mrcu = dict_from_cookiejar(response.history[0].cookies)['mrcu']
-            sdc = dict_from_cookiejar(response.history[5].history[3].cookies)['sdc']
-            mc = dict_from_cookiejar(response.history[2].history[1].cookies)['mc']
+            z = self.session.cookies['z']
+            mrcu = self.session.cookies['mrcu']
+            sdc = self.session.cookies['sdc']
+            mc = self.session.cookies['mc']
+            csrftoken = self.session.cookies['csrftoken']
 
         except KeyError:
             raise InvalidLoginException("Authorisation Error! Invalid login or password!")
-
-        cookies = {'mc': mc, 'mrcu': mrcu, 'sdc': sdc, 'z': z}
-
-        return cookies
-
-    def set_all_necessary_cookies(self):
-        get_csrf_token_url = 'https://target.my.com/csrf/'
-        cookies_auth = self.auth_login()
-        response = self._request(method="GET", location=get_csrf_token_url, cookies=cookiejar_from_dict(cookies_auth))
-
-        crsftoken_value = dict_from_cookiejar(response.cookies)['csrftoken']
-        csrftoken = {'csrftoken': crsftoken_value}
-
-        self.session.headers['X-CSRFToken'] = crsftoken_value
-        all_necessary_cookies = cookies_auth | csrftoken
-
-        self.session.cookies = cookiejar_from_dict(all_necessary_cookies)
