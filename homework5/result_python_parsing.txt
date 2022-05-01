@@ -19,16 +19,16 @@ VIEW - 0
 
 
 Top 10 requests by usage:
-103932   /administrator/index.php
-26336   /apache-log/access.log
-6940   /
+103941   /administrator/index.php
+26341   /apache-log/access.log
+7729   /index.php
+6983   /
 4980   /templates/_system/css/general.css
 3199   /robots.txt
 2356   http://almhuette-raith.at/administrator/index.php
 2201   /favicon.ico
-1644   /wp-login.php
+1759   /wp-login.php
 1563   /administrator/
-1287   /templates/jp_hotel/css/template.css
 
 
 Top 5 requests by response size ended with 4** error:

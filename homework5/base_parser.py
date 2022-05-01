@@ -33,50 +33,18 @@ class BaseParser:
         self.nginx_log.close()
 
     def count_total_number_of_requests(self):
+        http_methods = ['"GET ', '"POST ', '"PUT ', '"PATCH ', '"DELETE ', '"COPY ', '"HEAD ', '"OPTIONS ',
+                        '"LINK ', '"UNLINK ', '"PURGE ', '"LOCK ', '"UNLINK ', '"PURGE ', '"LOCK ',
+                        '"UNLOCK ', '"PROPFIND ', '"VIEW ']
         for line in self.nginx_log:
-            if ('"GET ' in line) or ('"POST ' in line) or ('"PUT ' in line) \
-                    or ('"PATCH ' in line) or ('"DELETE ' in line) or ('"COPY ' in line) \
-                    or ('"HEAD ' in line) or ('"OPTIONS ' in line) or ('"LINK ' in line) \
-                    or ('"UNLINK ' in line) or ('"PURGE ' in line) or ('"LOCK ' in line) \
-                    or ('"UNLOCK ' in line) or ('"PROPFIND ' in line) or ('"VIEW ' in line):
-                self.total_requests += 1
+            for iter in http_methods:
+                if iter in line:
+                    self.total_requests += 1
 
         self.reopen_file()
         return self.total_requests
 
     def count_total_requests_separate_by_type(self):
-        for line in self.nginx_log:
-            if '"GET ' in line:
-                self.total_count_get_requests += 1
-            elif '"POST ' in line:
-                self.total_count_post_requests += 1
-            elif '"PUT ' in line:
-                self.total_count_put_requests += 1
-            elif '"PATCH ' in line:
-                self.total_count_patch_requests += 1
-            elif '"DELETE ' in line:
-                self.total_count_delete_requests += 1
-            elif '"COPY ' in line:
-                self.total_count_delete_requests += 1
-            elif '"HEAD ' in line:
-                self.total_count_head_requests += 1
-            elif '"OPTIONS ' in line:
-                self.total_count_head_requests += 1
-            elif '"LINK ' in line:
-                self.total_count_link_requests += 1
-            elif '"UNLINK ' in line:
-                self.total_count_unlink_requests += 1
-            elif '"PURGE ' in line:
-                self.total_count_purge_requests += 1
-            elif '"LOCK ' in line:
-                self.total_count_lock_requests += 1
-            elif '"UNLOCK ' in line:
-                self.total_count_unlock_requests += 1
-            elif '"PROPFIND ' in line:
-                self.total_count_propfind_requests += 1
-            elif '"VIEW ' in line:
-                self.total_count_view_requests += 1
-
         count_requests_separated_by_type_dict = {"GET": self.total_count_get_requests,
                                                  "POST": self.total_count_post_requests,
                                                  "PUT": self.total_count_put_requests,
@@ -91,6 +59,12 @@ class BaseParser:
                                                  "UNLOCK": self.total_count_unlock_requests,
                                                  "PROPFIND": self.total_count_unlink_requests,
                                                  "VIEW": self.total_count_view_requests}
+
+        for line in self.nginx_log:
+            for key in count_requests_separated_by_type_dict.keys():
+                if '"' + key + " " in line:
+                    count_requests_separated_by_type_dict[key] = count_requests_separated_by_type_dict[key] + 1 if \
+                        count_requests_separated_by_type_dict.get(key) else 1
 
         self.reopen_file()
         if self.check_correct_separated(count_requests_separated_by_type_dict):
@@ -113,8 +87,13 @@ class BaseParser:
 
     def top_ten_requests_by_usage(self):
         urls_by_usage = {}
+        delimiters = ["%", "?", "#"]
         for line in self.nginx_log:
             url = line.split(" ")[6]
+            for sep in delimiters:
+                if sep in url:
+                    url = url.split(sep)[0]
+
             if url in urls_by_usage.keys():
                 urls_by_usage[url] += 1
             else:

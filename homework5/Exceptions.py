@@ -1,0 +1,2 @@
+class InvalidArgvException(Exception):
+    pass
