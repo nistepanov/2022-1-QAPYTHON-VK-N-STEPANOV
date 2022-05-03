@@ -1,0 +1,44 @@
+Total requests
+  225132
+
+Total requests by type:
+GET - 122095
+POST - 102503
+PUT - 6
+DELETE - 0
+PATCH - 0
+OPTIONS - 0
+HEAD - 528
+LINK - 0
+UNLINK - 0
+PURGE - 0
+LOCK - 0
+LOCK - 0
+PROPFIND - 0
+VIEW - 0
+
+Top 10 requests by usage:
+103932 /administrator/index.php
+26336 /apache-log/access.log
+6940 /
+4980 /templates/_system/css/general.css
+3199 /robots.txt
+2356 http://almhuette-raith.at/administrator/index.php
+2201 /favicon.ico
+1644 /wp-login.php
+1563 /administrator/
+1287 /templates/jp_hotel/css/template.css
+
+Top 5 requests by response size ended with 4** error:
+/index.php?option=com_phocagallery&view=category&id=7806&Itemid=53 404 1417 189.217.45.73
+/index.php?option=com_phocagallery&view=category&id=4025&Itemid=53 404 1417 189.217.45.73
+/index.php?option=com_phocagallery&view=category&id=%28SELECT%20%28CASE%20WHEN%20%289168%3D4696%29%20THEN%209168%20ELSE%209168%2A%28SELECT%209168%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%29%20END%29%29&Itemid=53 404 1417 189.217.45.73
+/index.php?option=com_phocagallery&view=category&id=%28SELECT%20%28CASE%20WHEN%20%281753%3D1753%29%20THEN%201753%20ELSE%201753%2A%28SELECT%201753%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%29%20END%29%29&Itemid=53 404 1417 189.217.45.73
+/index.php?view=videos&type=member&user_id=66+and+1=0+union+select+1,2,3,4,5,6,7,8,9,10,11,12,concat%280x3c757365723e,username,0x3c757365723e3c706173733e,password,0x3c706173733e%29,14,15,16,17,18,19,20,21,22,23,24,25,26+from+jos_users+where+gid=25+limit+0,1--&option=com_mytube 404 1397 5.206.77.93
+
+Top 5 users by count of requests ended with 5** error:
+ 225 189.217.45.73
+   4 82.193.127.15
+   3 91.210.145.36
+   2 198.38.94.207
+   2 195.133.48.198

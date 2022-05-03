@@ -1,0 +1,147 @@
+{
+  "Total requests": "225132",
+  "Total requests by type": [
+    {
+      "Method": "GET",
+      "Count": 122095
+    },
+    {
+      "Method": "POST",
+      "Count": 102503
+    },
+    {
+      "Method": "PUT",
+      "Count": 6
+    },
+    {
+      "Method": "DELETE",
+      "Count": 0
+    },
+    {
+      "Method": "PATCH",
+      "Count": 0
+    },
+    {
+      "Method": "OPTIONS",
+      "Count": 0
+    },
+    {
+      "Method": "HEAD",
+      "Count": 528
+    },
+    {
+      "Method": "LINK",
+      "Count": 0
+    },
+    {
+      "Method": "UNLINK",
+      "Count": 0
+    },
+    {
+      "Method": "PURGE",
+      "Count": 0
+    },
+    {
+      "Method": "LOCK",
+      "Count": 0
+    },
+    {
+      "Method": "UNLOCK",
+      "Count": 0
+    },
+    {
+      "Method": "PROPFIND",
+      "Count": 0
+    },
+    {
+      "Method": "VIEW",
+      "Count": 0
+    }
+  ],
+  "Top 10 requests by usage": [
+    {
+      "Count of usages": 103932,
+      "request": "/administrator/index.php"
+    },
+    {
+      "Count of usages": 26336,
+      "request": "/apache-log/access.log"
+    },
+    {
+      "Count of usages": 6940,
+      "request": "/"
+    },
+    {
+      "Count of usages": 4980,
+      "request": "/templates/_system/css/general.css"
+    },
+    {
+      "Count of usages": 3199,
+      "request": "/robots.txt"
+    },
+    {
+      "Count of usages": 2356,
+      "request": "http://almhuette-raith.at/administrator/index.php"
+    },
+    {
+      "Count of usages": 2201,
+      "request": "/favicon.ico"
+    },
+    {
+      "Count of usages": 1644,
+      "request": "/wp-login.php"
+    },
+    {
+      "Count of usages": 1563,
+      "request": "/administrator/"
+    },
+    {
+      "Count of usages": 1287,
+      "request": "/templates/jp_hotel/css/template.css"
+    }
+  ],
+  "Top 5 requests by response size ended with 4** error": [
+    {
+      "Request url": "/index.php?option=com_phocagallery&view=category&id=4025&Itemid=53 404 189.217.45.73",
+      "Response size": 1417
+    },
+    {
+      "Request url": "/index.php?option=com_phocagallery&view=category&id=7806&Itemid=53 404 189.217.45.73",
+      "Response size": 1417
+    },
+    {
+      "Request url": "/index.php?option=com_phocagallery&view=category&id=%28SELECT%20%28CASE%20WHEN%20%289168%3D4696%29%20THEN%209168%20ELSE%209168%2A%28SELECT%209168%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%29%20END%29%29&Itemid=53 404 189.217.45.73",
+      "Response size": 1417
+    },
+    {
+      "Request url": "/index.php?option=com_phocagallery&view=category&id=%28SELECT%20%28CASE%20WHEN%20%281753%3D1753%29%20THEN%201753%20ELSE%201753%2A%28SELECT%201753%20FROM%20INFORMATION_SCHEMA.CHARACTER_SETS%29%20END%29%29&Itemid=53 404 189.217.45.73",
+      "Response size": 1417
+    },
+    {
+      "Request url": "/index.php?option=com_easyblog&view=dashboard&layout=write 404 104.129.9.248",
+      "Response size": 1397
+    }
+  ],
+  "Top 5 users by count of requests ended with 5** error": [
+    {
+      "Count usages": 225,
+      "User IP": "189.217.45.73"
+    },
+    {
+      "Count usages": 4,
+      "User IP": "82.193.127.15"
+    },
+    {
+      "Count usages": 3,
+      "User IP": "91.210.145.36"
+    },
+    {
+      "Count usages": 2,
+      "User IP": "194.87.237.6"
+    },
+    {
+      "Count usages": 2,
+      "User IP": "198.38.94.207"
+    }
+  ]
+}
