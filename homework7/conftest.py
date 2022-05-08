@@ -15,7 +15,7 @@ repo_root = os.path.abspath(os.path.join(__file__, os.pardir))
 def wait_ready(host, port):
     started = False
     st = time.time()
-    while time.time() - st <= 15:
+    while time.time() - st <= 30:
         try:
             requests.get(f'http://{host}:{port}')
             started = True
@@ -24,7 +24,7 @@ def wait_ready(host, port):
             pass
 
     if not started:
-        raise RuntimeError(f'{host}:{port} did not started in 5s!')
+        raise RuntimeError(f'{host}:{port} did not started in 30s!')
 
 
 def pytest_configure(config):
