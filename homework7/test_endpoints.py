@@ -1,5 +1,5 @@
 import requests
-from faker import Faker
+from faker.proxy import Faker
 
 from server import settings
 

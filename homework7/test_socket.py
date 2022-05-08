@@ -3,7 +3,7 @@ import socket
 import json
 import time
 
-from faker import Faker
+from faker.proxy import Faker
 
 from server import settings
 

@@ -2,7 +2,7 @@ import os
 import signal
 import threading
 import logging
-from faker import Faker
+from faker.proxy import Faker
 from flask import Flask, jsonify, request
 
 from server import settings
