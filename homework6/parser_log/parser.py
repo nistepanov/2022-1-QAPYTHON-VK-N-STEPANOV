@@ -3,61 +3,45 @@ import re
 
 def count_requests(builder, path):
     count = 0
+    http_methods = ['"GET ', '"POST ', '"PUT ', '"PATCH ', '"DELETE ', '"COPY ', '"HEAD ', '"OPTIONS ',
+                    '"LINK ', '"UNLINK ', '"PURGE ', '"LOCK ', '"UNLINK ', '"PURGE ', '"LOCK ',
+                    '"UNLOCK ', '"PROPFIND ', '"VIEW ']
     with open(path) as file:
         for line in file:
-            if ('"GET ' in line) or ('"POST ' in line) or ('"PUT ' in line) \
-                    or ('"PATCH ' in line) or ('"DELETE ' in line) or ('"COPY ' in line) \
-                    or ('"HEAD ' in line) or ('"OPTIONS ' in line) or ('"LINK ' in line) \
-                    or ('"UNLINK ' in line) or ('"PURGE ' in line) or ('"LOCK ' in line) \
-                    or ('"UNLOCK ' in line) or ('"PROPFIND ' in line) or ('"VIEW ' in line):
-                count += 1
+            for iter in http_methods:
+                if iter in line:
+                    count += 1
 
     builder.create_count_requests(count)
 
 
 def count_requests_type(builder, path):
+    count_requests_separated_by_type_dict = {"GET": 0, "POST": 0, "PUT": 0, "DELETE": 0,
+                                             "PATCH": 0, "OPTIONS": 0, "HEAD": 0, "LINK": 0,
+                                             "UNLINK": 0, "PURGE": 0, "LOCK": 0, "UNLOCK": 0,
+                                             "PROPFIND": 0, "VIEW": 0}
     with open(path) as file:
-        count = {}
         for line in file:
-            if '"GET ' in line:
-                count['GET'] = count['GET'] + 1 if count.get('GET') else 1
-            elif '"POST ' in line:
-                count['POST'] = count['POST'] + 1 if count.get('POST') else 1
-            elif '"PUT ' in line:
-                count['PUT'] = count['PUT'] + 1 if count.get('PUT') else 1
-            elif '"PATCH ' in line:
-                count['PATCH'] = count['PATCH'] + 1 if count.get('PATCH') else 1
-            elif '"DELETE ' in line:
-                count['DELETE'] = count['DELETE'] + 1 if count.get('DELETE') else 1
-            elif '"COPY ' in line:
-                count['COPY'] = count['COPY'] + 1 if count.get('COPY') else 1
-            elif '"HEAD ' in line:
-                count['HEAD'] = count['HEAD'] + 1 if count.get('HEAD') else 1
-            elif '"OPTIONS ' in line:
-                count['OPTIONS'] = count['OPTIONS'] + 1 if count.get('OPTIONS') else 1
-            elif '"LINK ' in line:
-                count['LINK'] = count['LINK'] + 1 if count.get('LINK') else 1
-            elif '"UNLINK ' in line:
-                count['UNLINK'] = count['UNLINK'] + 1 if count.get('UNLINK') else 1
-            elif '"PURGE ' in line:
-                count['PURGE'] = count['PURGE'] + 1 if count.get('PURGE') else 1
-            elif '"LOCK ' in line:
-                count['LOCK'] = count['LOCK'] + 1 if count.get('LOCK') else 1
-            elif '"UNLOCK ' in line:
-                count['UNLOCK'] = count['UNLOCK'] + 1 if count.get('UNLOCK') else 1
-            elif '"PROPFIND ' in line:
-                count['PROPFIND'] = count['PROPFIND'] + 1 if count.get('PROPFIND') else 1
-            elif '"VIEW ' in line:
-                count['VIEW'] = count['VIEW'] + 1 if count.get('VIEW') else 1
-        for key, value in count.items():
-            builder.create_count_req_type(key, value)
+            for key in count_requests_separated_by_type_dict.keys():
+                if '"' + key + " " in line:
+                    count_requests_separated_by_type_dict[key] = count_requests_separated_by_type_dict[key] + 1 if \
+                        count_requests_separated_by_type_dict.get(key) else 1
+
+        for key, value in count_requests_separated_by_type_dict.items():
+            if value:
+                builder.create_count_req_type(key, value)
 
 
 def count_top_resource(builder, path):
     urls_by_usage = {}
+    delimiters = ["%", "?", "#"]
     with open(path) as file:
         for line in file:
             url = line.split(" ")[6]
+            for sep in delimiters:
+                if sep in url:
+                    url = url.split(sep)[0]
+
             if url in urls_by_usage.keys():
                 urls_by_usage[url] += 1
             else:
@@ -93,11 +77,11 @@ def top_five_biggest_requests_ended_client_error(builder, path):
     top_biggest_requests_ended_client_error = list_requests[0:5]
 
     for line in top_biggest_requests_ended_client_error:
-       path = line[0].split(' ')[0]
-       code = line[0].split(' ')[1]
-       ip = line[0].split(' ')[2]
-       size = line[1]
-       builder.create_count_req_client_error(path=path, code=code, ip=ip, size=size)
+        path = line[0].split(' ')[0]
+        code = line[0].split(' ')[1]
+        ip = line[0].split(' ')[2]
+        size = line[1]
+        builder.create_count_req_client_error(path=path, code=code, ip=ip, size=size)
 
 
 def top_five_requests_ended_server_error(builder, path):
