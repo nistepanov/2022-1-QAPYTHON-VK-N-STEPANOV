@@ -42,22 +42,6 @@ class MySqlClient:
         self.connection.execute(f'DROP database  if exists  {self.db_name}')
         self.connection.close()
 
-    def create_count_requests(self):
-        if not inspect(self.engine).has_table('count_requests'):
-            Base.metadata.tables['count_requests'].create(self.engine)
-
-    def create_count_requests_type(self):
-        if not inspect(self.engine).has_table('count_requests_type'):
-            Base.metadata.tables['count_requests_type'].create(self.engine)
-
-    def create_count_top_resources(self):
-        if not inspect(self.engine).has_table('count_top_resources'):
-            Base.metadata.tables['count_top_resources'].create(self.engine)
-
-    def create_server_errors_requests(self):
-        if not inspect(self.engine).has_table('count_requests_server_error'):
-            Base.metadata.tables['count_requests_server_error'].create(self.engine)
-
-    def create_client_error_requests(self):
-        if not inspect(self.engine).has_table('count_requests_client_error'):
-            Base.metadata.tables['count_requests_client_error'].create(self.engine)
+    def create_table(self, table_name):
+        if not inspect(self.engine).has_table(f'{table_name}'):
+            Base.metadata.tables[f'{table_name}'].create(self.engine)

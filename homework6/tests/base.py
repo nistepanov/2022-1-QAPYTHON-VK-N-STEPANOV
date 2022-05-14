@@ -1,4 +1,5 @@
 import pytest
+
 from mysql.builder import MySqlBuilder
 
 

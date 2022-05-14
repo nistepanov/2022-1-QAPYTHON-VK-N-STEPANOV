@@ -1,5 +1,6 @@
-import pytest
 import os
+
+import pytest
 
 from mysql.client import MySqlClient
 
