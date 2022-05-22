@@ -1,0 +1,2 @@
+SEVERE - network
+http://my_app:8086/reg - Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)

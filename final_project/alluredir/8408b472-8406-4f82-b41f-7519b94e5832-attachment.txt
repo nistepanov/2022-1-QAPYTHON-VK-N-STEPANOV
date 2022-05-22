@@ -1,0 +1,7 @@
+INFO     WDM:logger.py:26 
+
+INFO     WDM:logger.py:26 ====== WebDriver manager ======
+INFO     WDM:logger.py:26 Could not get version for google-chrome with the command: google-chrome --version || google-chrome-stable --version || google-chrome-beta --version || google-chrome-dev --version
+INFO     WDM:logger.py:26 Current google-chrome version is UNKNOWN
+INFO     WDM:logger.py:26 Get LATEST chromedriver version for UNKNOWN google-chrome
+INFO     WDM:logger.py:26 Driver [/root/.wdm/drivers/chromedriver/linux64/101.0.4951.41/chromedriver] found in cache
