@@ -73,7 +73,7 @@ services:
     build:
       context: .
     volumes:
-      - "./alluredir:/Users/n.stepanov/.jenkins/workspace/tests_my_app/allure-reports"
+      - "./allureresults:/tmp/allure"
     depends_on:
       my_app:
         condition: service_healthy

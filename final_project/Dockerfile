@@ -7,4 +7,4 @@ ADD / /final_project
 
 WORKDIR /final_project
 
-CMD ["pytest", "-s", "-l", "-v", "./code", "--selenoid", "--alluredir", "/Users/n.stepanov/.jenkins/workspace/tests_my_app/allure-report"]
+CMD ["pytest", "-s", "-l", "-v", "./code", "--selenoid", "--alluredir", "/tmp/allure"]
