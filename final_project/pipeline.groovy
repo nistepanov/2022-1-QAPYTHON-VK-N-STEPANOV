@@ -3,6 +3,7 @@ properties([disableConcurrentBuilds()])
 pipeline {
         environment {
         PATH = "$PATH:/usr/local/bin"
+        sh "sudo systemctl start docker"
     }
     agent {
         node {
