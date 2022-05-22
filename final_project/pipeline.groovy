@@ -16,12 +16,6 @@ pipeline {
     }
 
     stages {
-        stage("Preparing...") {
-            steps {
-                echo "one"
-                sh "systemctl start docker"
-            }
-        }
 
          stage("Building...") {
             steps {
