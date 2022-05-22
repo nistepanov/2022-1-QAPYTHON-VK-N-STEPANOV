@@ -13,14 +13,6 @@ pipeline {
     }
 
     stages {
-
-         stage("Preparing") {
-            steps {
-                echo "one"
-                sh "cd $WORKSPACE/final_project && pip install -r requirements.txt"
-            }
-            }
-
         stage("Building...") {
             steps {
                 echo "two"
