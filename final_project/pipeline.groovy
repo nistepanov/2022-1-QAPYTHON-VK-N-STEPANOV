@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage("Dropping images...") {
+        stage("Dropping containers...") {
             steps {
                 echo "two"
                 sh "cd $WORKSPACE/final_project && docker-compose down -v"
@@ -39,7 +39,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
+                    results: [[path: '-o ./allure-results']]
             ])
             cleanWs()
         }
