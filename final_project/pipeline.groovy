@@ -20,7 +20,7 @@ pipeline {
          stage("Building...") {
             steps {
                 echo "two"
-                sh "cd $WORKSPACE/final_project && docker-compose up"
+                sh "cd $WORKSPACE/final_project && docker-compose up -d"
             }
         }
     }
