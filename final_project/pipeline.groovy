@@ -19,6 +19,7 @@ pipeline {
                 echo "one"
                 sh "cd $WORKSPACE/final_project && pip install -r requirements.txt"
             }
+            }
 
         stage("Building...") {
             steps {
