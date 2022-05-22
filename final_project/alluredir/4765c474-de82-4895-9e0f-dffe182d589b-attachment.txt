@@ -1,8 +1,0 @@
-SEVERE - network
-http://my_app:8086/static/scripts/findMeError.js - Failed to load resource: the server responded with a status of 404 (NOT FOUND)
-SEVERE - network
-http://my_app:8086/static/scripts/findMeError.js - Failed to load resource: the server responded with a status of 404 (NOT FOUND)
-SEVERE - network
-http://my_app:8086/static/scripts/findMeError.js - Failed to load resource: the server responded with a status of 404 (NOT FOUND)
-SEVERE - network
-http://my_app:8086/static/scripts/findMeError.js - Failed to load resource: the server responded with a status of 404 (NOT FOUND)
