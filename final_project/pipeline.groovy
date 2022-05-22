@@ -23,6 +23,13 @@ pipeline {
                 sh "cd $WORKSPACE/final_project && docker-compose up -d"
             }
         }
+
+        stage("Dropping images...") {
+            steps {
+                echo "two"
+                sh "cd $WORKSPACE/final_project && docker-compose down -v"
+            }
+        }
     }
 
     post {
