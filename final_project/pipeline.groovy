@@ -39,7 +39,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: '-o ./final_project/alluredir']]
+                    results: [[path: '-c -o /Users/n.stepanov/.jenkins/workspace/tests_my_app/allure-report']]
             ])
             cleanWs()
         }
