@@ -16,7 +16,7 @@ pipeline {
         stage("Building...") {
             steps {
                 echo "two"
-                sh "cd $WORKSPACE/final_project && docker-compose up -d"
+                sh "cd $WORKSPACE/final_project && /usr/local/bin/docker-compose up -d"
             }
         }
     }
