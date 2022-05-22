@@ -16,9 +16,16 @@ pipeline {
     }
 
     stages {
-        stage("Building...") {
+        stage("Preparing...") {
             steps {
                 echo "one"
+                sh "systemctl start docker"
+            }
+        }
+
+         stage("Building...") {
+            steps {
+                echo "two"
                 sh "cd $WORKSPACE/final_project && docker-compose up -d"
             }
         }
