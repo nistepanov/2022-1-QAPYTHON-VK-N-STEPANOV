@@ -39,7 +39,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: '-o ./allure-results']]
+                    results: [[path: '-o ./final_project/alluredir']]
             ])
             cleanWs()
         }
