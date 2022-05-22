@@ -3,7 +3,6 @@ properties([disableConcurrentBuilds()])
 pipeline {
         environment {
         PATH = "$PATH:/usr/local/bin"
-        sh "sudo systemctl start docker"
     }
     agent {
         node {
@@ -19,7 +18,7 @@ pipeline {
     stages {
         stage("Building...") {
             steps {
-                echo "two"
+                echo "one"
                 sh "cd $WORKSPACE/final_project && docker-compose up -d"
             }
         }
