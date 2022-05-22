@@ -35,8 +35,11 @@ pipeline {
     post {
         always {
             allure([
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: '/final_project/alluredir']]
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'target/allure-results']]
             ])
             cleanWs()
         }
