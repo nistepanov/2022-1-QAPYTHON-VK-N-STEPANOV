@@ -1,6 +1,9 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
+        environment {
+        PATH = "$PATH:/usr/local/bin"
+    }
     agent {
         node {
             label 'master'
