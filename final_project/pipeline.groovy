@@ -29,7 +29,7 @@ pipeline {
         always {
             allure([
                 reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure']]
+                results: [[path: 'alluredir']]
             ])
             cleanWs()
         }
