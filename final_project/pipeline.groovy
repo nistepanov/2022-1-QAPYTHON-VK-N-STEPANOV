@@ -37,6 +37,7 @@ pipeline {
                 echo "three"
 
                 sh "cd $WORKSPACE/final_project && docker-compose down -v"
+                sh "cd $WORKSPACE"
             }
         }
     }
