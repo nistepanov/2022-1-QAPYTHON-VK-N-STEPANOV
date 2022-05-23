@@ -154,7 +154,7 @@ class TestUIUnauthorizedUserAuthPage(BaseCase):
 
 class TestUIUnauthorizedUserRegistrationPage(BaseCase):
 
-    @allure.title('Страница регистрации. Валидные данные (c middle-name). Успешная регистрация')
+    @allure.title('БАГ! Страница регистрации. Валидные данные (c middle-name). Успешная регистрация')
     @pytest.mark.UI
     def test_reg_page_success_with_middle_name_bug(self, create_user_data_with_middle_name):
         """
@@ -490,7 +490,7 @@ class TestUIUnauthorizedUserRegistrationPage(BaseCase):
             RegistrationPageLocators.QUERY_USER_ALREADY_EXISTS) == "User already exist", "Должен быть такой pop-up!"
         assert user_db is None, "Не должно быть занесено в БД какой-либо информации о пользователе"
 
-    @allure.title('Страница регистрации. Pop-up "Email already exists" при повторении username')
+    @allure.title('БАГ! Страница регистрации. Pop-up "Email already exists" при повторении username')
     @pytest.mark.UI
     def test_reg_page_validation_already_used_email_bug(self, create_user_data_with_middle_name):
         """
@@ -521,7 +521,7 @@ class TestUIUnauthorizedUserRegistrationPage(BaseCase):
             RegistrationPageLocators.QUERY_EMAIL_ALREADY_EXISTS) == "Email already exists", "Должен быть такой pop-up!"
         assert user_db is None, "Не должно быть занесено в БД какой-либо информации о пользователе"
 
-    @allure.title('Страница регистрации. Минимальная длина username. Этот тест имеет flucky сообщение!')
+    @allure.title('БАГ! Страница регистрации. Минимальная длина username. Этот тест имеет flucky сообщение!')
     @pytest.mark.UI
     def test_reg_page_validation_min_length_username_bug(self, create_user_data_with_middle_name):
         """
@@ -670,7 +670,7 @@ class TestUIUnauthorizedUserRegistrationPage(BaseCase):
 
         assert self.driver.current_url == self.registration_page.url, f"URL должен быть 'http://{APP_HOST}:{APP_PORT}/reg'"
 
-    @allure.title('Страница регистрации. Value в placeholder midlename')
+    @allure.title('БАГ! Страница регистрации. Value в placeholder midlename')
     @pytest.mark.UI
     def test_reg_page_value_midlename_bug(self):
         """
@@ -808,7 +808,7 @@ class TestUIAuthorizedUserWelcomePage(BaseCaseLogin):
 
     @allure.title('Основная страница. Нажатие на кнопку с жуком (bug)')
     @pytest.mark.UI
-    def test_welcome_page_click_on_bug_image(self):
+    def test_welcome_page_click_on_image(self):
         """
           Тестирование: Основная страница. Нажатие на кнопку с жуком (bug)
           Предусловия: Пользователь авторизован
@@ -897,7 +897,7 @@ class TestUIAuthorizedUserWelcomePage(BaseCaseLogin):
         assert self.driver.current_url == "https://flask.palletsprojects.com/en/1.1.x/#", \
             "URL должен быть 'https://flask.palletsprojects.com/en/1.1.x/#"
 
-    @allure.title('Основная страница. Нажатие на кнопку Download Centos 7 в выпадающем меню кнопки Linux')
+    @allure.title('БАГ! Основная страница. Нажатие на кнопку Download Centos 7 в выпадающем меню кнопки Linux')
     @pytest.mark.UI
     def test_welcome_page_click_on_download_centos_bug(self):
         """

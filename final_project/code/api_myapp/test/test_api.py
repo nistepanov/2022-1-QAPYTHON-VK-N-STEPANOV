@@ -31,7 +31,7 @@ class TestApiAuthorizedUser(BaseApi):
         complex_data = {**user_data, **human_data}
         return complex_data
 
-    @allure.title("Проверка создания пользователя без middle-name")
+    @allure.title("БАГ! Проверка создания пользователя без middle-name")
     @pytest.mark.API
     def test_post_create_user_without_middle_name_bug(self, create_user_data_without_middle_name):
         """
@@ -81,7 +81,7 @@ class TestApiAuthorizedUser(BaseApi):
         }, "Тело ответа приложения не соотв. ожидаемому"
         assert response.status_code == 201, "Код ответа приложения должен быть 201"
 
-    @allure.title("Проверка создания пользователя с middle-name")
+    @allure.title("БАГ! Проверка создания пользователя с middle-name")
     @pytest.mark.API
     def test_post_create_user_with_middle_name_bug(self, create_user_data_with_middle_name):
         """
@@ -270,7 +270,7 @@ class TestApiAuthorizedUser(BaseApi):
         }, "Тело ответа приложения не соотв. ожидаемому"
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
 
-    @allure.title("Проверка создания пользователя по email, который уже есть в БД")
+    @allure.title("БАГ! Проверка создания пользователя по email, который уже есть в БД")
     @pytest.mark.API
     def test_post_create_user_duplicate_data_email_bug(self, create_user_data_with_middle_name,
                                                        create_user_data_without_middle_name):
@@ -344,7 +344,7 @@ class TestApiAuthorizedUser(BaseApi):
             "status": "failed"
         }, "Тело ответа приложения не соотв. ожидаемому"
 
-    @allure.title("Проверка создания пользователя по username, длина которого меньше допустимого (< 6 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по username, длина которого меньше допустимого (< 6 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_username_length_less_than_acceptable_bug(self,
                                                                                     create_user_data_with_middle_name):
@@ -372,7 +372,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД при невалидной длине username"
 
-    @allure.title("Проверка создания пользователя по username, длина которого больше допустимого (> 16 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по username, длина которого больше допустимого (> 16 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_username_length_more_than_acceptable_bug(self,
                                                                                     create_user_data_with_middle_name):
@@ -400,7 +400,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД "
 
-    @allure.title("Проверка создания пользователя по email, длина которого больше допустимого (> 64 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по email, длина которого больше допустимого (> 64 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_email_length_more_than_acceptable_bug(self,
                                                                                  create_user_data_with_middle_name):
@@ -428,7 +428,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД "
 
-    @allure.title("Проверка создания пользователя по password, длина которого больше допустимого (> 255 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по password, длина которого больше допустимого (> 255 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_password_length_more_than_acceptable_bug(self,
                                                                                     create_user_data_with_middle_name):
@@ -456,7 +456,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД "
 
-    @allure.title("Проверка создания пользователя по name, длина которого больше допустимого (> 255 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по name, длина которого больше допустимого (> 255 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_name_length_more_than_acceptable_bug(self,
                                                                                 create_user_data_with_middle_name):
@@ -484,7 +484,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД "
 
-    @allure.title("Проверка создания пользователя по surname, длина которого больше допустимого (> 255 символов)")
+    @allure.title("БАГ! Проверка создания пользователя по surname, длина которого больше допустимого (> 255 символов)")
     @pytest.mark.API
     def test_post_create_user_invalid_data_surname_length_more_than_acceptable_bug(self,
                                                                                    create_user_data_with_middle_name):
@@ -512,7 +512,7 @@ class TestApiAuthorizedUser(BaseApi):
         assert response.status_code == 400, "Код ответа приложения должен быть 400"
         assert user_db is None, "Пользователь не должен добавляться в БД "
 
-    @allure.title("Проверка создания пользователя по email, который не соотв. схеме имя@домен")
+    @allure.title("БАГ! Проверка создания пользователя по email, который не соотв. схеме имя@домен")
     @pytest.mark.API
     def test_post_create_user_invalid_email_schema_validation_bug(self, create_user_data_with_middle_name):
         """
@@ -721,7 +721,7 @@ class TestApiAuthorizedUser(BaseApi):
 
         self.post_unblock_user(username)
 
-    @allure.title("Разблокировка ранее заблокированного пользователя")
+    @allure.title("БАГ! Разблокировка ранее заблокированного пользователя")
     @pytest.mark.API
     def test_post_unblock_blocked_user_bug(self):
         """
@@ -904,7 +904,7 @@ class TestApiUnauthorizedUser(BaseApi):
         assert response.status_code == 302, "Код ответа приложения должен быть 302"
         assert dict_from_cookiejar(response.cookies)['session']
 
-    @allure.title("Авторизация с помощью неверных данных")
+    @allure.title("БАГ! Авторизация с помощью неверных данных")
     @pytest.mark.API
     @pytest.mark.parametrize('login, password', [('error', 'error'), ('nikita', 'testik'), ('nik', 'beast')])
     def test_post_auth_invalid_data_bug(self, login, password):

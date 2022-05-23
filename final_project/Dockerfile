@@ -7,4 +7,4 @@ ADD / /final_project
 
 WORKDIR /final_project
 
-CMD ["pytest", "-s", "-l", "-v", "./code", "--selenoid", "--alluredir", "/tmp/allure"]
+CMD ["pytest", "-s", "-l", "-v", "-n2", "./code", "--selenoid", "--alluredir", "/tmp/allure"]
