@@ -27,6 +27,7 @@ pipeline {
         stage("Dropping containers...") {
             steps {
                 echo "two"
+                sh "cd $WORKSPACE/final_project docker wait tests_qa"
                 sh "cd $WORKSPACE/final_project && docker-compose down -v"
             }
         }
