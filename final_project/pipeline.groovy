@@ -24,15 +24,22 @@ pipeline {
             }
         }
 
-        stage("Dropping containers...") {
+        stage("Waiting for tests...") {
             steps {
                 echo "two"
-                sh "cd $WORKSPACE/final_project docker wait tests_qa"
+
+                sh "cd $WORKSPACE/final_project && docker wait tests_qa"
+            }
+        }
+
+        stage("Dropping containers...") {
+            steps {
+                echo "three"
+
                 sh "cd $WORKSPACE/final_project && docker-compose down -v"
             }
         }
     }
-
     post {
         always {
             allure([
