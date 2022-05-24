@@ -25,12 +25,12 @@ class MainFlaskApp:
             pass
         if user_name not in app_data:
             app_data[user_name] = user_id_seq
-            app_data['surname'] = surname
+            app_data[str(user_id_seq)] = surname
             user_id_seq += 1
             if surname is None:
                 return jsonify({'user_id': app_data[user_name]}), 201
             else:
-                return jsonify({'user_id': app_data[user_name], 'surname': app_data['surname']}), 201
+                return jsonify({'user_id': app_data[user_name], 'surname': app_data[str(user_id_seq - 1)]}), 201
 
         else:
             return jsonify(f'User_name {user_name} already exists: id: {app_data[user_name]}'), 400
@@ -53,7 +53,7 @@ class MainFlaskApp:
             surname_host = os.environ['SURNAME_HOST']
             surname_port = os.environ['SURNAME_PORT']
 
-            surname = app_data['surname']
+            surname = app_data.get(str(app_data[name]))
             try:
                 response = requests.get(f'http://{surname_host}:{surname_port}/get_surname/{name}',
                                         params={'surname': surname})
