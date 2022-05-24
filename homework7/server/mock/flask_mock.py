@@ -80,7 +80,10 @@ class AuxiliaryMethods:
 
     @staticmethod
     def shutdown_mock():
-        os.kill(os.getpid(), signal.SIGTERM)
+        # os.kill(os.getppid(), signal.SIGTERM)
+        terminate_func = request.environ.get('werkzeug.server.shutdown')
+        if terminate_func:
+            terminate_func()
 
 
 if __name__ == '__main__':
