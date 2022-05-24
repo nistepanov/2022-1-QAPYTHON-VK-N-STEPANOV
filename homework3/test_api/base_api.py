@@ -26,7 +26,7 @@ class BaseApi:
 
         headers = {**self.api_client.session.headers, **additional_headers_for_campaign}
 
-        return self.api_client._request(method='POST', location='api/v2/campaigns.json', json=json_data,
+        return self.api_client._request(method='POST', location='api_myapp/v2/campaigns.json', json=json_data,
                                         headers=headers)
 
     def check_campaign_is_created(self, id_campaign, name):
@@ -34,7 +34,7 @@ class BaseApi:
                   'sorting': '-id',
                   'status': 'active'}
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params)
+        response = self.api_client._request(method='GET', location='api_myapp/v2/campaigns.json', params=params)
 
         response_as_dict = ast.literal_eval(response.text)
         recently_created_campaign = response_as_dict['items'][0]
@@ -55,7 +55,7 @@ class BaseApi:
         json_data = [{"id": id_campaign,
                       "status": "deleted"}]
 
-        self.api_client._request(method='POST', location='api/v2/campaigns/mass_action.json', json=json_data,
+        self.api_client._request(method='POST', location='api_myapp/v2/campaigns/mass_action.json', json=json_data,
                                  expected_status=204)
 
     def check_campaign_is_deleted(self, id_campaign, name):
@@ -63,7 +63,7 @@ class BaseApi:
                   'sorting': '-id',
                   'status': 'deleted'}
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json', params=params)
+        response = self.api_client._request(method='GET', location='api_myapp/v2/campaigns.json', params=params)
 
         response_as_dict = ast.literal_eval(response.text)
 
@@ -81,14 +81,14 @@ class BaseApi:
         json_data = {"name": name, "pass_condition": 1, "relations": [
             {"object_type": "remarketing_player", "params": {"type": "positive", "left": 365, "right": 0}}]}
 
-        response = self.api_client._request(method="POST", location="api/v2/remarketing/segments.json",
+        response = self.api_client._request(method="POST", location="api_myapp/v2/remarketing/segments.json",
                                             json=json_data)
 
         return response
 
     def check_segment_is_created(self, id_segment, name):
         params = {'sorting': '-id'}
-        response = self.api_client._request(method="GET", location="api/v2/remarketing/segments.json",
+        response = self.api_client._request(method="GET", location="api_myapp/v2/remarketing/segments.json",
                                             params=params)
         response_as_dict = ast.literal_eval(response.text)
 
@@ -104,7 +104,7 @@ class BaseApi:
 
     def check_segment_is_deleted(self, id_segment, name):
 
-        response = self.api_client._request(method='GET', location='api/v2/campaigns.json')
+        response = self.api_client._request(method='GET', location='api_myapp/v2/campaigns.json')
 
         response_as_dict = ast.literal_eval(response.text)
 
@@ -117,4 +117,4 @@ class BaseApi:
     def delete_segment(self, id_segment):
         json_data = [{"source_id": id_segment, "source_type": "segment"}]
 
-        self.api_client._request(method="POST", location="api/v1/remarketing/mass_action/delete.json", json=json_data)
+        self.api_client._request(method="POST", location="api_myapp/v1/remarketing/mass_action/delete.json", json=json_data)
