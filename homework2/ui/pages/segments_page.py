@@ -57,6 +57,5 @@ class SegmentsPage(BasePage):
 
         self.segment_name = RandomGenerate.generate_random_name()
         self.search_insert(SegmentsPageLocators.QUERY_ADD_NAME_SEGMENT, self.segment_name)
-        print(self.flag)
         self.create_segment_button()
         self.find(SegmentsPageLocators.QUERY_TABLE_SEGMENTS)

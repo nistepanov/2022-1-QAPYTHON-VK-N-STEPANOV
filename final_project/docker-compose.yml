@@ -1,0 +1,82 @@
+version: '2.1'
+
+networks:
+  my_network:
+    external: true
+    name: my_network
+services:
+  mysql:
+    image: "percona:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - "./code/mysql/migrations/migrations.sql:/data/my_app/mysql.sql"
+    command: --init-file /data/my_app/mysql.sql
+    healthcheck:
+      test: [ 'CMD', 'mysqladmin', '-uroot', '-ppass', 'ping', '-h', '127.0.0.1' ]
+      timeout: 1s
+      retries: 30
+    networks:
+      - my_network
+
+  my_app:
+    image: myapp:latest
+    volumes:
+      - "./code/settings:/tmp/appconf"
+    healthcheck:
+      test: curl -sS http://127.0.0.1:8086/status || echo 1
+      timeout: 1s
+      retries: 30
+    depends_on:
+      mysql:
+        condition: service_healthy
+      vk_api:
+        condition: service_started
+    tty:
+      true
+    command: /app/myapp --config=/tmp/appconf/config.py
+    ports:
+      - 8086:8086
+    networks:
+      - my_network
+    links:
+      - vk_api
+    container_name: my_app
+
+  vk_api:
+    networks:
+      - my_network
+    ports:
+      - 8787:8787
+    container_name: vk_api
+    build:
+      context: ./server_mock
+
+  selenoid_hub:
+    image: aerokube/selenoid:latest-release
+    volumes:
+      - "./code/selenoid:/etc/selenoid"
+      - "./selenoid/logs:/opt/selenoid/logs"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: [ "-conf", "/etc/selenoid/browsers.json", "-log-output-dir", "/opt/selenoid/logs", "-container-network", "my_network" ]
+    networks:
+      my_network: null
+    ports:
+      - 4444:4444
+    container_name: selenoid_hub
+
+
+  tests_qa:
+    networks:
+      - my_network
+    build:
+      context: .
+    volumes:
+      - "../allure-results:/tmp/allure"
+    depends_on:
+      my_app:
+        condition: service_healthy
+      selenoid_hub:
+        condition: service_started
+    container_name: tests_qa

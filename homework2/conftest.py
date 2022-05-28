@@ -2,10 +2,11 @@ import logging
 
 from homework2.ui.fixtures import *
 
+from final_project.code.settings.config import APP_HOST, APP_PORT
 
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
-    parser.addoption('--url', default='https://https://target.my.com/')
+    parser.addoption('--url', default=f'http://{APP_HOST}:{APP_PORT}/')
     parser.addoption('--debug_log', action='store_true')
     parser.addoption('--selenoid', action='store_true')
     parser.addoption('--vnc', action='store_true')
@@ -19,7 +20,7 @@ def repo_root():
 @pytest.fixture(scope='session')
 def base_temp_dir():
     if sys.platform.startswith('win'):
-        base_dir = 'C:\\tests'
+        base_dir = 'C:\\test'
     else:
         base_dir = '/tmp/tests'
     if os.path.exists(base_dir):
@@ -49,6 +50,13 @@ def config(request):
         selenoid = None
         vnc = False
 
+    print({
+        'url': url,
+        'browser': browser,
+        'debug_log': debug_log,
+        'selenoid': selenoid,
+        'vnc': vnc,
+    })
     return {
         'url': url,
         'browser': browser,

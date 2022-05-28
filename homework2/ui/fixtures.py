@@ -28,7 +28,7 @@ def url():
 
 def pytest_configure(config):
     if sys.platform.startswith('win'):
-        base_dir = 'C:\\tests'
+        base_dir = 'C:\\test'
     else:
         base_dir = '/tmp/tests'
     if not hasattr(config, 'workerunput'):
