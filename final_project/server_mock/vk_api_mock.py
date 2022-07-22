@@ -1,9 +1,9 @@
 import logging
-from faker.proxy import Faker
-from flask import Flask, jsonify, request, session
-
-import string
 import random
+import string
+
+from faker.proxy import Faker
+from flask import Flask, jsonify, request
 
 VK_API_HOST = '0.0.0.0'
 VK_API_PORT = 8787

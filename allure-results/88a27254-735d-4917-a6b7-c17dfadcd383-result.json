@@ -1,1 +1,49 @@
-{"name": "Основная страница. Корректная Авторизация", "status": "passed", "description": "\n          Тестирование: Основная страница.\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Авторизоваться\n          Ожидаемый результат:\n          1. Пользователя редирекнет на основную страницу /welcome (+)\n          Фактический результат:\n          1. Пользователя редирекнет на основную страницу /welcome\n        ", "start": 1653294684521, "stop": 1653294684527, "uuid": "b19a5056-8152-4a57-a0ef-1f6936446ebb", "historyId": "20bd53f63d0e1a0e2f51776d35d176e9", "testCaseId": "4cd0d5ca6fe9faba3f50ecfba2e90016", "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIAuthorizedUserWelcomePage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Основная страница. Корректная Авторизация",
+  "status": "passed",
+  "description": "\n          Тестирование: Основная страница.\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Авторизоваться\n          Ожидаемый результат:\n          1. Пользователя редирекнет на основную страницу /welcome (+)\n          Фактический результат:\n          1. Пользователя редирекнет на основную страницу /welcome\n        ",
+  "start": 1653294684521,
+  "stop": 1653294684527,
+  "uuid": "b19a5056-8152-4a57-a0ef-1f6936446ebb",
+  "historyId": "20bd53f63d0e1a0e2f51776d35d176e9",
+  "testCaseId": "4cd0d5ca6fe9faba3f50ecfba2e90016",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIAuthorizedUserWelcomePage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

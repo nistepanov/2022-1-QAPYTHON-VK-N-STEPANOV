@@ -1,7 +1,6 @@
-import os
-
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
+
 from final_project.code.settings.config import *
 
 

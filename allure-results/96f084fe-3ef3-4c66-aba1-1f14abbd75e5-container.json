@@ -1,1 +1,76 @@
-{"uuid": "3e966ed1-a606-450b-993b-6a10c727a4e4", "children": ["a8511681-c024-4e7e-b5dd-3e8212c2b249"], "befores": [{"name": "setup", "status": "passed", "steps": [{"name": "Выполняем коннект к БД и возвращаем объект соединения", "status": "passed", "start": 1653294458734, "stop": 1653294458734}, {"name": "Выполняем инициализацию API-client'a", "status": "passed", "start": 1653294458734, "stop": 1653294458734}, {"name": "Авторизуемся по стабильным данным - выполянем POST запрос /login", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/login'"}, {"name": "headers", "value": "{}"}, {"name": "data", "value": "{'username': 'nikita', 'password': 'test'}"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653294458734, "stop": 1653294458746}], "parameters": [{"name": "data", "value": "None"}], "start": 1653294458734, "stop": 1653294458746}], "start": 1653294458734, "stop": 1653294458746}], "start": 1653294458734, "stop": 1653294458790}
+{
+  "uuid": "3e966ed1-a606-450b-993b-6a10c727a4e4",
+  "children": [
+    "a8511681-c024-4e7e-b5dd-3e8212c2b249"
+  ],
+  "befores": [
+    {
+      "name": "setup",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем коннект к БД и возвращаем объект соединения",
+          "status": "passed",
+          "start": 1653294458734,
+          "stop": 1653294458734
+        },
+        {
+          "name": "Выполняем инициализацию API-client'a",
+          "status": "passed",
+          "start": 1653294458734,
+          "stop": 1653294458734
+        },
+        {
+          "name": "Авторизуемся по стабильным данным - выполянем POST запрос /login",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Выполняем запрос",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "method",
+                  "value": "'POST'"
+                },
+                {
+                  "name": "location",
+                  "value": "'/login'"
+                },
+                {
+                  "name": "headers",
+                  "value": "{}"
+                },
+                {
+                  "name": "data",
+                  "value": "{'username': 'nikita', 'password': 'test'}"
+                },
+                {
+                  "name": "params",
+                  "value": "None"
+                },
+                {
+                  "name": "json",
+                  "value": "False"
+                }
+              ],
+              "start": 1653294458734,
+              "stop": 1653294458746
+            }
+          ],
+          "parameters": [
+            {
+              "name": "data",
+              "value": "None"
+            }
+          ],
+          "start": 1653294458734,
+          "stop": 1653294458746
+        }
+      ],
+      "start": 1653294458734,
+      "stop": 1653294458746
+    }
+  ],
+  "start": 1653294458734,
+  "stop": 1653294458790
+}

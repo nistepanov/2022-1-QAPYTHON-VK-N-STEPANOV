@@ -1,1 +1,147 @@
-{"name": "Проверка создания пользователя по email, который уже есть в БД", "status": "failed", "statusDetails": {"message": "AssertionError: Код ответа приложения должен быть 400\nassert 500 == 400\n  +500\n  -400", "trace": "self = <test_api.TestApiAuthorizedUser object at 0x7fb01b9e3be0>\ncreate_user_data_with_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncreate_user_data_without_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\n\n    @allure.title(\"Проверка создания пользователя по email, который уже есть в БД\")\n    @pytest.mark.API\n    def test_post_create_user_duplicate_data_email_bug(self, create_user_data_with_middle_name,\n                                                       create_user_data_without_middle_name):\n        \"\"\"\n         Тестирование: Добавление пользователя с данными, которые уже есть в БД (email)\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API\n         Ожидаемый результат:\n         Пользователь НЕ добавляется в БД (+)\n         Код ответа - 400 (\"BAD REQUEST\") (-)\n         Фактический результат:\n         Код ответа - 500 (\"INTERNAL SERVER ERROR\")\n         Пользователь НЕ добавляется в БД\n         \"\"\"\n        complex_user_data_first = create_user_data_with_middle_name\n        email_first_user = complex_user_data_first[\"email\"]\n    \n        self.post_create_user(complex_user_data_first)\n        complex_user_data_second = create_user_data_without_middle_name\n        complex_user_data_second[\"middle_name\"] = create_user_data_with_middle_name[\"middle_name\"]\n        complex_user_data_second[\"email\"] = email_first_user\n        complex_user_data_second[\"username\"] = RandomGenerate.generate_random_user_name()\n    \n        response = self.post_create_user(complex_user_data_second)\n        self.mysql.session.commit()\n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data_second['username']).first()\n    \n        assert user_db is None, \"Пользователь не должен добавляться в БД\"\n>       assert response.status_code == 400, \"Код ответа приложения должен быть 400\"\nE       AssertionError: Код ответа приложения должен быть 400\nE       assert 500 == 400\nE         +500\nE         -400\n\ncomplex_user_data_first = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncomplex_user_data_second = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\ncreate_user_data_with_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncreate_user_data_without_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\nemail_first_user = 'Af1SWlFhWLEAq@mail.ru'\nresponse   = <Response [500]>\nself       = <test_api.TestApiAuthorizedUser object at 0x7fb01b9e3be0>\nuser_db    = None\n\ncode/api_myapp/test/test_api.py:304: AssertionError"}, "description": "\n         Тестирование: Добавление пользователя с данными, которые уже есть в БД (email)\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API\n         Ожидаемый результат:\n         Пользователь НЕ добавляется в БД (+)\n         Код ответа - 400 (\"BAD REQUEST\") (-)\n         Фактический результат:\n         Код ответа - 500 (\"INTERNAL SERVER ERROR\")\n         Пользователь НЕ добавляется в БД\n         ", "steps": [{"name": "Выполняем POST запрос '/api/user'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user'"}, {"name": "headers", "value": "{'Content-Type': 'application/json'}"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'username': 'WYNyyL0ngrC', 'password': 'zFvU6yk', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'James', 'surname': 'Sullivan', 'middle_name': 'JamesSullivan'}"}], "start": 1653294456974, "stop": 1653294456993}], "parameters": [{"name": "complex_data", "value": "{'username': 'WYNyyL0ngrC', 'password': 'zFvU6yk', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'James', 'surname': 'Sullivan', 'middle_name': 'JamesSullivan'}"}], "start": 1653294456974, "stop": 1653294456993}, {"name": "Выполняем POST запрос '/api/user'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user'"}, {"name": "headers", "value": "{'Content-Type': 'application/json'}"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'username': 'FRZ4il9GooMwds', 'password': 'mjQtjDY3d', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'Monica', 'surname': 'Ramirez', 'middle_name': 'JamesSullivan'}"}], "start": 1653294456994, "stop": 1653294457016}], "parameters": [{"name": "complex_data", "value": "{'username': 'FRZ4il9GooMwds', 'password': 'mjQtjDY3d', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'Monica', 'surname': 'Ramirez', 'middle_name': 'JamesSullivan'}"}], "start": 1653294456993, "stop": 1653294457016}], "start": 1653294456974, "stop": 1653294457024, "uuid": "938868ce-2873-4ec5-8c8e-707082f441da", "historyId": "9c6e8e60b473a7fa50f9375dae1e84a0", "testCaseId": "4ee2e7fff953b29fe95ef3042cddb251", "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_post_create_user_duplicate_data_email_bug", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiAuthorizedUser"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Проверка создания пользователя по email, который уже есть в БД",
+  "status": "failed",
+  "statusDetails": {
+    "message": "AssertionError: Код ответа приложения должен быть 400\nassert 500 == 400\n  +500\n  -400",
+    "trace": "self = <test_api.TestApiAuthorizedUser object at 0x7fb01b9e3be0>\ncreate_user_data_with_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncreate_user_data_without_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\n\n    @allure.title(\"Проверка создания пользователя по email, который уже есть в БД\")\n    @pytest.mark.API\n    def test_post_create_user_duplicate_data_email_bug(self, create_user_data_with_middle_name,\n                                                       create_user_data_without_middle_name):\n        \"\"\"\n         Тестирование: Добавление пользователя с данными, которые уже есть в БД (email)\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API\n         Ожидаемый результат:\n         Пользователь НЕ добавляется в БД (+)\n         Код ответа - 400 (\"BAD REQUEST\") (-)\n         Фактический результат:\n         Код ответа - 500 (\"INTERNAL SERVER ERROR\")\n         Пользователь НЕ добавляется в БД\n         \"\"\"\n        complex_user_data_first = create_user_data_with_middle_name\n        email_first_user = complex_user_data_first[\"email\"]\n    \n        self.post_create_user(complex_user_data_first)\n        complex_user_data_second = create_user_data_without_middle_name\n        complex_user_data_second[\"middle_name\"] = create_user_data_with_middle_name[\"middle_name\"]\n        complex_user_data_second[\"email\"] = email_first_user\n        complex_user_data_second[\"username\"] = RandomGenerate.generate_random_user_name()\n    \n        response = self.post_create_user(complex_user_data_second)\n        self.mysql.session.commit()\n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data_second['username']).first()\n    \n        assert user_db is None, \"Пользователь не должен добавляться в БД\"\n>       assert response.status_code == 400, \"Код ответа приложения должен быть 400\"\nE       AssertionError: Код ответа приложения должен быть 400\nE       assert 500 == 400\nE         +500\nE         -400\n\ncomplex_user_data_first = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncomplex_user_data_second = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\ncreate_user_data_with_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'James', 'password': 'zFvU6yk', ...}\ncreate_user_data_without_middle_name = {'email': 'Af1SWlFhWLEAq@mail.ru', 'middle_name': 'JamesSullivan', 'name': 'Monica', 'password': 'mjQtjDY3d', ...}\nemail_first_user = 'Af1SWlFhWLEAq@mail.ru'\nresponse   = <Response [500]>\nself       = <test_api.TestApiAuthorizedUser object at 0x7fb01b9e3be0>\nuser_db    = None\n\ncode/api_myapp/test/test_api.py:304: AssertionError"
+  },
+  "description": "\n         Тестирование: Добавление пользователя с данными, которые уже есть в БД (email)\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API\n         Ожидаемый результат:\n         Пользователь НЕ добавляется в БД (+)\n         Код ответа - 400 (\"BAD REQUEST\") (-)\n         Фактический результат:\n         Код ответа - 500 (\"INTERNAL SERVER ERROR\")\n         Пользователь НЕ добавляется в БД\n         ",
+  "steps": [
+    {
+      "name": "Выполняем POST запрос '/api/user'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user'"
+            },
+            {
+              "name": "headers",
+              "value": "{'Content-Type': 'application/json'}"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'username': 'WYNyyL0ngrC', 'password': 'zFvU6yk', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'James', 'surname': 'Sullivan', 'middle_name': 'JamesSullivan'}"
+            }
+          ],
+          "start": 1653294456974,
+          "stop": 1653294456993
+        }
+      ],
+      "parameters": [
+        {
+          "name": "complex_data",
+          "value": "{'username': 'WYNyyL0ngrC', 'password': 'zFvU6yk', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'James', 'surname': 'Sullivan', 'middle_name': 'JamesSullivan'}"
+        }
+      ],
+      "start": 1653294456974,
+      "stop": 1653294456993
+    },
+    {
+      "name": "Выполняем POST запрос '/api/user'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user'"
+            },
+            {
+              "name": "headers",
+              "value": "{'Content-Type': 'application/json'}"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'username': 'FRZ4il9GooMwds', 'password': 'mjQtjDY3d', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'Monica', 'surname': 'Ramirez', 'middle_name': 'JamesSullivan'}"
+            }
+          ],
+          "start": 1653294456994,
+          "stop": 1653294457016
+        }
+      ],
+      "parameters": [
+        {
+          "name": "complex_data",
+          "value": "{'username': 'FRZ4il9GooMwds', 'password': 'mjQtjDY3d', 'email': 'Af1SWlFhWLEAq@mail.ru', 'name': 'Monica', 'surname': 'Ramirez', 'middle_name': 'JamesSullivan'}"
+        }
+      ],
+      "start": 1653294456993,
+      "stop": 1653294457016
+    }
+  ],
+  "start": 1653294456974,
+  "stop": 1653294457024,
+  "uuid": "938868ce-2873-4ec5-8c8e-707082f441da",
+  "historyId": "9c6e8e60b473a7fa50f9375dae1e84a0",
+  "testCaseId": "4ee2e7fff953b29fe95ef3042cddb251",
+  "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_post_create_user_duplicate_data_email_bug",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiAuthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

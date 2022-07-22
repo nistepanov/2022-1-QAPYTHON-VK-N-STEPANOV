@@ -1,1 +1,215 @@
-{"name": "Страница авторизации. Некорректные данные(login)/неуспешная авторизация", "status": "passed", "description": "\n         Тестирование: Авторизация\n         Предусловия: Некорректные данные(login)\n         Шаги:\n         1. Ввести данные через UI\n         Ожидаемый результат:\n         Неуспешный вход, пользователь остается на /login (+)\n         Pop-up, уведомляющий пользователя о неверной комбинации логина/пароля (+)\n         Фактический результат:\n         Неуспешный вход, пользователь остается на /login\n         Pop-up, уведомляющий пользователя о неверной комбинации логина/пароля\n        ", "steps": [{"name": "Логинимся", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294621436, "stop": 1653294621455}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294621456, "stop": 1653294622034}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'iqnsXKTMnuS'"}, {"name": "timeout", "value": "None"}], "start": 1653294621455, "stop": 1653294622185}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294622185, "stop": 1653294622219}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'test'"}, {"name": "timeout", "value": "None"}], "start": 1653294622185, "stop": 1653294622364}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294622364, "stop": 1653294622395}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294622364, "stop": 1653294622669}], "parameters": [{"name": "username", "value": "'iqnsXKTMnuS'"}, {"name": "password", "value": "'test'"}], "start": 1653294621145, "stop": 1653294622669}, {"name": "Ищем и проверяем pop-up, уведомляющий о неуспешной авторизации", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'Invalid username or password')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653294622696, "stop": 1653294623251}], "start": 1653294622695, "stop": 1653294623273}], "start": 1653294621145, "stop": 1653294623273, "uuid": "d4f383b2-a9db-46ce-8a18-7a83e96c682d", "historyId": "d60e65553e8db00b179502b22a2c1866", "testCaseId": "66f8956402d8f68a84e328913108515e", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_invalid_data_username", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserAuthPage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница авторизации. Некорректные данные(login)/неуспешная авторизация",
+  "status": "passed",
+  "description": "\n         Тестирование: Авторизация\n         Предусловия: Некорректные данные(login)\n         Шаги:\n         1. Ввести данные через UI\n         Ожидаемый результат:\n         Неуспешный вход, пользователь остается на /login (+)\n         Pop-up, уведомляющий пользователя о неверной комбинации логина/пароля (+)\n         Фактический результат:\n         Неуспешный вход, пользователь остается на /login\n         Pop-up, уведомляющий пользователя о неверной комбинации логина/пароля\n        ",
+  "steps": [
+    {
+      "name": "Логинимся",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Переходим на необходимую страницу",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "timeout",
+              "value": "15"
+            }
+          ],
+          "start": 1653294621436,
+          "stop": 1653294621455
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294621456,
+              "stop": 1653294622034
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'iqnsXKTMnuS'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294621455,
+          "stop": 1653294622185
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294622185,
+              "stop": 1653294622219
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'test'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294622185,
+          "stop": 1653294622364
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294622364,
+              "stop": 1653294622395
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"submit\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294622364,
+          "stop": 1653294622669
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'iqnsXKTMnuS'"
+        },
+        {
+          "name": "password",
+          "value": "'test'"
+        }
+      ],
+      "start": 1653294621145,
+      "stop": 1653294622669
+    },
+    {
+      "name": "Ищем и проверяем pop-up, уведомляющий о неуспешной авторизации",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//div[contains(text(), 'Invalid username or password')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294622696,
+          "stop": 1653294623251
+        }
+      ],
+      "start": 1653294622695,
+      "stop": 1653294623273
+    }
+  ],
+  "start": 1653294621145,
+  "stop": 1653294623273,
+  "uuid": "d4f383b2-a9db-46ce-8a18-7a83e96c682d",
+  "historyId": "d60e65553e8db00b179502b22a2c1866",
+  "testCaseId": "66f8956402d8f68a84e328913108515e",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_invalid_data_username",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserAuthPage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

@@ -1,1 +1,34 @@
-{"uuid": "25374819-cb50-4d6d-a66c-358a103b22b9", "children": ["d173de00-b395-48d3-9542-8a32b1791c02"], "befores": [{"name": "temp_dir", "status": "passed", "steps": [{"name": "Создаем директорию для логов", "status": "passed", "parameters": [{"name": "request", "value": "<SubRequest 'temp_dir' for <Function test_post_create_user_invalid_data_name_length_more_than_acceptable_bug>>"}, {"name": "base_temp_dir", "value": "'/tmp/tests'"}], "start": 1653294613810, "stop": 1653294613810}], "start": 1653294613809, "stop": 1653294613810}], "start": 1653294613809, "stop": 1653294613908}
+{
+  "uuid": "25374819-cb50-4d6d-a66c-358a103b22b9",
+  "children": [
+    "d173de00-b395-48d3-9542-8a32b1791c02"
+  ],
+  "befores": [
+    {
+      "name": "temp_dir",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Создаем директорию для логов",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "request",
+              "value": "<SubRequest 'temp_dir' for <Function test_post_create_user_invalid_data_name_length_more_than_acceptable_bug>>"
+            },
+            {
+              "name": "base_temp_dir",
+              "value": "'/tmp/tests'"
+            }
+          ],
+          "start": 1653294613810,
+          "stop": 1653294613810
+        }
+      ],
+      "start": 1653294613809,
+      "stop": 1653294613810
+    }
+  ],
+  "start": 1653294613809,
+  "stop": 1653294613908
+}

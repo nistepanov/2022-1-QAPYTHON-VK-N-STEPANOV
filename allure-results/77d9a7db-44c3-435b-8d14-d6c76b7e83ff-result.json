@@ -1,1 +1,197 @@
-{"name": "Смена пароля", "status": "passed", "description": "\n         Тестирование: Смена пароля\n         Эндпоинт: PUT http://127.0.0.1:8086/api/user/{username}/change-password\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API для создания пользователя - POST http://127.0.0.1:8086/api/user/\n         2. Сгенерировать новый пароль\n         3. Отправка запроса по API для смены пароля пользователя - PUT http://127.0.0.1:8086/api/user/{\n         name}/change-password (использовать новый пароль)\n         4. Вернуть пароль в прежнее состояние\n         Ожидаемый результат:\n         Код ответа - 204 (\"NO CONTENT\") (+)\n         Пароль пользователя изменяется корректно (меняется на переданный) (+)\n         Фактический результат:\n         Код ответа - 204 (\"NO CONTENT\")\n         Пароль пользователя изменяется корректно (меняется на переданный)\n         ", "steps": [{"name": "Выполняем POST запрос '/api/user'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user'"}, {"name": "headers", "value": "{'Content-Type': 'application/json'}"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'username': 'tW1jdm', 'password': '72u1yKXJjyM2N', 'email': 'LmYRHE8Ildw4L@mail.ru', 'name': 'Margaret', 'surname': 'Huff', 'middle_name': 'MargaretHuff'}"}], "start": 1653294458442, "stop": 1653294458454}], "parameters": [{"name": "complex_data", "value": "{'username': 'tW1jdm', 'password': '72u1yKXJjyM2N', 'email': 'LmYRHE8Ildw4L@mail.ru', 'name': 'Margaret', 'surname': 'Huff', 'middle_name': 'MargaretHuff'}"}], "start": 1653294458442, "stop": 1653294458454}, {"name": "Выполняем PUT запрос '/api/user/'tW1jdm'/change-password'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'PUT'"}, {"name": "location", "value": "'/api/user/tW1jdm/change-password'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'password': 'ZVNuXkTmpxvtWGC'}"}], "start": 1653294458455, "stop": 1653294458465}], "parameters": [{"name": "username", "value": "'tW1jdm'"}, {"name": "new_password", "value": "'ZVNuXkTmpxvtWGC'"}], "start": 1653294458455, "stop": 1653294458465}, {"name": "Выполняем PUT запрос '/api/user/'tW1jdm'/change-password'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'PUT'"}, {"name": "location", "value": "'/api/user/tW1jdm/change-password'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'password': '72u1yKXJjyM2N'}"}], "start": 1653294458469, "stop": 1653294458479}], "parameters": [{"name": "username", "value": "'tW1jdm'"}, {"name": "new_password", "value": "'72u1yKXJjyM2N'"}], "start": 1653294458469, "stop": 1653294458479}], "start": 1653294458442, "stop": 1653294458479, "uuid": "a1cdefeb-303e-4241-809b-d9d45ce74f2f", "historyId": "c693adcbed2509967d516b95ddb968f7", "testCaseId": "ea5bb7bdd87389d3c8171e5886d06ddd", "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_put_change_password", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiAuthorizedUser"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Смена пароля",
+  "status": "passed",
+  "description": "\n         Тестирование: Смена пароля\n         Эндпоинт: PUT http://127.0.0.1:8086/api/user/{username}/change-password\n         Предусловия: Авторизация, создание пользовательских данных\n         Шаги:\n         1. Отправка запроса по API для создания пользователя - POST http://127.0.0.1:8086/api/user/\n         2. Сгенерировать новый пароль\n         3. Отправка запроса по API для смены пароля пользователя - PUT http://127.0.0.1:8086/api/user/{\n         name}/change-password (использовать новый пароль)\n         4. Вернуть пароль в прежнее состояние\n         Ожидаемый результат:\n         Код ответа - 204 (\"NO CONTENT\") (+)\n         Пароль пользователя изменяется корректно (меняется на переданный) (+)\n         Фактический результат:\n         Код ответа - 204 (\"NO CONTENT\")\n         Пароль пользователя изменяется корректно (меняется на переданный)\n         ",
+  "steps": [
+    {
+      "name": "Выполняем POST запрос '/api/user'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user'"
+            },
+            {
+              "name": "headers",
+              "value": "{'Content-Type': 'application/json'}"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'username': 'tW1jdm', 'password': '72u1yKXJjyM2N', 'email': 'LmYRHE8Ildw4L@mail.ru', 'name': 'Margaret', 'surname': 'Huff', 'middle_name': 'MargaretHuff'}"
+            }
+          ],
+          "start": 1653294458442,
+          "stop": 1653294458454
+        }
+      ],
+      "parameters": [
+        {
+          "name": "complex_data",
+          "value": "{'username': 'tW1jdm', 'password': '72u1yKXJjyM2N', 'email': 'LmYRHE8Ildw4L@mail.ru', 'name': 'Margaret', 'surname': 'Huff', 'middle_name': 'MargaretHuff'}"
+        }
+      ],
+      "start": 1653294458442,
+      "stop": 1653294458454
+    },
+    {
+      "name": "Выполняем PUT запрос '/api/user/'tW1jdm'/change-password'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'PUT'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/tW1jdm/change-password'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'password': 'ZVNuXkTmpxvtWGC'}"
+            }
+          ],
+          "start": 1653294458455,
+          "stop": 1653294458465
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'tW1jdm'"
+        },
+        {
+          "name": "new_password",
+          "value": "'ZVNuXkTmpxvtWGC'"
+        }
+      ],
+      "start": 1653294458455,
+      "stop": 1653294458465
+    },
+    {
+      "name": "Выполняем PUT запрос '/api/user/'tW1jdm'/change-password'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'PUT'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/tW1jdm/change-password'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'password': '72u1yKXJjyM2N'}"
+            }
+          ],
+          "start": 1653294458469,
+          "stop": 1653294458479
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'tW1jdm'"
+        },
+        {
+          "name": "new_password",
+          "value": "'72u1yKXJjyM2N'"
+        }
+      ],
+      "start": 1653294458469,
+      "stop": 1653294458479
+    }
+  ],
+  "start": 1653294458442,
+  "stop": 1653294458479,
+  "uuid": "a1cdefeb-303e-4241-809b-d9d45ce74f2f",
+  "historyId": "c693adcbed2509967d516b95ddb968f7",
+  "testCaseId": "ea5bb7bdd87389d3c8171e5886d06ddd",
+  "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_put_change_password",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiAuthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

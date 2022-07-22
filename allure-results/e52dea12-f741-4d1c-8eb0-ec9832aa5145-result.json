@@ -1,1 +1,189 @@
-{"name": "Разблокировка пользователя без авторизации", "status": "passed", "description": "\n         Тестирование: Разблокировка пользователя без авторизации\n         Эндпоинт: POST http://127.0.0.1:8086/api/user/{username}/block\n         Предусловия: Пользователь не авторизован, вытащить пользователя из БД с access == 1\n         Шаги:\n         1. Вытащить из БД значение username, access для любого пользователя\n         2. Отправка запроса по API для смены флага доступа (блокировки пользователя) - POST\n         http://127.0.0.1:8086/api/user/{username}/block\n         Ожидаемый результат:\n         Код ответа - 401 (\"UNAUTHORIZED\") (+)\n         Фактический результат:\n         Код ответа - 401 (\"UNAUTHORIZED\")\n         ", "steps": [{"name": "Выполняем POST запрос '/api/user/'e5N3jI7'/block'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user/e5N3jI7/block'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653294459660, "stop": 1653294459670}], "parameters": [{"name": "username", "value": "'e5N3jI7'"}], "start": 1653294459660, "stop": 1653294459670}, {"name": "Выполняем POST запрос '/api/user/'e5N3jI7'/accept'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user/e5N3jI7/accept'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653294459672, "stop": 1653294459686}], "parameters": [{"name": "username", "value": "'e5N3jI7'"}], "start": 1653294459671, "stop": 1653294459686}, {"name": "Выполняем POST запрос '/api/user/'e5N3jI7'/accept'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user/e5N3jI7/accept'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653294459686, "stop": 1653294459691}], "parameters": [{"name": "username", "value": "'e5N3jI7'"}], "start": 1653294459686, "stop": 1653294459691}], "start": 1653294459655, "stop": 1653294459691, "uuid": "4c5ba85d-5927-4427-ab23-ac9ba005add2", "historyId": "c3b88bc6cc56021c17757e31b2dd005b", "testCaseId": "66508991891313830391ab8a53c0e0ac", "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_unblock_without_auth", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiUnauthorizedUser"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Разблокировка пользователя без авторизации",
+  "status": "passed",
+  "description": "\n         Тестирование: Разблокировка пользователя без авторизации\n         Эндпоинт: POST http://127.0.0.1:8086/api/user/{username}/block\n         Предусловия: Пользователь не авторизован, вытащить пользователя из БД с access == 1\n         Шаги:\n         1. Вытащить из БД значение username, access для любого пользователя\n         2. Отправка запроса по API для смены флага доступа (блокировки пользователя) - POST\n         http://127.0.0.1:8086/api/user/{username}/block\n         Ожидаемый результат:\n         Код ответа - 401 (\"UNAUTHORIZED\") (+)\n         Фактический результат:\n         Код ответа - 401 (\"UNAUTHORIZED\")\n         ",
+  "steps": [
+    {
+      "name": "Выполняем POST запрос '/api/user/'e5N3jI7'/block'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/e5N3jI7/block'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653294459660,
+          "stop": 1653294459670
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'e5N3jI7'"
+        }
+      ],
+      "start": 1653294459660,
+      "stop": 1653294459670
+    },
+    {
+      "name": "Выполняем POST запрос '/api/user/'e5N3jI7'/accept'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/e5N3jI7/accept'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653294459672,
+          "stop": 1653294459686
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'e5N3jI7'"
+        }
+      ],
+      "start": 1653294459671,
+      "stop": 1653294459686
+    },
+    {
+      "name": "Выполняем POST запрос '/api/user/'e5N3jI7'/accept'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/e5N3jI7/accept'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653294459686,
+          "stop": 1653294459691
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'e5N3jI7'"
+        }
+      ],
+      "start": 1653294459686,
+      "stop": 1653294459691
+    }
+  ],
+  "start": 1653294459655,
+  "stop": 1653294459691,
+  "uuid": "4c5ba85d-5927-4427-ab23-ac9ba005add2",
+  "historyId": "c3b88bc6cc56021c17757e31b2dd005b",
+  "testCaseId": "66508991891313830391ab8a53c0e0ac",
+  "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_unblock_without_auth",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiUnauthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

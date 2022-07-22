@@ -1,8 +1,8 @@
-import requests
-import socket
 import json
+import socket
 import time
 
+import requests
 from faker.proxy import Faker
 
 from server import settings

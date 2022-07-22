@@ -1,1 +1,16 @@
-{"uuid": "11b624c3-f98f-489d-a0e4-49df9c66a211", "children": ["c7876589-f914-4f32-93e5-868ac87802fb"], "befores": [{"name": "registration_page", "status": "passed", "start": 1653294661341, "stop": 1653294661341}], "start": 1653294661341, "stop": 1653294662504}
+{
+  "uuid": "11b624c3-f98f-489d-a0e4-49df9c66a211",
+  "children": [
+    "c7876589-f914-4f32-93e5-868ac87802fb"
+  ],
+  "befores": [
+    {
+      "name": "registration_page",
+      "status": "passed",
+      "start": 1653294661341,
+      "stop": 1653294661341
+    }
+  ],
+  "start": 1653294661341,
+  "stop": 1653294662504
+}

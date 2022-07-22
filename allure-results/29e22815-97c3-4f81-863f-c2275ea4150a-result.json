@@ -1,1 +1,79 @@
-{"name": "Страница регистрации. Value в placeholder password", "status": "passed", "description": "\n          Тестирование: Регистрация. Value в placeholder password\n          Шаги:\n          1. Через UI посмотреть на \"подсказку\" поля password\n          Ожидаемый результат:\n          1. Подсказка совпадает с полем - Password (+)\n          Фактический результат:\n          1. Подсказка совпадает с полем - Password\n        ", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653990255921, "stop": 1653990255949}, {"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653990255949, "stop": 1653990256525}], "start": 1653990255463, "stop": 1653990256548, "uuid": "3dcc6f90-2acb-4c0e-b622-3230f344009c", "historyId": "8517dbd1cba2546e5542d0aefeea82ee", "testCaseId": "69822c2dbec3e35526c8014fdf0c9ee5", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_value_password", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "11-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница регистрации. Value в placeholder password",
+  "status": "passed",
+  "description": "\n          Тестирование: Регистрация. Value в placeholder password\n          Шаги:\n          1. Через UI посмотреть на \"подсказку\" поля password\n          Ожидаемый результат:\n          1. Подсказка совпадает с полем - Password (+)\n          Фактический результат:\n          1. Подсказка совпадает с полем - Password\n        ",
+  "steps": [
+    {
+      "name": "Переходим на необходимую страницу",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "timeout",
+          "value": "15"
+        }
+      ],
+      "start": 1653990255921,
+      "stop": 1653990255949
+    },
+    {
+      "name": "Ждем существования и видимости элемента",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653990255949,
+      "stop": 1653990256525
+    }
+  ],
+  "start": 1653990255463,
+  "stop": 1653990256548,
+  "uuid": "3dcc6f90-2acb-4c0e-b622-3230f344009c",
+  "historyId": "8517dbd1cba2546e5542d0aefeea82ee",
+  "testCaseId": "69822c2dbec3e35526c8014fdf0c9ee5",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_value_password",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "11-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

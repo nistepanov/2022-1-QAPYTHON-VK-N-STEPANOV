@@ -1,1 +1,34 @@
-{"uuid": "cb84241e-5f95-4ade-9294-d4a4d6121568", "children": ["1713b80f-87e6-4e13-81ea-b6af6cfdb652"], "befores": [{"name": "temp_dir", "status": "passed", "steps": [{"name": "Создаем директорию для логов", "status": "passed", "parameters": [{"name": "request", "value": "<SubRequest 'temp_dir' for <Function test_delete_user_without_auth>>"}, {"name": "base_temp_dir", "value": "'/tmp/tests'"}], "start": 1653294459416, "stop": 1653294459416}], "start": 1653294459415, "stop": 1653294459416}], "start": 1653294459415, "stop": 1653294459479}
+{
+  "uuid": "cb84241e-5f95-4ade-9294-d4a4d6121568",
+  "children": [
+    "1713b80f-87e6-4e13-81ea-b6af6cfdb652"
+  ],
+  "befores": [
+    {
+      "name": "temp_dir",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Создаем директорию для логов",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "request",
+              "value": "<SubRequest 'temp_dir' for <Function test_delete_user_without_auth>>"
+            },
+            {
+              "name": "base_temp_dir",
+              "value": "'/tmp/tests'"
+            }
+          ],
+          "start": 1653294459416,
+          "stop": 1653294459416
+        }
+      ],
+      "start": 1653294459415,
+      "stop": 1653294459416
+    }
+  ],
+  "start": 1653294459415,
+  "stop": 1653294459479
+}

@@ -1,7 +1,5 @@
-import os
-
-import pytest
 import allure
+import pytest
 from _pytest.fixtures import FixtureRequest
 
 from pages import AuthPage, RegistrationPage, WelcomePage

@@ -9,6 +9,7 @@ import pytest
 from final_project.code.mysql.client import MySqlClient
 from final_project.code.settings.config import *
 
+
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
     parser.addoption('--url', default=f'http://{APP_HOST}:{APP_PORT}/')

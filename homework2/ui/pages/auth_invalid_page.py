@@ -1,9 +1,6 @@
-import pytest
-from selenium.webdriver.remote.webelement import WebElement
-
+from homework2.ui.locators.my_target_locators.static_locators import InvalidAuthLocators
 from .base_page import BasePage
 from ..locators.my_target_locators.static_locators import LoginPageLocators
-from homework2.ui.locators.my_target_locators.static_locators import InvalidAuthLocators
 
 
 class AuthInvalidPage(BasePage):

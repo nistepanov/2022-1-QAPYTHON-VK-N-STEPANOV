@@ -1,1 +1,34 @@
-{"uuid": "f8d06ddf-7bf5-43f5-986b-746ee5ccb1fb", "children": ["72b48f96-dfa8-406b-b7aa-3cfc4f01f7e8"], "befores": [{"name": "logger", "status": "passed", "steps": [{"name": "Инициализация логгера", "status": "passed", "parameters": [{"name": "temp_dir", "value": "'/tmp/tests/code/ui_myapp/tests/test_ui.py::TestUIAuthorizedUserWelcomePage::test_welcome_page_click_on_network_news'"}, {"name": "config", "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"}], "start": 1653990291894, "stop": 1653990291894}], "start": 1653990291894, "stop": 1653990291894}], "start": 1653990291894, "stop": 1653990302795}
+{
+  "uuid": "f8d06ddf-7bf5-43f5-986b-746ee5ccb1fb",
+  "children": [
+    "72b48f96-dfa8-406b-b7aa-3cfc4f01f7e8"
+  ],
+  "befores": [
+    {
+      "name": "logger",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Инициализация логгера",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "temp_dir",
+              "value": "'/tmp/tests/code/ui_myapp/tests/test_ui.py::TestUIAuthorizedUserWelcomePage::test_welcome_page_click_on_network_news'"
+            },
+            {
+              "name": "config",
+              "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"
+            }
+          ],
+          "start": 1653990291894,
+          "stop": 1653990291894
+        }
+      ],
+      "start": 1653990291894,
+      "stop": 1653990291894
+    }
+  ],
+  "start": 1653990291894,
+  "stop": 1653990302795
+}

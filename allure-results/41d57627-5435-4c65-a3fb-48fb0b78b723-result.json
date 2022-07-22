@@ -1,1 +1,125 @@
-{"name": "Основная страница. Нажатие на кнопку HOME", "status": "passed", "description": "\n          Тестирование: Основная страница. Нажатие на кнопку HOME\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Нажатие на кнопку HOME\n          Ожидаемый результат:\n          1. Страница обновится, факт о языке Python снизу изменится (+)\n          Фактический результат:\n          1. Страница обновится, факт о языке Python снизу изменится\n        ", "steps": [{"name": "Нажимаем на кнопку HOME", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[starts-with(@class, 'uk-text-center uk-text-large')]//child::p\")"}, {"name": "timeout", "value": "None"}], "start": 1653990282783, "stop": 1653990282826}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//a[contains(text(), 'HOME')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990282859, "stop": 1653990282904}], "parameters": [{"name": "locator", "value": "('xpath', \"//a[contains(text(), 'HOME')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990282859, "stop": 1653990283965}], "start": 1653990282783, "stop": 1653990283965}, {"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[starts-with(@class, 'uk-text-center uk-text-large')]//child::p\")"}, {"name": "timeout", "value": "None"}], "start": 1653990283965, "stop": 1653990283990}], "start": 1653990282783, "stop": 1653990284017, "uuid": "a86ba021-bdd5-499b-9203-89efa6c8d0cc", "historyId": "7dda91e6a8286572d1c802b5b5b96084", "testCaseId": "5accf5324ae192dce18a2b561aebcf41", "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_click_on_button_home", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIAuthorizedUserWelcomePage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "11-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Основная страница. Нажатие на кнопку HOME",
+  "status": "passed",
+  "description": "\n          Тестирование: Основная страница. Нажатие на кнопку HOME\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Нажатие на кнопку HOME\n          Ожидаемый результат:\n          1. Страница обновится, факт о языке Python снизу изменится (+)\n          Фактический результат:\n          1. Страница обновится, факт о языке Python снизу изменится\n        ",
+  "steps": [
+    {
+      "name": "Нажимаем на кнопку HOME",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//div[starts-with(@class, 'uk-text-center uk-text-large')]//child::p\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653990282783,
+          "stop": 1653990282826
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', \"//a[contains(text(), 'HOME')]\")"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653990282859,
+              "stop": 1653990282904
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//a[contains(text(), 'HOME')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653990282859,
+          "stop": 1653990283965
+        }
+      ],
+      "start": 1653990282783,
+      "stop": 1653990283965
+    },
+    {
+      "name": "Ждем существования и видимости элемента",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//div[starts-with(@class, 'uk-text-center uk-text-large')]//child::p\")"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653990283965,
+      "stop": 1653990283990
+    }
+  ],
+  "start": 1653990282783,
+  "stop": 1653990284017,
+  "uuid": "a86ba021-bdd5-499b-9203-89efa6c8d0cc",
+  "historyId": "7dda91e6a8286572d1c802b5b5b96084",
+  "testCaseId": "5accf5324ae192dce18a2b561aebcf41",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_click_on_button_home",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIAuthorizedUserWelcomePage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "11-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

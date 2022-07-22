@@ -2,9 +2,8 @@ import random
 import string
 
 import pytest
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class UIElementSearchClass:

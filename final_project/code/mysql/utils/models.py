@@ -1,5 +1,3 @@
-import allure
-
 from sqlalchemy import Column, Integer, VARCHAR, DateTime, SMALLINT
 from sqlalchemy.ext.declarative import declarative_base
 

@@ -1,1 +1,24 @@
-{"uuid": "c5b9fe6f-2ae0-492c-83a7-251028ecf731", "children": ["5ac56f00-e10d-4929-9152-546e1a100003"], "befores": [{"name": "ui_report", "status": "passed", "start": 1653294692239, "stop": 1653294692240}], "afters": [{"name": "ui_report::0", "status": "passed", "start": 1653294696229, "stop": 1653294696229}], "start": 1653294692239, "stop": 1653294696229}
+{
+  "uuid": "c5b9fe6f-2ae0-492c-83a7-251028ecf731",
+  "children": [
+    "5ac56f00-e10d-4929-9152-546e1a100003"
+  ],
+  "befores": [
+    {
+      "name": "ui_report",
+      "status": "passed",
+      "start": 1653294692239,
+      "stop": 1653294692240
+    }
+  ],
+  "afters": [
+    {
+      "name": "ui_report::0",
+      "status": "passed",
+      "start": 1653294696229,
+      "stop": 1653294696229
+    }
+  ],
+  "start": 1653294692239,
+  "stop": 1653294696229
+}

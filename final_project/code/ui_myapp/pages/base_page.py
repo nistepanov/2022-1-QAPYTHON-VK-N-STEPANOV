@@ -1,10 +1,9 @@
 import time
 
 import allure
-from selenium.common.exceptions import StaleElementReferenceException, ElementClickInterceptedException
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class PageNotOpenedException(Exception):

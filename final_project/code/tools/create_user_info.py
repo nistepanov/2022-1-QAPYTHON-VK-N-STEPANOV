@@ -1,5 +1,5 @@
-import faker
 import allure
+import faker
 
 from final_project.code.tools.randomizer import RandomGenerate
 

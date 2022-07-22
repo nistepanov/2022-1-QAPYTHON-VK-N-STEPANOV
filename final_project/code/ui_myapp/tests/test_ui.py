@@ -1,15 +1,13 @@
 import re
 
-import allure
 import pytest
+from locators.static_locators import *
 
+from final_project.code.credentials.static import *
 from final_project.code.mysql.utils.models import Users
-from final_project.code.settings.config import *
 from final_project.code.tools.randomizer import RandomGenerate
 from final_project.code.ui_myapp.pages.welcome_page import *
 from final_project.code.ui_myapp.tests.base_ui import BaseCase, BaseCaseLogin
-from locators.static_locators import *
-from final_project.code.credentials.static import *
 
 MAX_RETRY_COUNT = 3
 

@@ -1,7 +1,7 @@
 from urllib.parse import urljoin
 
-import requests
 import allure
+import requests
 
 from final_project.code.settings.config import *
 

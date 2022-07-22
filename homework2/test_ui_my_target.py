@@ -1,8 +1,8 @@
 import allure
 
 from base import BaseCase, BaseCaseLogin
-from homework2.ui.tools.random_generate import RandomGenerate
 from homework2.ui.fixtures import *
+from homework2.ui.tools.random_generate import RandomGenerate
 
 MAX_RETRY_COUNT = 3
 

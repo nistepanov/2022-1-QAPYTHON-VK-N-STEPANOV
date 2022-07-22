@@ -1,1 +1,101 @@
-{"name": "Получение VK ID реального пользователя (mock)", "status": "passed", "description": "\n         Тестирование: Получение VK ID реального пользователя (mock)\n         Эндпоинт: GET http://<VK_URL>/vk_id/<username>\n         Предусловия: Запущен контейнер с моком, запущено приложение, mock корректно работает в приложении (в правом\n         верхнем углу виден VK ID)\n         Шаги:\n         1. Достать из БД username какого-либо реального пользователя\n         2. Отправить запрос по API для получения VK_ID - GET http://<VK_URL>/vk_id/{username}\n         Ожидаемый результат:\n         Код ответа - 200 (\"ОК\") (+)\n         В response.body содержится корректное значени VK_ID для текущего пользователя  (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         В response.body содержится корректное значени VK_ID для текущего пользователя\n         ", "steps": [{"name": "Выполняем GET запрос 'http://<VK_URL>/vk_id/<username>'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'GET'"}, {"name": "location", "value": "'/vk_id/aOdJ8V2eoZe'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}, {"name": "url", "value": "'http://vk_api:8787'"}], "start": 1653990191912, "stop": 1653990191920}], "parameters": [{"name": "username", "value": "'aOdJ8V2eoZe'"}], "start": 1653990191911, "stop": 1653990191920}], "start": 1653990191904, "stop": 1653990191921, "uuid": "e5e78421-3bb2-47b1-bafd-781d4ad34892", "historyId": "b2ff8a3b03f7099c59455dab5b89b7f8", "testCaseId": "2710cc1488859ca1ed524b80a8d107a8", "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_get_vk_id_for_real_user", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiAuthorizedUser"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "8-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Получение VK ID реального пользователя (mock)",
+  "status": "passed",
+  "description": "\n         Тестирование: Получение VK ID реального пользователя (mock)\n         Эндпоинт: GET http://<VK_URL>/vk_id/<username>\n         Предусловия: Запущен контейнер с моком, запущено приложение, mock корректно работает в приложении (в правом\n         верхнем углу виден VK ID)\n         Шаги:\n         1. Достать из БД username какого-либо реального пользователя\n         2. Отправить запрос по API для получения VK_ID - GET http://<VK_URL>/vk_id/{username}\n         Ожидаемый результат:\n         Код ответа - 200 (\"ОК\") (+)\n         В response.body содержится корректное значени VK_ID для текущего пользователя  (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         В response.body содержится корректное значени VK_ID для текущего пользователя\n         ",
+  "steps": [
+    {
+      "name": "Выполняем GET запрос 'http://<VK_URL>/vk_id/<username>'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'GET'"
+            },
+            {
+              "name": "location",
+              "value": "'/vk_id/aOdJ8V2eoZe'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            },
+            {
+              "name": "url",
+              "value": "'http://vk_api:8787'"
+            }
+          ],
+          "start": 1653990191912,
+          "stop": 1653990191920
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'aOdJ8V2eoZe'"
+        }
+      ],
+      "start": 1653990191911,
+      "stop": 1653990191920
+    }
+  ],
+  "start": 1653990191904,
+  "stop": 1653990191921,
+  "uuid": "e5e78421-3bb2-47b1-bafd-781d4ad34892",
+  "historyId": "b2ff8a3b03f7099c59455dab5b89b7f8",
+  "testCaseId": "2710cc1488859ca1ed524b80a8d107a8",
+  "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_get_vk_id_for_real_user",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiAuthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "8-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

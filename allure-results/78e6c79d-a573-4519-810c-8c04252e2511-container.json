@@ -1,1 +1,34 @@
-{"uuid": "ddbfcc47-6610-4d29-9878-a0fd614ce068", "children": ["417048d4-d4ec-4898-a0ef-1eb8b8433d3a"], "befores": [{"name": "temp_dir", "status": "passed", "steps": [{"name": "Создаем директорию для логов", "status": "passed", "parameters": [{"name": "request", "value": "<SubRequest 'temp_dir' for <Function test_reg_page_validation_empty_username>>"}, {"name": "base_temp_dir", "value": "'/tmp/tests'"}], "start": 1653990204805, "stop": 1653990204805}], "start": 1653990204805, "stop": 1653990204805}], "start": 1653990204804, "stop": 1653990208520}
+{
+  "uuid": "ddbfcc47-6610-4d29-9878-a0fd614ce068",
+  "children": [
+    "417048d4-d4ec-4898-a0ef-1eb8b8433d3a"
+  ],
+  "befores": [
+    {
+      "name": "temp_dir",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Создаем директорию для логов",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "request",
+              "value": "<SubRequest 'temp_dir' for <Function test_reg_page_validation_empty_username>>"
+            },
+            {
+              "name": "base_temp_dir",
+              "value": "'/tmp/tests'"
+            }
+          ],
+          "start": 1653990204805,
+          "stop": 1653990204805
+        }
+      ],
+      "start": 1653990204805,
+      "stop": 1653990204805
+    }
+  ],
+  "start": 1653990204804,
+  "stop": 1653990208520
+}

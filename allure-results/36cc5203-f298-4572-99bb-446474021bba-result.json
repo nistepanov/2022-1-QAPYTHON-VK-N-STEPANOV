@@ -1,1 +1,91 @@
-{"name": "Получение статуса приложения без авторизации", "status": "passed", "description": "\n         Тестирование: Получение статуса приложения\n         Эндпоинт: GET http://127.0.0.1:8086/status\n         Предусловия: Поднятие приложения, пользователь не авторизован\n         Шаги:\n         1. Отправить запрос по API для получения статуса - GET http://127.0.0.1:8086/status\n         Ожидаемый результат:\n         Код ответа - 200 (\"ОК\") (+)\n         Информативное корректное сообщение, о том, что приложение запущено (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         Информативное корректное сообщение, о том, что приложение запущено\n         ", "steps": [{"name": "Выполняем GET запрос '/status'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'GET'"}, {"name": "location", "value": "'/status'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653294459733, "stop": 1653294459737}], "start": 1653294459733, "stop": 1653294459737}], "start": 1653294459733, "stop": 1653294459737, "uuid": "5b8b0eb0-7bc1-4b13-916e-e127fa10b69c", "historyId": "99831d805f174f3b1cdb91218874042d", "testCaseId": "9bd08ad82e43819d4a924f1249ad9826", "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_get_status_without_auth", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiUnauthorizedUser"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Получение статуса приложения без авторизации",
+  "status": "passed",
+  "description": "\n         Тестирование: Получение статуса приложения\n         Эндпоинт: GET http://127.0.0.1:8086/status\n         Предусловия: Поднятие приложения, пользователь не авторизован\n         Шаги:\n         1. Отправить запрос по API для получения статуса - GET http://127.0.0.1:8086/status\n         Ожидаемый результат:\n         Код ответа - 200 (\"ОК\") (+)\n         Информативное корректное сообщение, о том, что приложение запущено (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         Информативное корректное сообщение, о том, что приложение запущено\n         ",
+  "steps": [
+    {
+      "name": "Выполняем GET запрос '/status'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'GET'"
+            },
+            {
+              "name": "location",
+              "value": "'/status'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653294459733,
+          "stop": 1653294459737
+        }
+      ],
+      "start": 1653294459733,
+      "stop": 1653294459737
+    }
+  ],
+  "start": 1653294459733,
+  "stop": 1653294459737,
+  "uuid": "5b8b0eb0-7bc1-4b13-916e-e127fa10b69c",
+  "historyId": "99831d805f174f3b1cdb91218874042d",
+  "testCaseId": "9bd08ad82e43819d4a924f1249ad9826",
+  "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_get_status_without_auth",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiUnauthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

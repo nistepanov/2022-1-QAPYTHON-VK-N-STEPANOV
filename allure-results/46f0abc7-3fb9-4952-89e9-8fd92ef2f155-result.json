@@ -1,1 +1,97 @@
-{"name": "Создание пользователя без авторизации", "status": "passed", "description": "\n         Тестирование: Очистка сесии после логаута\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Пользователь не авторизован\n         Шаги:\n         1. Отправить запрос по API для создания пользователя - POST http://127.0.0.1:8086/api/user\n         Ожидаемый результат:\n         Код ответа - 401 (\"UNAUTHORIZED\") (+)\n         Фактический результат:\n         Код ответа - 401 (\"UNAUTHORIZED\")\n         ", "steps": [{"name": "Выполняем POST запрос '/api/user'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user'"}, {"name": "headers", "value": "{'Content-Type': 'application/json'}"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "{'username': 'NsW1EcgCfl0', 'password': 'v64LUf', 'email': '8i7teDM@mail.ru', 'name': 'Willie', 'surname': 'Ball'}"}], "start": 1653294614510, "stop": 1653294614514}], "parameters": [{"name": "complex_data", "value": "{'username': 'NsW1EcgCfl0', 'password': 'v64LUf', 'email': '8i7teDM@mail.ru', 'name': 'Willie', 'surname': 'Ball'}"}], "start": 1653294614510, "stop": 1653294614514}], "start": 1653294614510, "stop": 1653294614514, "uuid": "fdcdfe6c-3dff-49a4-bd1f-53a0d2fde4e1", "historyId": "fb3d4d5714a7f832a9a9259ef2366356", "testCaseId": "a9faf3f5abe266fa98da405cc7ec205d", "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_create_user_without_auth", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiUnauthorizedUser"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Создание пользователя без авторизации",
+  "status": "passed",
+  "description": "\n         Тестирование: Очистка сесии после логаута\n         Эндпоинт: POST http://127.0.0.1:8086/api/user\n         Предусловия: Пользователь не авторизован\n         Шаги:\n         1. Отправить запрос по API для создания пользователя - POST http://127.0.0.1:8086/api/user\n         Ожидаемый результат:\n         Код ответа - 401 (\"UNAUTHORIZED\") (+)\n         Фактический результат:\n         Код ответа - 401 (\"UNAUTHORIZED\")\n         ",
+  "steps": [
+    {
+      "name": "Выполняем POST запрос '/api/user'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user'"
+            },
+            {
+              "name": "headers",
+              "value": "{'Content-Type': 'application/json'}"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "{'username': 'NsW1EcgCfl0', 'password': 'v64LUf', 'email': '8i7teDM@mail.ru', 'name': 'Willie', 'surname': 'Ball'}"
+            }
+          ],
+          "start": 1653294614510,
+          "stop": 1653294614514
+        }
+      ],
+      "parameters": [
+        {
+          "name": "complex_data",
+          "value": "{'username': 'NsW1EcgCfl0', 'password': 'v64LUf', 'email': '8i7teDM@mail.ru', 'name': 'Willie', 'surname': 'Ball'}"
+        }
+      ],
+      "start": 1653294614510,
+      "stop": 1653294614514
+    }
+  ],
+  "start": 1653294614510,
+  "stop": 1653294614514,
+  "uuid": "fdcdfe6c-3dff-49a4-bd1f-53a0d2fde4e1",
+  "historyId": "fb3d4d5714a7f832a9a9259ef2366356",
+  "testCaseId": "a9faf3f5abe266fa98da405cc7ec205d",
+  "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_create_user_without_auth",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiUnauthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

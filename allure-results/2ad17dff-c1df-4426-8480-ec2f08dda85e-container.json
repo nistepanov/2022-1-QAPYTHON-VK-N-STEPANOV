@@ -1,1 +1,158 @@
-{"uuid": "c93da64c-b747-48f1-a467-df01f5cd5bd7", "children": ["4b7fdac2-7794-4a94-b7a0-7215a6eb60ab"], "befores": [{"name": "welcome_page", "status": "passed", "steps": [{"name": "Логинимся", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294693473, "stop": 1653294693528}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294693528, "stop": 1653294694108}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'nikita'"}, {"name": "timeout", "value": "None"}], "start": 1653294693528, "stop": 1653294694345}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294694345, "stop": 1653294694401}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'test'"}, {"name": "timeout", "value": "None"}], "start": 1653294694345, "stop": 1653294694588}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294694588, "stop": 1653294694638}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294694588, "stop": 1653294696291}], "parameters": [{"name": "username", "value": "'nikita'"}, {"name": "password", "value": "'test'"}], "start": 1653294693195, "stop": 1653294696291}], "start": 1653294693194, "stop": 1653294696291}], "start": 1653294693194, "stop": 1653294697959}
+{
+  "uuid": "c93da64c-b747-48f1-a467-df01f5cd5bd7",
+  "children": [
+    "4b7fdac2-7794-4a94-b7a0-7215a6eb60ab"
+  ],
+  "befores": [
+    {
+      "name": "welcome_page",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Логинимся",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Переходим на необходимую страницу",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "timeout",
+                  "value": "15"
+                }
+              ],
+              "start": 1653294693473,
+              "stop": 1653294693528
+            },
+            {
+              "name": "Очищаем и заполняем поле",
+              "status": "passed",
+              "steps": [
+                {
+                  "name": "Ждем существования и видимости элемента",
+                  "status": "passed",
+                  "parameters": [
+                    {
+                      "name": "locator",
+                      "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                    },
+                    {
+                      "name": "timeout",
+                      "value": "None"
+                    }
+                  ],
+                  "start": 1653294693528,
+                  "stop": 1653294694108
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "query",
+                  "value": "'nikita'"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294693528,
+              "stop": 1653294694345
+            },
+            {
+              "name": "Очищаем и заполняем поле",
+              "status": "passed",
+              "steps": [
+                {
+                  "name": "Ждем существования и видимости элемента",
+                  "status": "passed",
+                  "parameters": [
+                    {
+                      "name": "locator",
+                      "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                    },
+                    {
+                      "name": "timeout",
+                      "value": "None"
+                    }
+                  ],
+                  "start": 1653294694345,
+                  "stop": 1653294694401
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "query",
+                  "value": "'test'"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294694345,
+              "stop": 1653294694588
+            },
+            {
+              "name": "Кликаем по полю",
+              "status": "passed",
+              "steps": [
+                {
+                  "name": "Ждем существования и видимости элемента",
+                  "status": "passed",
+                  "parameters": [
+                    {
+                      "name": "locator",
+                      "value": "('xpath', '//input[@type=\"submit\"]')"
+                    },
+                    {
+                      "name": "timeout",
+                      "value": "None"
+                    }
+                  ],
+                  "start": 1653294694588,
+                  "stop": 1653294694638
+                }
+              ],
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294694588,
+              "stop": 1653294696291
+            }
+          ],
+          "parameters": [
+            {
+              "name": "username",
+              "value": "'nikita'"
+            },
+            {
+              "name": "password",
+              "value": "'test'"
+            }
+          ],
+          "start": 1653294693195,
+          "stop": 1653294696291
+        }
+      ],
+      "start": 1653294693194,
+      "stop": 1653294696291
+    }
+  ],
+  "start": 1653294693194,
+  "stop": 1653294697959
+}

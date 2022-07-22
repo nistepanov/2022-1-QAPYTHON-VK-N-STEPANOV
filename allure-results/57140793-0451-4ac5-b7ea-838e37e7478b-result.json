@@ -1,1 +1,423 @@
-{"name": "БАГ! Страница регистрации. Pop-up \"Email already exists\" при повторении username", "status": "failed", "statusDetails": {"message": "AssertionError: Должен быть такой pop-up!\nassert 'Internal Server Error' == 'Email already exists'\n  - Email already exists\n  + Internal Server Error", "trace": "self = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fbd9e048220>\ncreate_user_data_with_middle_name = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\n\n    @allure.title('БАГ! Страница регистрации. Pop-up \"Email already exists\" при повторении username')\n    @pytest.mark.UI\n    def test_reg_page_validation_already_used_email_bug(self, create_user_data_with_middle_name):\n        \"\"\"\n          Тестирование: Регистрация. Email уже добавлен ранее в БД\n          Предусловия: Сгенерировать валидные данные, заменить username на\n          использованный ранее\n          Шаги:\n          1. Заполнить через UI все поля регистрации\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о том, что email уже\n          используется (-)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, о INTERNAL SERVER ERROR\n          3. Пользователь с указанными данными не создается в БД (+)\n        \"\"\"\n        complex_user_data = create_user_data_with_middle_name\n        complex_user_data['email'] = 'nik-stepanov-2001@bk.ru'\n        self.registration_page.registration(complex_user_data)\n        self.mysql.session.commit()\n    \n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data['username']).first()\n    \n        assert self.driver.current_url == self.registration_page.url, f\"URL должен быть 'http://{APP_HOST}:{APP_PORT}/reg'\"\n>       assert self.registration_page.find_pop_up_text(\n            RegistrationPageLocators.QUERY_EMAIL_ALREADY_EXISTS) == \"Email already exists\", \"Должен быть такой pop-up!\"\nE       AssertionError: Должен быть такой pop-up!\nE       assert 'Internal Server Error' == 'Email already exists'\nE         - Email already exists\nE         + Internal Server Error\n\ncomplex_user_data = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\ncreate_user_data_with_middle_name = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\nself       = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fbd9e048220>\nuser_db    = None\n\ncode/ui_myapp/tests/test_ui.py:520: AssertionError"}, "description": "\n          Тестирование: Регистрация. Email уже добавлен ранее в БД\n          Предусловия: Сгенерировать валидные данные, заменить username на\n          использованный ранее\n          Шаги:\n          1. Заполнить через UI все поля регистрации\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о том, что email уже\n          используется (-)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, о INTERNAL SERVER ERROR\n          3. Пользователь с указанными данными не создается в БД (+)\n        ", "steps": [{"name": "Попытка зарегистрироваться", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294664018, "stop": 1653294664027}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294664028, "stop": 1653294664585}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'8eGS0Kn52dV8l'"}, {"name": "timeout", "value": "None"}], "start": 1653294664027, "stop": 1653294664762}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294664763, "stop": 1653294664805}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'6aBTWwxk4ctC'"}, {"name": "timeout", "value": "None"}], "start": 1653294664762, "stop": 1653294664975}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294664976, "stop": 1653294665001}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "query", "value": "'6aBTWwxk4ctC'"}, {"name": "timeout", "value": "None"}], "start": 1653294664975, "stop": 1653294665133}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665133, "stop": 1653294665163}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "query", "value": "'Carrie'"}, {"name": "timeout", "value": "None"}], "start": 1653294665133, "stop": 1653294665284}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665284, "stop": 1653294665312}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}, {"name": "query", "value": "'Moore'"}, {"name": "timeout", "value": "None"}], "start": 1653294665284, "stop": 1653294665462}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665462, "stop": 1653294665500}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"}, {"name": "query", "value": "'nik-stepanov-2001@bk.ru'"}, {"name": "timeout", "value": "None"}], "start": 1653294665462, "stop": 1653294665743}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665743, "stop": 1653294665770}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665743, "stop": 1653294665933}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665933, "stop": 1653294665986}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294665933, "stop": 1653294666283}], "parameters": [{"name": "data", "value": "{'username': '8eGS0Kn52dV8l', 'password': '6aBTWwxk4ctC', 'email': 'nik-stepanov-2001@bk.ru', 'name': 'Carrie', 'surname': 'Moore', 'middle_name': 'CarrieMoore'}"}, {"name": "middle_name_option", "value": "0"}, {"name": "empty_rep_password_option", "value": "0"}, {"name": "rep_password", "value": "0"}, {"name": "checkbox_option", "value": "1"}], "start": 1653294663578, "stop": 1653294666283}, {"name": "Смотрим pop-up text при пустом поле ", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'Internal Server Error')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653294666303, "stop": 1653294666888}], "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'Internal Server Error')]\")"}], "start": 1653294666302, "stop": 1653294666905}], "start": 1653294663577, "stop": 1653294666905, "uuid": "2d6916c2-0b7f-42cb-8bd0-e83ad885faf3", "historyId": "d63007d2bcd9100b93a26cf18c69f93b", "testCaseId": "b5236526756a5587844b493a6aba7075", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_already_used_email_bug", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "БАГ! Страница регистрации. Pop-up \"Email already exists\" при повторении username",
+  "status": "failed",
+  "statusDetails": {
+    "message": "AssertionError: Должен быть такой pop-up!\nassert 'Internal Server Error' == 'Email already exists'\n  - Email already exists\n  + Internal Server Error",
+    "trace": "self = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fbd9e048220>\ncreate_user_data_with_middle_name = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\n\n    @allure.title('БАГ! Страница регистрации. Pop-up \"Email already exists\" при повторении username')\n    @pytest.mark.UI\n    def test_reg_page_validation_already_used_email_bug(self, create_user_data_with_middle_name):\n        \"\"\"\n          Тестирование: Регистрация. Email уже добавлен ранее в БД\n          Предусловия: Сгенерировать валидные данные, заменить username на\n          использованный ранее\n          Шаги:\n          1. Заполнить через UI все поля регистрации\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о том, что email уже\n          используется (-)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, о INTERNAL SERVER ERROR\n          3. Пользователь с указанными данными не создается в БД (+)\n        \"\"\"\n        complex_user_data = create_user_data_with_middle_name\n        complex_user_data['email'] = 'nik-stepanov-2001@bk.ru'\n        self.registration_page.registration(complex_user_data)\n        self.mysql.session.commit()\n    \n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data['username']).first()\n    \n        assert self.driver.current_url == self.registration_page.url, f\"URL должен быть 'http://{APP_HOST}:{APP_PORT}/reg'\"\n>       assert self.registration_page.find_pop_up_text(\n            RegistrationPageLocators.QUERY_EMAIL_ALREADY_EXISTS) == \"Email already exists\", \"Должен быть такой pop-up!\"\nE       AssertionError: Должен быть такой pop-up!\nE       assert 'Internal Server Error' == 'Email already exists'\nE         - Email already exists\nE         + Internal Server Error\n\ncomplex_user_data = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\ncreate_user_data_with_middle_name = {'email': 'nik-stepanov-2001@bk.ru', 'middle_name': 'CarrieMoore', 'name': 'Carrie', 'password': '6aBTWwxk4ctC', ...}\nself       = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fbd9e048220>\nuser_db    = None\n\ncode/ui_myapp/tests/test_ui.py:520: AssertionError"
+  },
+  "description": "\n          Тестирование: Регистрация. Email уже добавлен ранее в БД\n          Предусловия: Сгенерировать валидные данные, заменить username на\n          использованный ранее\n          Шаги:\n          1. Заполнить через UI все поля регистрации\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о том, что email уже\n          используется (-)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, о INTERNAL SERVER ERROR\n          3. Пользователь с указанными данными не создается в БД (+)\n        ",
+  "steps": [
+    {
+      "name": "Попытка зарегистрироваться",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Переходим на необходимую страницу",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "timeout",
+              "value": "15"
+            }
+          ],
+          "start": 1653294664018,
+          "stop": 1653294664027
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294664028,
+              "stop": 1653294664585
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'8eGS0Kn52dV8l'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294664027,
+          "stop": 1653294664762
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294664763,
+              "stop": 1653294664805
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'6aBTWwxk4ctC'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294664762,
+          "stop": 1653294664975
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294664976,
+              "stop": 1653294665001
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'6aBTWwxk4ctC'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294664975,
+          "stop": 1653294665133
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294665133,
+              "stop": 1653294665163
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'Carrie'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294665133,
+          "stop": 1653294665284
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294665284,
+              "stop": 1653294665312
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'Moore'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294665284,
+          "stop": 1653294665462
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294665462,
+              "stop": 1653294665500
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'nik-stepanov-2001@bk.ru'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294665462,
+          "stop": 1653294665743
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"checkbox\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294665743,
+              "stop": 1653294665770
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"checkbox\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294665743,
+          "stop": 1653294665933
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294665933,
+              "stop": 1653294665986
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"submit\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294665933,
+          "stop": 1653294666283
+        }
+      ],
+      "parameters": [
+        {
+          "name": "data",
+          "value": "{'username': '8eGS0Kn52dV8l', 'password': '6aBTWwxk4ctC', 'email': 'nik-stepanov-2001@bk.ru', 'name': 'Carrie', 'surname': 'Moore', 'middle_name': 'CarrieMoore'}"
+        },
+        {
+          "name": "middle_name_option",
+          "value": "0"
+        },
+        {
+          "name": "empty_rep_password_option",
+          "value": "0"
+        },
+        {
+          "name": "rep_password",
+          "value": "0"
+        },
+        {
+          "name": "checkbox_option",
+          "value": "1"
+        }
+      ],
+      "start": 1653294663578,
+      "stop": 1653294666283
+    },
+    {
+      "name": "Смотрим pop-up text при пустом поле ",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//div[contains(text(), 'Internal Server Error')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294666303,
+          "stop": 1653294666888
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//div[contains(text(), 'Internal Server Error')]\")"
+        }
+      ],
+      "start": 1653294666302,
+      "stop": 1653294666905
+    }
+  ],
+  "start": 1653294663577,
+  "stop": 1653294666905,
+  "uuid": "2d6916c2-0b7f-42cb-8bd0-e83ad885faf3",
+  "historyId": "d63007d2bcd9100b93a26cf18c69f93b",
+  "testCaseId": "b5236526756a5587844b493a6aba7075",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_already_used_email_bug",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

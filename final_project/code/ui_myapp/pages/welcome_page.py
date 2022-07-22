@@ -1,8 +1,8 @@
 import allure
-from selenium.webdriver import ActionChains
-
 from locators.static_locators import WelcomePageLocators
 from pages.base_page import BasePage
+from selenium.webdriver import ActionChains
+
 from final_project.code.settings.config import APP_HOST, APP_PORT
 
 

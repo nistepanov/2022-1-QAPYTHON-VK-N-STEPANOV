@@ -1,1 +1,419 @@
-{"name": "Страница регистрации. Pop-up \"заполните это поле\" при пустом repeat-password", "status": "passed", "description": "\n          Тестирование: Регистрация. Пустое поле repeat password\n          Предусловия: Сгенерировать валидные данные\n          Шаги:\n          1. Заполнить через UI все поля регистрации, кроме repeat password\n          2. Нажать на чекбокс\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о пустом поле repeat password (+)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg\n          2. Показывается pop-up, уведомляющий о пустом поле repeat password\n          3. Пользователь с указанными данными не создается в БД\n        ", "steps": [{"name": "Попытка зарегистрироваться", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294646625, "stop": 1653294646661}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294646661, "stop": 1653294647222}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'OPStIZS'"}, {"name": "timeout", "value": "None"}], "start": 1653294646661, "stop": 1653294647435}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294647436, "stop": 1653294647487}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'xv7ptw5bPH3u'"}, {"name": "timeout", "value": "None"}], "start": 1653294647436, "stop": 1653294647698}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294647699, "stop": 1653294647745}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "query", "value": "0"}, {"name": "timeout", "value": "None"}], "start": 1653294647699, "stop": 1653294648016}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648016, "stop": 1653294648067}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "query", "value": "'David'"}, {"name": "timeout", "value": "None"}], "start": 1653294648016, "stop": 1653294648290}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648290, "stop": 1653294648322}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}, {"name": "query", "value": "'Rivera'"}, {"name": "timeout", "value": "None"}], "start": 1653294648290, "stop": 1653294648460}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648460, "stop": 1653294648501}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"}, {"name": "query", "value": "'Wt0c672Q@bk.ru'"}, {"name": "timeout", "value": "None"}], "start": 1653294648460, "stop": 1653294648820}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648820, "stop": 1653294648852}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648820, "stop": 1653294648957}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648957, "stop": 1653294648990}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294648957, "stop": 1653294649260}], "parameters": [{"name": "data", "value": "{'username': 'OPStIZS', 'password': 'xv7ptw5bPH3u', 'email': 'Wt0c672Q@bk.ru', 'name': 'David', 'surname': 'Rivera', 'middle_name': 'DavidRivera'}"}, {"name": "middle_name_option", "value": "0"}, {"name": "empty_rep_password_option", "value": "1"}, {"name": "rep_password", "value": "0"}, {"name": "checkbox_option", "value": "1"}], "start": 1653294646381, "stop": 1653294649260}, {"name": "Смотрим pop-up text при пустом поле ", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'Passwords must match')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653294649275, "stop": 1653294649829}], "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'Passwords must match')]\")"}], "start": 1653294649275, "stop": 1653294649849}], "start": 1653294646381, "stop": 1653294649849, "uuid": "1c5e1edc-fb07-4390-b719-ce042bd9f0dd", "historyId": "524cb7d6a38b1c24b1aed4c051ef75ba", "testCaseId": "e02d9c402e1a5c5e111e9b6c9335f27a", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_empty_repeat_password", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница регистрации. Pop-up \"заполните это поле\" при пустом repeat-password",
+  "status": "passed",
+  "description": "\n          Тестирование: Регистрация. Пустое поле repeat password\n          Предусловия: Сгенерировать валидные данные\n          Шаги:\n          1. Заполнить через UI все поля регистрации, кроме repeat password\n          2. Нажать на чекбокс\n          Ожидаемый результат:\n          1. Пользователь остается на странице /reg (+)\n          2. Показывается pop-up, уведомляющий о пустом поле repeat password (+)\n          3. Пользователь с указанными данными не создается в БД (+)\n          Фактический результат:\n          1. Пользователь остается на странице /reg\n          2. Показывается pop-up, уведомляющий о пустом поле repeat password\n          3. Пользователь с указанными данными не создается в БД\n        ",
+  "steps": [
+    {
+      "name": "Попытка зарегистрироваться",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Переходим на необходимую страницу",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "timeout",
+              "value": "15"
+            }
+          ],
+          "start": 1653294646625,
+          "stop": 1653294646661
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294646661,
+              "stop": 1653294647222
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'OPStIZS'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294646661,
+          "stop": 1653294647435
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294647436,
+              "stop": 1653294647487
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'xv7ptw5bPH3u'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294647436,
+          "stop": 1653294647698
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294647699,
+              "stop": 1653294647745
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "0"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294647699,
+          "stop": 1653294648016
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294648016,
+              "stop": 1653294648067
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'David'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294648016,
+          "stop": 1653294648290
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294648290,
+              "stop": 1653294648322
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'Rivera'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294648290,
+          "stop": 1653294648460
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294648460,
+              "stop": 1653294648501
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Email\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'Wt0c672Q@bk.ru'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294648460,
+          "stop": 1653294648820
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"checkbox\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294648820,
+              "stop": 1653294648852
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"checkbox\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294648820,
+          "stop": 1653294648957
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294648957,
+              "stop": 1653294648990
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"submit\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294648957,
+          "stop": 1653294649260
+        }
+      ],
+      "parameters": [
+        {
+          "name": "data",
+          "value": "{'username': 'OPStIZS', 'password': 'xv7ptw5bPH3u', 'email': 'Wt0c672Q@bk.ru', 'name': 'David', 'surname': 'Rivera', 'middle_name': 'DavidRivera'}"
+        },
+        {
+          "name": "middle_name_option",
+          "value": "0"
+        },
+        {
+          "name": "empty_rep_password_option",
+          "value": "1"
+        },
+        {
+          "name": "rep_password",
+          "value": "0"
+        },
+        {
+          "name": "checkbox_option",
+          "value": "1"
+        }
+      ],
+      "start": 1653294646381,
+      "stop": 1653294649260
+    },
+    {
+      "name": "Смотрим pop-up text при пустом поле ",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//div[contains(text(), 'Passwords must match')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294649275,
+          "stop": 1653294649829
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//div[contains(text(), 'Passwords must match')]\")"
+        }
+      ],
+      "start": 1653294649275,
+      "stop": 1653294649849
+    }
+  ],
+  "start": 1653294646381,
+  "stop": 1653294649849,
+  "uuid": "1c5e1edc-fb07-4390-b719-ce042bd9f0dd",
+  "historyId": "524cb7d6a38b1c24b1aed4c051ef75ba",
+  "testCaseId": "e02d9c402e1a5c5e111e9b6c9335f27a",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_empty_repeat_password",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

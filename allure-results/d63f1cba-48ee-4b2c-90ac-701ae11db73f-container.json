@@ -1,1 +1,36 @@
-{"uuid": "705c60ed-4198-48b1-bd11-41ae8adfd373", "children": ["938868ce-2873-4ec5-8c8e-707082f441da"], "befores": [{"name": "Создание пользовательских данных (без middle-name)", "status": "passed", "steps": [{"name": "Создание юзерских даннных", "status": "passed", "start": 1653294456973, "stop": 1653294456973}, {"name": "Создание персональных даннных", "status": "passed", "parameters": [{"name": "option_middle_name", "value": "0"}], "start": 1653294456973, "stop": 1653294456973}], "start": 1653294456951, "stop": 1653294456973}], "start": 1653294456951, "stop": 1653294457046}
+{
+  "uuid": "705c60ed-4198-48b1-bd11-41ae8adfd373",
+  "children": [
+    "938868ce-2873-4ec5-8c8e-707082f441da"
+  ],
+  "befores": [
+    {
+      "name": "Создание пользовательских данных (без middle-name)",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Создание юзерских даннных",
+          "status": "passed",
+          "start": 1653294456973,
+          "stop": 1653294456973
+        },
+        {
+          "name": "Создание персональных даннных",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "option_middle_name",
+              "value": "0"
+            }
+          ],
+          "start": 1653294456973,
+          "stop": 1653294456973
+        }
+      ],
+      "start": 1653294456951,
+      "stop": 1653294456973
+    }
+  ],
+  "start": 1653294456951,
+  "stop": 1653294457046
+}

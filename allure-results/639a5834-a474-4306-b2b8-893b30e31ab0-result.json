@@ -1,1 +1,97 @@
-{"name": "Страница авторизации. Переход на страницу регистрации", "status": "passed", "description": "\n        Тестирование: Авторизация. Переход на страницу регистрации\n        Предусловия:\n        Шаги:\n        1. Нажать через UI на линк регистрации\n        Ожидаемый результат:\n        Линк действительно ведет на страницу регистрации /reg (+)\n        Фактический результат:\n        Линк действительно ведет на страницу регистрации /reg\n        ", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294476671, "stop": 1653294476705}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//a[starts-with(@href, '/reg')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653294476705, "stop": 1653294477250}], "parameters": [{"name": "locator", "value": "('xpath', \"//a[starts-with(@href, '/reg')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653294476705, "stop": 1653294477506}], "start": 1653294476519, "stop": 1653294477539, "uuid": "98962658-fe84-471d-9738-84f2fa5651c9", "historyId": "bfee7b921779cacd475750fa4fc0aeae", "testCaseId": "abc27d165642f0aed80b3e6a20c9095f", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_redirect_to_reg_page", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserAuthPage"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница авторизации. Переход на страницу регистрации",
+  "status": "passed",
+  "description": "\n        Тестирование: Авторизация. Переход на страницу регистрации\n        Предусловия:\n        Шаги:\n        1. Нажать через UI на линк регистрации\n        Ожидаемый результат:\n        Линк действительно ведет на страницу регистрации /reg (+)\n        Фактический результат:\n        Линк действительно ведет на страницу регистрации /reg\n        ",
+  "steps": [
+    {
+      "name": "Переходим на необходимую страницу",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "timeout",
+          "value": "15"
+        }
+      ],
+      "start": 1653294476671,
+      "stop": 1653294476705
+    },
+    {
+      "name": "Кликаем по полю",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//a[starts-with(@href, '/reg')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294476705,
+          "stop": 1653294477250
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//a[starts-with(@href, '/reg')]\")"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653294476705,
+      "stop": 1653294477506
+    }
+  ],
+  "start": 1653294476519,
+  "stop": 1653294477539,
+  "uuid": "98962658-fe84-471d-9738-84f2fa5651c9",
+  "historyId": "bfee7b921779cacd475750fa4fc0aeae",
+  "testCaseId": "abc27d165642f0aed80b3e6a20c9095f",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_redirect_to_reg_page",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserAuthPage"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

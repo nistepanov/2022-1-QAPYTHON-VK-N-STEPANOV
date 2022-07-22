@@ -1,1 +1,36 @@
-{"uuid": "50ca83e4-540f-4427-9e30-93430a84a934", "children": ["12729441-5298-4108-951c-96f92228ffe5"], "befores": [{"name": "ui_report", "status": "passed", "start": 1653990228005, "stop": 1653990228005}], "afters": [{"name": "ui_report::0", "status": "passed", "attachments": [{"name": "failed.png", "source": "5d448a88-5a29-404f-b389-2fe0b3802f3c-attachment.png", "type": "image/png"}, {"name": "test.log", "source": "3691165f-78ad-42a7-a87e-b245f798e953-attachment.txt", "type": "text/plain"}], "start": 1653990230504, "stop": 1653990230908}], "start": 1653990228005, "stop": 1653990230908}
+{
+  "uuid": "50ca83e4-540f-4427-9e30-93430a84a934",
+  "children": [
+    "12729441-5298-4108-951c-96f92228ffe5"
+  ],
+  "befores": [
+    {
+      "name": "ui_report",
+      "status": "passed",
+      "start": 1653990228005,
+      "stop": 1653990228005
+    }
+  ],
+  "afters": [
+    {
+      "name": "ui_report::0",
+      "status": "passed",
+      "attachments": [
+        {
+          "name": "failed.png",
+          "source": "5d448a88-5a29-404f-b389-2fe0b3802f3c-attachment.png",
+          "type": "image/png"
+        },
+        {
+          "name": "test.log",
+          "source": "3691165f-78ad-42a7-a87e-b245f798e953-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "start": 1653990230504,
+      "stop": 1653990230908
+    }
+  ],
+  "start": 1653990228005,
+  "stop": 1653990230908
+}

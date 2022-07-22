@@ -1,1 +1,79 @@
-{"name": "Страница регистрации. Value в placeholder repeat password", "status": "passed", "description": "\n          Тестирование: Регистрация. Value в placeholder repeat password\n          Шаги:\n          1. Через UI посмотреть на \"подсказку\" поля repeat password\n          Ожидаемый результат:\n          1. Подсказка совпадает с полем - Repeat password (+)\n          Фактический результат:\n          1. Подсказка совпадает с полем - Repeat password\n        ", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294675743, "stop": 1653294675784}, {"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294675784, "stop": 1653294676345}], "start": 1653294675527, "stop": 1653294676364, "uuid": "abe341f2-4a7a-4647-989e-dae5c5204c51", "historyId": "b0fe40a6c60adb6f7cdc4fd15b0c5594", "testCaseId": "a7ada69c55cb6908e81c08e838baa83d", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_value_repeat_password", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница регистрации. Value в placeholder repeat password",
+  "status": "passed",
+  "description": "\n          Тестирование: Регистрация. Value в placeholder repeat password\n          Шаги:\n          1. Через UI посмотреть на \"подсказку\" поля repeat password\n          Ожидаемый результат:\n          1. Подсказка совпадает с полем - Repeat password (+)\n          Фактический результат:\n          1. Подсказка совпадает с полем - Repeat password\n        ",
+  "steps": [
+    {
+      "name": "Переходим на необходимую страницу",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "timeout",
+          "value": "15"
+        }
+      ],
+      "start": 1653294675743,
+      "stop": 1653294675784
+    },
+    {
+      "name": "Ждем существования и видимости элемента",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653294675784,
+      "stop": 1653294676345
+    }
+  ],
+  "start": 1653294675527,
+  "stop": 1653294676364,
+  "uuid": "abe341f2-4a7a-4647-989e-dae5c5204c51",
+  "historyId": "b0fe40a6c60adb6f7cdc4fd15b0c5594",
+  "testCaseId": "a7ada69c55cb6908e81c08e838baa83d",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_value_repeat_password",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

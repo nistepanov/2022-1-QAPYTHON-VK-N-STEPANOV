@@ -1,7 +1,7 @@
 import os
 
-import pytest
 import allure
+import pytest
 from _pytest.fixtures import FixtureRequest
 
 from homework2.ui.pages import LoginPage, AuthInvalidPage, MainPage, CampaignPage, SegmentsPage

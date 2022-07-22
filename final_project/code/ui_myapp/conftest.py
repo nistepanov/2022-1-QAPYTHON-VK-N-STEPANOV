@@ -1,7 +1,6 @@
 import os
 
 import allure
-import pytest
 
 from final_project.code.tools.create_user_info import UserInfo
 from final_project.code.ui_myapp.tools.fixtures import *

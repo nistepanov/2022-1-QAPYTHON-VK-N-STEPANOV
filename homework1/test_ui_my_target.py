@@ -2,9 +2,9 @@ import time
 
 import pytest
 
-from ui.locators import basic_locators
-from ui import static
 from UIElementSearch import UIElementSearchClass
+from ui import static
+from ui.locators import basic_locators
 
 
 class TestsUIMyTarget(UIElementSearchClass):
@@ -81,4 +81,3 @@ class TestsUIMyTarget(UIElementSearchClass):
                 pass
             else:
                 break
-

@@ -1,1 +1,85 @@
-{"name": "Основная страница. Нажатие на картинку с Монитором", "status": "passed", "description": "\n          Тестирование: Основная страница. Нажатие на картинку с Монитором'\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Нажать на картинку с монитором\n          Ожидаемый результат:\n          1. Пользователя редирекнет (новая вкладка) на https://en.wikipedia.org/wiki/API (+)\n          Фактический результат:\n          1. Пользователя редирекнет (новая вкладка) на https://en.wikipedia.org/wiki/API\n        ", "steps": [{"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//img[@src=\"/static/images/laptop.png\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653990312850, "stop": 1653990312881}], "parameters": [{"name": "locator", "value": "('xpath', '//img[@src=\"/static/images/laptop.png\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653990312850, "stop": 1653990313116}], "start": 1653990312850, "stop": 1653990314071, "uuid": "fd4a1287-ce94-4a24-8c0f-7a389f6690cb", "historyId": "e40de83d6106ff639932c6061edcdc06", "testCaseId": "9dd73c95422406dd14d55251010200cd", "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_click_on_image_laptop", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIAuthorizedUserWelcomePage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "8-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Основная страница. Нажатие на картинку с Монитором",
+  "status": "passed",
+  "description": "\n          Тестирование: Основная страница. Нажатие на картинку с Монитором'\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Нажать на картинку с монитором\n          Ожидаемый результат:\n          1. Пользователя редирекнет (новая вкладка) на https://en.wikipedia.org/wiki/API (+)\n          Фактический результат:\n          1. Пользователя редирекнет (новая вкладка) на https://en.wikipedia.org/wiki/API\n        ",
+  "steps": [
+    {
+      "name": "Кликаем по полю",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//img[@src=\"/static/images/laptop.png\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653990312850,
+          "stop": 1653990312881
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', '//img[@src=\"/static/images/laptop.png\"]')"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653990312850,
+      "stop": 1653990313116
+    }
+  ],
+  "start": 1653990312850,
+  "stop": 1653990314071,
+  "uuid": "fd4a1287-ce94-4a24-8c0f-7a389f6690cb",
+  "historyId": "e40de83d6106ff639932c6061edcdc06",
+  "testCaseId": "9dd73c95422406dd14d55251010200cd",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_click_on_image_laptop",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIAuthorizedUserWelcomePage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "8-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

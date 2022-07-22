@@ -1,1 +1,143 @@
-{"name": "Блокировка пользователя", "status": "passed", "description": "\n         Тестирование: Блокировка пользователя\n         Эндпоинт: POST http://127.0.0.1:8086/api/user/{username}/block\n         Предусловия: Авторизация, вытащить пользователя из БД с access == 1\n         Шаги:\n         1. Вытащить из БД значение username, access для любого пользователя\n         2. Отправка запроса по API для смены флага доступа (блокировки пользователя) - POST\n         http://127.0.0.1:8086/api/user/{username}/block\n         3. Вернуть флаг access в изначальное состояние (разблокировать пользователя)\n         Ожидаемый результат:\n         Код ответа - 200 (\"OK\") (+)\n         Флаг доступа пользователя access меняется с 1 на 0 (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         Флаг доступа пользователя access меняется с 1 на 0\n         ", "steps": [{"name": "Выполняем POST запрос '/api/user/'aOdJ8V2eoZe'/block'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user/aOdJ8V2eoZe/block'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653990191311, "stop": 1653990191338}], "parameters": [{"name": "username", "value": "'aOdJ8V2eoZe'"}], "start": 1653990191310, "stop": 1653990191339}, {"name": "Выполняем POST запрос '/api/user/'aOdJ8V2eoZe'/accept'", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/api/user/aOdJ8V2eoZe/accept'"}, {"name": "headers", "value": "None"}, {"name": "data", "value": "None"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653990191345, "stop": 1653990191365}], "parameters": [{"name": "username", "value": "'aOdJ8V2eoZe'"}], "start": 1653990191345, "stop": 1653990191365}], "start": 1653990191298, "stop": 1653990191365, "uuid": "17806b5c-1818-4a5c-8cd1-0abc4fdb36c9", "historyId": "96ee29ab4269cf18847a543ca785364a", "testCaseId": "2164acc05407c0aacdf369981716b8df", "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_post_block", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiAuthorizedUser"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "11-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Блокировка пользователя",
+  "status": "passed",
+  "description": "\n         Тестирование: Блокировка пользователя\n         Эндпоинт: POST http://127.0.0.1:8086/api/user/{username}/block\n         Предусловия: Авторизация, вытащить пользователя из БД с access == 1\n         Шаги:\n         1. Вытащить из БД значение username, access для любого пользователя\n         2. Отправка запроса по API для смены флага доступа (блокировки пользователя) - POST\n         http://127.0.0.1:8086/api/user/{username}/block\n         3. Вернуть флаг access в изначальное состояние (разблокировать пользователя)\n         Ожидаемый результат:\n         Код ответа - 200 (\"OK\") (+)\n         Флаг доступа пользователя access меняется с 1 на 0 (+)\n         Фактический результат:\n         Код ответа - 200 (\"OK\")\n         Флаг доступа пользователя access меняется с 1 на 0\n         ",
+  "steps": [
+    {
+      "name": "Выполняем POST запрос '/api/user/'aOdJ8V2eoZe'/block'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/aOdJ8V2eoZe/block'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653990191311,
+          "stop": 1653990191338
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'aOdJ8V2eoZe'"
+        }
+      ],
+      "start": 1653990191310,
+      "stop": 1653990191339
+    },
+    {
+      "name": "Выполняем POST запрос '/api/user/'aOdJ8V2eoZe'/accept'",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/api/user/aOdJ8V2eoZe/accept'"
+            },
+            {
+              "name": "headers",
+              "value": "None"
+            },
+            {
+              "name": "data",
+              "value": "None"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653990191345,
+          "stop": 1653990191365
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'aOdJ8V2eoZe'"
+        }
+      ],
+      "start": 1653990191345,
+      "stop": 1653990191365
+    }
+  ],
+  "start": 1653990191298,
+  "stop": 1653990191365,
+  "uuid": "17806b5c-1818-4a5c-8cd1-0abc4fdb36c9",
+  "historyId": "96ee29ab4269cf18847a543ca785364a",
+  "testCaseId": "2164acc05407c0aacdf369981716b8df",
+  "fullName": "code.api_myapp.test.test_api.TestApiAuthorizedUser#test_post_block",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiAuthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "11-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

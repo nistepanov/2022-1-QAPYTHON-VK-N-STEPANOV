@@ -1,1 +1,36 @@
-{"uuid": "18596fcf-f1c7-4519-9515-a15642a225f3", "children": ["2d6916c2-0b7f-42cb-8bd0-e83ad885faf3"], "befores": [{"name": "ui_report", "status": "passed", "start": 1653294663519, "stop": 1653294663519}], "afters": [{"name": "ui_report::0", "status": "passed", "attachments": [{"name": "failed.png", "source": "9c0d7e3d-ff7e-4662-8553-f5a1c244707c-attachment.png", "type": "image/png"}, {"name": "test.log", "source": "861956f7-fd28-4457-91b6-b0bd0c0232a8-attachment.txt", "type": "text/plain"}], "start": 1653294666953, "stop": 1653294667222}], "start": 1653294663519, "stop": 1653294667222}
+{
+  "uuid": "18596fcf-f1c7-4519-9515-a15642a225f3",
+  "children": [
+    "2d6916c2-0b7f-42cb-8bd0-e83ad885faf3"
+  ],
+  "befores": [
+    {
+      "name": "ui_report",
+      "status": "passed",
+      "start": 1653294663519,
+      "stop": 1653294663519
+    }
+  ],
+  "afters": [
+    {
+      "name": "ui_report::0",
+      "status": "passed",
+      "attachments": [
+        {
+          "name": "failed.png",
+          "source": "9c0d7e3d-ff7e-4662-8553-f5a1c244707c-attachment.png",
+          "type": "image/png"
+        },
+        {
+          "name": "test.log",
+          "source": "861956f7-fd28-4457-91b6-b0bd0c0232a8-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "start": 1653294666953,
+      "stop": 1653294667222
+    }
+  ],
+  "start": 1653294663519,
+  "stop": 1653294667222
+}

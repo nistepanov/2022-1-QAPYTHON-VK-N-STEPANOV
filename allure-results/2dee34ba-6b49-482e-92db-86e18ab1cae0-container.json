@@ -1,1 +1,34 @@
-{"uuid": "b51a90a2-8e71-4534-9996-608507dab13e", "children": ["eeffbec6-c40d-465b-a0d1-ac30acb1101c"], "befores": [{"name": "logger", "status": "passed", "steps": [{"name": "Инициализация логгера", "status": "passed", "parameters": [{"name": "temp_dir", "value": "'/tmp/tests/code/api_myapp/test/test_api.py::TestApiAuthorizedUser::test_post_create_user_invalid_data_username_length_more_than_acceptable_bug'"}, {"name": "config", "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"}], "start": 1653294457535, "stop": 1653294457535}], "start": 1653294457534, "stop": 1653294457535}], "start": 1653294457534, "stop": 1653294457752}
+{
+  "uuid": "b51a90a2-8e71-4534-9996-608507dab13e",
+  "children": [
+    "eeffbec6-c40d-465b-a0d1-ac30acb1101c"
+  ],
+  "befores": [
+    {
+      "name": "logger",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Инициализация логгера",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "temp_dir",
+              "value": "'/tmp/tests/code/api_myapp/test/test_api.py::TestApiAuthorizedUser::test_post_create_user_invalid_data_username_length_more_than_acceptable_bug'"
+            },
+            {
+              "name": "config",
+              "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"
+            }
+          ],
+          "start": 1653294457535,
+          "stop": 1653294457535
+        }
+      ],
+      "start": 1653294457534,
+      "stop": 1653294457535
+    }
+  ],
+  "start": 1653294457534,
+  "stop": 1653294457752
+}

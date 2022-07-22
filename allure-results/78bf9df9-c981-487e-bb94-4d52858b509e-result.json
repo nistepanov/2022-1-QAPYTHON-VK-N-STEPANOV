@@ -1,1 +1,97 @@
-{"name": "Страница регистрации. Линк на авторизацию", "status": "passed", "description": "\n          Тестирование: Регистрация. Линк на страницу авторизации\n          Шаги:\n          1. Через UI нажать на линк авторизации\n          Ожидаемый результат:\n          1. Пользователь перенаправляется на страницу /login (+)\n          Фактический результат:\n          1. Пользователь остается на странице /login\n        ", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653990234743, "stop": 1653990234769}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//a[starts-with(@href, '/login')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990234769, "stop": 1653990235335}], "parameters": [{"name": "locator", "value": "('xpath', \"//a[starts-with(@href, '/login')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990234769, "stop": 1653990235712}], "start": 1653990234501, "stop": 1653990235723, "uuid": "738fc28c-b378-4ade-8f04-52b03e4d2496", "historyId": "5b473ab1e37b2e2fa8b3f5b0147d632f", "testCaseId": "7e49442c709482d4055b3d2ce1e9a189", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_link_to_auth_page", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "11-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница регистрации. Линк на авторизацию",
+  "status": "passed",
+  "description": "\n          Тестирование: Регистрация. Линк на страницу авторизации\n          Шаги:\n          1. Через UI нажать на линк авторизации\n          Ожидаемый результат:\n          1. Пользователь перенаправляется на страницу /login (+)\n          Фактический результат:\n          1. Пользователь остается на странице /login\n        ",
+  "steps": [
+    {
+      "name": "Переходим на необходимую страницу",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "timeout",
+          "value": "15"
+        }
+      ],
+      "start": 1653990234743,
+      "stop": 1653990234769
+    },
+    {
+      "name": "Кликаем по полю",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//a[starts-with(@href, '/login')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653990234769,
+          "stop": 1653990235335
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//a[starts-with(@href, '/login')]\")"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653990234769,
+      "stop": 1653990235712
+    }
+  ],
+  "start": 1653990234501,
+  "stop": 1653990235723,
+  "uuid": "738fc28c-b378-4ade-8f04-52b03e4d2496",
+  "historyId": "5b473ab1e37b2e2fa8b3f5b0147d632f",
+  "testCaseId": "7e49442c709482d4055b3d2ce1e9a189",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_link_to_auth_page",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "11-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

@@ -2,10 +2,9 @@ import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 
+from homework2.ui.tools.random_generate import RandomGenerate
 from .base_page import BasePage
 from ..locators.my_target_locators.static_locators import CampaignPageLocators
-from homework2.ui.fixtures import *
-from homework2.ui.tools.random_generate import RandomGenerate
 
 
 class CampaignPage(BasePage):

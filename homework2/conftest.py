@@ -1,8 +1,8 @@
 import logging
 
+from final_project.code.settings.config import APP_HOST, APP_PORT
 from homework2.ui.fixtures import *
 
-from final_project.code.settings.config import APP_HOST, APP_PORT
 
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')

@@ -1,7 +1,7 @@
 import allure
-
 from locators.static_locators import RegistrationPageLocators
 from pages.base_page import BasePage
+
 from final_project.code.settings.config import APP_HOST, APP_PORT
 
 
@@ -42,5 +42,3 @@ class RegistrationPage(BasePage):
         elem = self.find(locator)
 
         return elem.text
-
-

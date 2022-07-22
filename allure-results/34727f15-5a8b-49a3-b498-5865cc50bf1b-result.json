@@ -1,1 +1,79 @@
-{"name": "Страница авторизации. Value в placeholder username", "status": "passed", "description": "\n        Тестирование: Авторизация. Value в placeholder username\n        Шаги:\n        1. Через UI посмотреть на \"подсказку\" поля username\n        Ожидаемый результат:\n        1. Подсказка совпадает с полем - Username (+)\n        Фактический результат:\n        1. Подсказка совпадает с полем - Username\n        ", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294471463, "stop": 1653294471499}, {"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294471499, "stop": 1653294472046}], "start": 1653294471271, "stop": 1653294472069, "uuid": "002ebcf4-3572-4343-8632-fd4c1db7619c", "historyId": "e132d04e023594031a2dde136b7d0f07", "testCaseId": "641a9fe7f785a1c79f8a12e48e1d802b", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_value_username", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserAuthPage"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница авторизации. Value в placeholder username",
+  "status": "passed",
+  "description": "\n        Тестирование: Авторизация. Value в placeholder username\n        Шаги:\n        1. Через UI посмотреть на \"подсказку\" поля username\n        Ожидаемый результат:\n        1. Подсказка совпадает с полем - Username (+)\n        Фактический результат:\n        1. Подсказка совпадает с полем - Username\n        ",
+  "steps": [
+    {
+      "name": "Переходим на необходимую страницу",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "timeout",
+          "value": "15"
+        }
+      ],
+      "start": 1653294471463,
+      "stop": 1653294471499
+    },
+    {
+      "name": "Ждем существования и видимости элемента",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653294471499,
+      "stop": 1653294472046
+    }
+  ],
+  "start": 1653294471271,
+  "stop": 1653294472069,
+  "uuid": "002ebcf4-3572-4343-8632-fd4c1db7619c",
+  "historyId": "e132d04e023594031a2dde136b7d0f07",
+  "testCaseId": "641a9fe7f785a1c79f8a12e48e1d802b",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_value_username",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserAuthPage"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

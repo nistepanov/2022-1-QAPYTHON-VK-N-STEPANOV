@@ -2,7 +2,6 @@ import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-from final_project.code.settings.config import APP_PORT, APP_HOST
 from ..pages import RegistrationPage, AuthPage, WelcomePage
 
 

@@ -1,5 +1,4 @@
 import ast
-from requests.utils import dict_from_cookiejar
 
 import pytest
 

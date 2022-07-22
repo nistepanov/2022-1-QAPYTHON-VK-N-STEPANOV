@@ -1,7 +1,7 @@
 import allure
 
-from ..data.user_data.static import PASSWORD, EMAIL
 from .base_page import BasePage
+from ..data.user_data.static import PASSWORD, EMAIL
 from ..locators.my_target_locators.static_locators import LoginPageLocators
 
 

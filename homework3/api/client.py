@@ -2,7 +2,6 @@ from urllib.parse import urljoin
 
 import requests
 from requests.utils import dict_from_cookiejar
-from requests.cookies import cookiejar_from_dict
 
 from .Exceptions import InvalidLoginException, ResponseStatusCodeException
 

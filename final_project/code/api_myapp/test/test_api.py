@@ -3,7 +3,6 @@ import re
 
 import allure
 import pytest
-
 from requests.utils import dict_from_cookiejar
 
 from base_api import BaseApi

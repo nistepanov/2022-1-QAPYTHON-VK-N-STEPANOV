@@ -1,8 +1,8 @@
 import allure
 import pytest
-
 from api_client import ApiClient
-from final_project.server_mock.vk_api_mock import VK_API_HOST, VK_API_PORT
+
+from final_project.server_mock.vk_api_mock import VK_API_PORT
 
 vk_mock_url = f"http://vk_api:{VK_API_PORT}"
 

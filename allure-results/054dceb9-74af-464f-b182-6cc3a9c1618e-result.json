@@ -1,1 +1,97 @@
-{"name": "Авторизация с помощью верных данных", "status": "passed", "description": "\n         Тестирование: Авторизация с помощью верных данных\n         Эндпоинт: POST http://127.0.0.1:8086/login\n         Предусловия: Пользователь не авторизован, известны логин/пароль для тестирования авторизации\n         Шаги:\n         1. Отправить запрос по API для авторизации - POST http://127.0.0.1:8086/login\n         Ожидаемый результат:\n         Код ответа - 302 (\"FOUND\") (+)\n         Пользователь авторизовался (открывается страница с url /welcome) (+)\n         Фактический результат:\n         Код ответа - 302 (\"FOUND\") (+)\n         Пользователь авторизовался (открывается страница с url /welcome)\n         ", "steps": [{"name": "Авторизуемся по стабильным данным - выполянем POST запрос /login", "status": "passed", "steps": [{"name": "Выполняем запрос", "status": "passed", "parameters": [{"name": "method", "value": "'POST'"}, {"name": "location", "value": "'/login'"}, {"name": "headers", "value": "{}"}, {"name": "data", "value": "{'username': 'nikita', 'password': 'test'}"}, {"name": "params", "value": "None"}, {"name": "json", "value": "False"}], "start": 1653990192200, "stop": 1653990192226}], "parameters": [{"name": "data", "value": "{'username': 'nikita', 'password': 'test'}"}], "start": 1653990192200, "stop": 1653990192226}], "start": 1653990192200, "stop": 1653990192226, "uuid": "c212f6bb-a125-494e-839b-2b89220d84a3", "historyId": "0bdc6889e50135aff5f35786d44b6a3c", "testCaseId": "9058502f2ac978cc990b2ea273454b01", "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_auth_correct_data", "labels": [{"name": "tag", "value": "API"}, {"name": "parentSuite", "value": "code.api_myapp.test"}, {"name": "suite", "value": "test_api"}, {"name": "subSuite", "value": "TestApiUnauthorizedUser"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "8-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.api_myapp.test.test_api"}]}
+{
+  "name": "Авторизация с помощью верных данных",
+  "status": "passed",
+  "description": "\n         Тестирование: Авторизация с помощью верных данных\n         Эндпоинт: POST http://127.0.0.1:8086/login\n         Предусловия: Пользователь не авторизован, известны логин/пароль для тестирования авторизации\n         Шаги:\n         1. Отправить запрос по API для авторизации - POST http://127.0.0.1:8086/login\n         Ожидаемый результат:\n         Код ответа - 302 (\"FOUND\") (+)\n         Пользователь авторизовался (открывается страница с url /welcome) (+)\n         Фактический результат:\n         Код ответа - 302 (\"FOUND\") (+)\n         Пользователь авторизовался (открывается страница с url /welcome)\n         ",
+  "steps": [
+    {
+      "name": "Авторизуемся по стабильным данным - выполянем POST запрос /login",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем запрос",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "method",
+              "value": "'POST'"
+            },
+            {
+              "name": "location",
+              "value": "'/login'"
+            },
+            {
+              "name": "headers",
+              "value": "{}"
+            },
+            {
+              "name": "data",
+              "value": "{'username': 'nikita', 'password': 'test'}"
+            },
+            {
+              "name": "params",
+              "value": "None"
+            },
+            {
+              "name": "json",
+              "value": "False"
+            }
+          ],
+          "start": 1653990192200,
+          "stop": 1653990192226
+        }
+      ],
+      "parameters": [
+        {
+          "name": "data",
+          "value": "{'username': 'nikita', 'password': 'test'}"
+        }
+      ],
+      "start": 1653990192200,
+      "stop": 1653990192226
+    }
+  ],
+  "start": 1653990192200,
+  "stop": 1653990192226,
+  "uuid": "c212f6bb-a125-494e-839b-2b89220d84a3",
+  "historyId": "0bdc6889e50135aff5f35786d44b6a3c",
+  "testCaseId": "9058502f2ac978cc990b2ea273454b01",
+  "fullName": "code.api_myapp.test.test_api.TestApiUnauthorizedUser#test_post_auth_correct_data",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "API"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.api_myapp.test"
+    },
+    {
+      "name": "suite",
+      "value": "test_api"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestApiUnauthorizedUser"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "8-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.api_myapp.test.test_api"
+    }
+  ]
+}

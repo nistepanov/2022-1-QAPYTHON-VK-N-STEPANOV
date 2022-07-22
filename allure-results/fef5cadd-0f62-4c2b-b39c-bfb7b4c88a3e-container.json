@@ -1,1 +1,24 @@
-{"uuid": "47c47341-e91a-4468-bbd0-30b4e1cc4bb8", "children": ["b99c2589-1e6e-4245-b263-45b002c16759"], "befores": [{"name": "driver", "status": "passed", "start": 1653990278918, "stop": 1653990280741}], "afters": [{"name": "driver::0", "status": "passed", "start": 1653990285162, "stop": 1653990285217}], "start": 1653990278918, "stop": 1653990285217}
+{
+  "uuid": "47c47341-e91a-4468-bbd0-30b4e1cc4bb8",
+  "children": [
+    "b99c2589-1e6e-4245-b263-45b002c16759"
+  ],
+  "befores": [
+    {
+      "name": "driver",
+      "status": "passed",
+      "start": 1653990278918,
+      "stop": 1653990280741
+    }
+  ],
+  "afters": [
+    {
+      "name": "driver::0",
+      "status": "passed",
+      "start": 1653990285162,
+      "stop": 1653990285217
+    }
+  ],
+  "start": 1653990278918,
+  "stop": 1653990285217
+}

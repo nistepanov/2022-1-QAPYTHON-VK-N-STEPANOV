@@ -1,1 +1,81 @@
-{"name": "Основная страница. Без авторизации", "status": "passed", "description": "\n          Тестирование: Основная страница.\n          Предусловия: Пользователь не авторизован\n          Шаги:\n          1. Через UI перейти на основную страницу /welcome\n          Ожидаемый результат:\n          1. Пользователь покажется pop-up, уведомляющий его, что эта страница доступна только авторизованному пол-лю\n          (+)\n          Фактический результат:\n          1. Пользователь покажется pop-up, уведомляющий его, что эта страница доступна только авторизованному пол-лю\n        ", "steps": [{"name": "Смотрим pop-up text при пустом поле ", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'This page is available')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990262314, "stop": 1653990262874}], "parameters": [{"name": "locator", "value": "('xpath', \"//div[contains(text(), 'This page is available')]\")"}], "start": 1653990262314, "stop": 1653990262894}], "start": 1653990261965, "stop": 1653990262906, "uuid": "cbc349c8-289c-4479-a1ee-9accd649c525", "historyId": "8377bd051637db4b1da5ebfd46d2d8d8", "testCaseId": "3854b65deb484fb2fb9980b6502e77c1", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserWelcomePage#test_main_page_without_auth", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserWelcomePage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "11-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Основная страница. Без авторизации",
+  "status": "passed",
+  "description": "\n          Тестирование: Основная страница.\n          Предусловия: Пользователь не авторизован\n          Шаги:\n          1. Через UI перейти на основную страницу /welcome\n          Ожидаемый результат:\n          1. Пользователь покажется pop-up, уведомляющий его, что эта страница доступна только авторизованному пол-лю\n          (+)\n          Фактический результат:\n          1. Пользователь покажется pop-up, уведомляющий его, что эта страница доступна только авторизованному пол-лю\n        ",
+  "steps": [
+    {
+      "name": "Смотрим pop-up text при пустом поле ",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', \"//div[contains(text(), 'This page is available')]\")"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653990262314,
+          "stop": 1653990262874
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//div[contains(text(), 'This page is available')]\")"
+        }
+      ],
+      "start": 1653990262314,
+      "stop": 1653990262894
+    }
+  ],
+  "start": 1653990261965,
+  "stop": 1653990262906,
+  "uuid": "cbc349c8-289c-4479-a1ee-9accd649c525",
+  "historyId": "8377bd051637db4b1da5ebfd46d2d8d8",
+  "testCaseId": "3854b65deb484fb2fb9980b6502e77c1",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserWelcomePage#test_main_page_without_auth",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserWelcomePage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "11-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

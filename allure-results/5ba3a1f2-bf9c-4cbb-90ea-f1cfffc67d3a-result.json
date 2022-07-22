@@ -1,1 +1,347 @@
-{"name": "Страница регистрации. Pop-up \"заполните это поле\" при пустом Surname", "status": "failed", "statusDetails": {"message": "AssertionError: assert 'Please fill out this field.' == 'Заполните это поле.'\n  - Заполните это поле.\n  + Please fill out this field.", "trace": "self = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fb01b93de20>\ncreate_user_data_with_middle_name = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\n\n    @allure.title('Страница регистрации. Pop-up \"заполните это поле\" при пустом Surname')\n    @pytest.mark.UI\n    def test_reg_page_validation_empty_surname(self, create_user_data_with_middle_name):\n        \"\"\"\n        Тестирование: Регистрация. Пустое поле Surname\n        Предусловия: Сгенерировать валидные данные\n        Шаги:\n        1. Заполнить через UI все поля регистрации, кроме name\n        2. Нажать на чекбокс\n        Ожидаемый результат:\n        1. Пользователь остается на странице /reg (+)\n        2. Показывается pop-up, уведомляющий о пустом поле surname (+)\n        3. Пользователь с указанными данными не создается в БД (+)\n        Фактический результат:\n        1. Пользователь остается на странице /reg\n        2. Показывается pop-up, уведомляющий о пустом поле surname\n        3. Пользователь с указанными данными не создается в БД\n        \"\"\"\n        complex_user_data = create_user_data_with_middle_name\n        complex_user_data.pop(\"surname\")\n        self.registration_page.registration(complex_user_data)\n        self.mysql.session.commit()\n    \n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data['email']).first()\n    \n        assert self.driver.current_url == self.registration_page.url, f\"URL должен быть 'http://{APP_HOST}:{APP_PORT}/reg'\"\n>       assert self.registration_page.find_pop_up_empty_req_field(RegistrationPageLocators.QUERY_PLACEHOLDER_SURNAME) \\\n               == \\\n               \"Заполните это поле.\"\nE       AssertionError: assert 'Please fill out this field.' == 'Заполните это поле.'\nE         - Заполните это поле.\nE         + Please fill out this field.\n\ncomplex_user_data = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\ncreate_user_data_with_middle_name = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\nself       = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fb01b93de20>\nuser_db    = None\n\ncode/ui_myapp/tests/test_ui.py:304: AssertionError"}, "description": "\n        Тестирование: Регистрация. Пустое поле Surname\n        Предусловия: Сгенерировать валидные данные\n        Шаги:\n        1. Заполнить через UI все поля регистрации, кроме name\n        2. Нажать на чекбокс\n        Ожидаемый результат:\n        1. Пользователь остается на странице /reg (+)\n        2. Показывается pop-up, уведомляющий о пустом поле surname (+)\n        3. Пользователь с указанными данными не создается в БД (+)\n        Фактический результат:\n        1. Пользователь остается на странице /reg\n        2. Показывается pop-up, уведомляющий о пустом поле surname\n        3. Пользователь с указанными данными не создается в БД\n        ", "steps": [{"name": "Попытка зарегистрироваться", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294491364, "stop": 1653294491398}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294491398, "stop": 1653294491947}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'0Bgw5Kt'"}, {"name": "timeout", "value": "None"}], "start": 1653294491398, "stop": 1653294492054}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492054, "stop": 1653294492078}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'SoYNpvTOs'"}, {"name": "timeout", "value": "None"}], "start": 1653294492054, "stop": 1653294492218}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492218, "stop": 1653294492246}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"}, {"name": "query", "value": "'SoYNpvTOs'"}, {"name": "timeout", "value": "None"}], "start": 1653294492218, "stop": 1653294492351}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492352, "stop": 1653294492373}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"}, {"name": "query", "value": "'Debbie'"}, {"name": "timeout", "value": "None"}], "start": 1653294492351, "stop": 1653294492471}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492471, "stop": 1653294492493}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"checkbox\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492471, "stop": 1653294492595}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492596, "stop": 1653294492617}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492595, "stop": 1653294492700}], "parameters": [{"name": "data", "value": "{'username': '0Bgw5Kt', 'password': 'SoYNpvTOs', 'email': 'jKDDDla7KO@mail.ru', 'name': 'Debbie', 'middle_name': 'DebbieHolden'}"}, {"name": "middle_name_option", "value": "0"}, {"name": "empty_rep_password_option", "value": "0"}, {"name": "rep_password", "value": "0"}, {"name": "checkbox_option", "value": "1"}], "start": 1653294491159, "stop": 1653294492700}, {"name": "Смотрим pop-up validationMessage при пустом поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294492715, "stop": 1653294492739}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"}], "start": 1653294492715, "stop": 1653294492754}], "start": 1653294491158, "stop": 1653294492755, "uuid": "e8f06f9d-bd56-4b8f-89d7-9fc1d7836368", "historyId": "801151ba6adb18d62c08d369a560986a", "testCaseId": "34ed6b54b5b74101463d13a16d257123", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_empty_surname", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserRegistrationPage"}, {"name": "host", "value": "deb0c69e5821"}, {"name": "thread", "value": "1-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница регистрации. Pop-up \"заполните это поле\" при пустом Surname",
+  "status": "failed",
+  "statusDetails": {
+    "message": "AssertionError: assert 'Please fill out this field.' == 'Заполните это поле.'\n  - Заполните это поле.\n  + Please fill out this field.",
+    "trace": "self = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fb01b93de20>\ncreate_user_data_with_middle_name = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\n\n    @allure.title('Страница регистрации. Pop-up \"заполните это поле\" при пустом Surname')\n    @pytest.mark.UI\n    def test_reg_page_validation_empty_surname(self, create_user_data_with_middle_name):\n        \"\"\"\n        Тестирование: Регистрация. Пустое поле Surname\n        Предусловия: Сгенерировать валидные данные\n        Шаги:\n        1. Заполнить через UI все поля регистрации, кроме name\n        2. Нажать на чекбокс\n        Ожидаемый результат:\n        1. Пользователь остается на странице /reg (+)\n        2. Показывается pop-up, уведомляющий о пустом поле surname (+)\n        3. Пользователь с указанными данными не создается в БД (+)\n        Фактический результат:\n        1. Пользователь остается на странице /reg\n        2. Показывается pop-up, уведомляющий о пустом поле surname\n        3. Пользователь с указанными данными не создается в БД\n        \"\"\"\n        complex_user_data = create_user_data_with_middle_name\n        complex_user_data.pop(\"surname\")\n        self.registration_page.registration(complex_user_data)\n        self.mysql.session.commit()\n    \n        user_db = self.mysql.session.query(Users).filter_by(email=complex_user_data['email']).first()\n    \n        assert self.driver.current_url == self.registration_page.url, f\"URL должен быть 'http://{APP_HOST}:{APP_PORT}/reg'\"\n>       assert self.registration_page.find_pop_up_empty_req_field(RegistrationPageLocators.QUERY_PLACEHOLDER_SURNAME) \\\n               == \\\n               \"Заполните это поле.\"\nE       AssertionError: assert 'Please fill out this field.' == 'Заполните это поле.'\nE         - Заполните это поле.\nE         + Please fill out this field.\n\ncomplex_user_data = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\ncreate_user_data_with_middle_name = {'email': 'jKDDDla7KO@mail.ru', 'middle_name': 'DebbieHolden', 'name': 'Debbie', 'password': 'SoYNpvTOs', ...}\nself       = <test_ui.TestUIUnauthorizedUserRegistrationPage object at 0x7fb01b93de20>\nuser_db    = None\n\ncode/ui_myapp/tests/test_ui.py:304: AssertionError"
+  },
+  "description": "\n        Тестирование: Регистрация. Пустое поле Surname\n        Предусловия: Сгенерировать валидные данные\n        Шаги:\n        1. Заполнить через UI все поля регистрации, кроме name\n        2. Нажать на чекбокс\n        Ожидаемый результат:\n        1. Пользователь остается на странице /reg (+)\n        2. Показывается pop-up, уведомляющий о пустом поле surname (+)\n        3. Пользователь с указанными данными не создается в БД (+)\n        Фактический результат:\n        1. Пользователь остается на странице /reg\n        2. Показывается pop-up, уведомляющий о пустом поле surname\n        3. Пользователь с указанными данными не создается в БД\n        ",
+  "steps": [
+    {
+      "name": "Попытка зарегистрироваться",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Переходим на необходимую страницу",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "timeout",
+              "value": "15"
+            }
+          ],
+          "start": 1653294491364,
+          "stop": 1653294491398
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294491398,
+              "stop": 1653294491947
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'0Bgw5Kt'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294491398,
+          "stop": 1653294492054
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294492054,
+              "stop": 1653294492078
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'SoYNpvTOs'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492054,
+          "stop": 1653294492218
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294492218,
+              "stop": 1653294492246
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Repeat password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'SoYNpvTOs'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492218,
+          "stop": 1653294492351
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294492352,
+              "stop": 1653294492373
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Name\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'Debbie'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492351,
+          "stop": 1653294492471
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"checkbox\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294492471,
+              "stop": 1653294492493
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"checkbox\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492471,
+          "stop": 1653294492595
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294492596,
+              "stop": 1653294492617
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"submit\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492595,
+          "stop": 1653294492700
+        }
+      ],
+      "parameters": [
+        {
+          "name": "data",
+          "value": "{'username': '0Bgw5Kt', 'password': 'SoYNpvTOs', 'email': 'jKDDDla7KO@mail.ru', 'name': 'Debbie', 'middle_name': 'DebbieHolden'}"
+        },
+        {
+          "name": "middle_name_option",
+          "value": "0"
+        },
+        {
+          "name": "empty_rep_password_option",
+          "value": "0"
+        },
+        {
+          "name": "rep_password",
+          "value": "0"
+        },
+        {
+          "name": "checkbox_option",
+          "value": "1"
+        }
+      ],
+      "start": 1653294491159,
+      "stop": 1653294492700
+    },
+    {
+      "name": "Смотрим pop-up validationMessage при пустом поле",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Ждем существования и видимости элемента",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294492715,
+          "stop": 1653294492739
+        }
+      ],
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', '//input[contains(@placeholder, \"Surname\")]')"
+        }
+      ],
+      "start": 1653294492715,
+      "stop": 1653294492754
+    }
+  ],
+  "start": 1653294491158,
+  "stop": 1653294492755,
+  "uuid": "e8f06f9d-bd56-4b8f-89d7-9fc1d7836368",
+  "historyId": "801151ba6adb18d62c08d369a560986a",
+  "testCaseId": "34ed6b54b5b74101463d13a16d257123",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserRegistrationPage#test_reg_page_validation_empty_surname",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserRegistrationPage"
+    },
+    {
+      "name": "host",
+      "value": "deb0c69e5821"
+    },
+    {
+      "name": "thread",
+      "value": "1-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

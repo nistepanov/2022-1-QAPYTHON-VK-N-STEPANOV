@@ -1,1 +1,24 @@
-{"uuid": "b01ac6c9-b16f-4b9e-b67a-59400d3d2c63", "children": ["cb6d194a-f9bb-41a5-991a-2caa30e3ac22"], "befores": [{"name": "setup", "status": "passed", "steps": [{"name": "Выполняем коннект к БД и возвращаем объект соединения", "status": "passed", "start": 1653990196817, "stop": 1653990196818}], "start": 1653990196817, "stop": 1653990196818}], "start": 1653990196817, "stop": 1653990199439}
+{
+  "uuid": "b01ac6c9-b16f-4b9e-b67a-59400d3d2c63",
+  "children": [
+    "cb6d194a-f9bb-41a5-991a-2caa30e3ac22"
+  ],
+  "befores": [
+    {
+      "name": "setup",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем коннект к БД и возвращаем объект соединения",
+          "status": "passed",
+          "start": 1653990196817,
+          "stop": 1653990196818
+        }
+      ],
+      "start": 1653990196817,
+      "stop": 1653990196818
+    }
+  ],
+  "start": 1653990196817,
+  "stop": 1653990199439
+}

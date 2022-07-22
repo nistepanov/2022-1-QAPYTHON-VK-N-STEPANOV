@@ -1,1 +1,34 @@
-{"uuid": "24abe849-a8d4-4d6c-85a4-7566c1c68b0f", "children": ["512d00e6-210f-4507-905e-b818ba9dc735"], "befores": [{"name": "logger", "status": "passed", "steps": [{"name": "Инициализация логгера", "status": "passed", "parameters": [{"name": "temp_dir", "value": "'/tmp/tests/code/ui_myapp/tests/test_ui.py::TestUIUnauthorizedUserRegistrationPage::test_reg_page_validation_invalid_email_schema[0]'"}, {"name": "config", "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"}], "start": 1653990254418, "stop": 1653990254418}], "start": 1653990254418, "stop": 1653990254418}], "start": 1653990254418, "stop": 1653990260300}
+{
+  "uuid": "24abe849-a8d4-4d6c-85a4-7566c1c68b0f",
+  "children": [
+    "512d00e6-210f-4507-905e-b818ba9dc735"
+  ],
+  "befores": [
+    {
+      "name": "logger",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Инициализация логгера",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "temp_dir",
+              "value": "'/tmp/tests/code/ui_myapp/tests/test_ui.py::TestUIUnauthorizedUserRegistrationPage::test_reg_page_validation_invalid_email_schema[0]'"
+            },
+            {
+              "name": "config",
+              "value": "{'url': 'http://my_app:8086/', 'browser': 'chrome', 'debug_log': False, 'selenoid': 'http://selenoid_hub:4444/wd/hub', 'vnc': False}"
+            }
+          ],
+          "start": 1653990254418,
+          "stop": 1653990254418
+        }
+      ],
+      "start": 1653990254418,
+      "stop": 1653990254418
+    }
+  ],
+  "start": 1653990254418,
+  "stop": 1653990260300
+}

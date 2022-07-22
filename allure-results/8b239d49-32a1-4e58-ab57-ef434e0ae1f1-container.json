@@ -1,1 +1,40 @@
-{"uuid": "1b1428b2-86aa-40ca-a658-a17207cd0e88", "children": ["fd4a1287-ce94-4a24-8c0f-7a389f6690cb"], "befores": [{"name": "mysql_client_fixture", "status": "passed", "steps": [{"name": "Выполняем коннект к БД и возвращаем объект соединения", "status": "passed", "start": 1653990309179, "stop": 1653990309186}], "start": 1653990309179, "stop": 1653990309187}], "afters": [{"name": "mysql_client_fixture::0", "status": "passed", "steps": [{"name": "Закрываем соединение с БД", "status": "passed", "start": 1653990314101, "stop": 1653990314101}], "start": 1653990314100, "stop": 1653990314102}], "start": 1653990309179, "stop": 1653990314102}
+{
+  "uuid": "1b1428b2-86aa-40ca-a658-a17207cd0e88",
+  "children": [
+    "fd4a1287-ce94-4a24-8c0f-7a389f6690cb"
+  ],
+  "befores": [
+    {
+      "name": "mysql_client_fixture",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Выполняем коннект к БД и возвращаем объект соединения",
+          "status": "passed",
+          "start": 1653990309179,
+          "stop": 1653990309186
+        }
+      ],
+      "start": 1653990309179,
+      "stop": 1653990309187
+    }
+  ],
+  "afters": [
+    {
+      "name": "mysql_client_fixture::0",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Закрываем соединение с БД",
+          "status": "passed",
+          "start": 1653990314101,
+          "stop": 1653990314101
+        }
+      ],
+      "start": 1653990314100,
+      "stop": 1653990314102
+    }
+  ],
+  "start": 1653990309179,
+  "stop": 1653990314102
+}

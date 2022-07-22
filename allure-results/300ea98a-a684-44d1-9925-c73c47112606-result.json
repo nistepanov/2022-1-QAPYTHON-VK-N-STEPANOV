@@ -1,1 +1,191 @@
-{"name": "Страница авторизации. Корректные данные и успешная авторизация", "status": "passed", "description": "\n         Тестирование: Авторизация\n         Предусловия: Корректные данные\n         Шаги:\n         1. Ввести данные через UI\n         Ожидаемый результат:\n         Успешный вход на /welcome (+)\n         Фактический результат:\n         Успешный вход на /welcome\n         ", "steps": [{"name": "Логинимся", "status": "passed", "steps": [{"name": "Переходим на необходимую страницу", "status": "passed", "parameters": [{"name": "timeout", "value": "15"}], "start": 1653294617048, "stop": 1653294617088}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294617088, "stop": 1653294617643}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"}, {"name": "query", "value": "'nikita'"}, {"name": "timeout", "value": "None"}], "start": 1653294617088, "stop": 1653294617799}, {"name": "Очищаем и заполняем поле", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "timeout", "value": "None"}], "start": 1653294617800, "stop": 1653294617865}], "parameters": [{"name": "locator", "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"}, {"name": "query", "value": "'test'"}, {"name": "timeout", "value": "None"}], "start": 1653294617800, "stop": 1653294618121}, {"name": "Кликаем по полю", "status": "passed", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294618121, "stop": 1653294618155}], "parameters": [{"name": "locator", "value": "('xpath', '//input[@type=\"submit\"]')"}, {"name": "timeout", "value": "None"}], "start": 1653294618121, "stop": 1653294619152}], "parameters": [{"name": "username", "value": "'nikita'"}, {"name": "password", "value": "'test'"}], "start": 1653294616747, "stop": 1653294619152}], "start": 1653294616747, "stop": 1653294619164, "uuid": "5fc588e1-cd42-49e4-a288-f367dbf19360", "historyId": "5c5a21dd8760ea865139aa9fb1f4949c", "testCaseId": "1dce9d196ac952aa54176939a14ab7eb", "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_correct_data", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIUnauthorizedUserAuthPage"}, {"name": "host", "value": "f32cf065649b"}, {"name": "thread", "value": "12-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Страница авторизации. Корректные данные и успешная авторизация",
+  "status": "passed",
+  "description": "\n         Тестирование: Авторизация\n         Предусловия: Корректные данные\n         Шаги:\n         1. Ввести данные через UI\n         Ожидаемый результат:\n         Успешный вход на /welcome (+)\n         Фактический результат:\n         Успешный вход на /welcome\n         ",
+  "steps": [
+    {
+      "name": "Логинимся",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Переходим на необходимую страницу",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "timeout",
+              "value": "15"
+            }
+          ],
+          "start": 1653294617048,
+          "stop": 1653294617088
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294617088,
+              "stop": 1653294617643
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Username\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'nikita'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294617088,
+          "stop": 1653294617799
+        },
+        {
+          "name": "Очищаем и заполняем поле",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294617800,
+              "stop": 1653294617865
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[contains(@placeholder, \"Password\")]')"
+            },
+            {
+              "name": "query",
+              "value": "'test'"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294617800,
+          "stop": 1653294618121
+        },
+        {
+          "name": "Кликаем по полю",
+          "status": "passed",
+          "steps": [
+            {
+              "name": "Ждем существования и видимости элемента",
+              "status": "passed",
+              "parameters": [
+                {
+                  "name": "locator",
+                  "value": "('xpath', '//input[@type=\"submit\"]')"
+                },
+                {
+                  "name": "timeout",
+                  "value": "None"
+                }
+              ],
+              "start": 1653294618121,
+              "stop": 1653294618155
+            }
+          ],
+          "parameters": [
+            {
+              "name": "locator",
+              "value": "('xpath', '//input[@type=\"submit\"]')"
+            },
+            {
+              "name": "timeout",
+              "value": "None"
+            }
+          ],
+          "start": 1653294618121,
+          "stop": 1653294619152
+        }
+      ],
+      "parameters": [
+        {
+          "name": "username",
+          "value": "'nikita'"
+        },
+        {
+          "name": "password",
+          "value": "'test'"
+        }
+      ],
+      "start": 1653294616747,
+      "stop": 1653294619152
+    }
+  ],
+  "start": 1653294616747,
+  "stop": 1653294619164,
+  "uuid": "5fc588e1-cd42-49e4-a288-f367dbf19360",
+  "historyId": "5c5a21dd8760ea865139aa9fb1f4949c",
+  "testCaseId": "1dce9d196ac952aa54176939a14ab7eb",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIUnauthorizedUserAuthPage#test_auth_page_correct_data",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIUnauthorizedUserAuthPage"
+    },
+    {
+      "name": "host",
+      "value": "f32cf065649b"
+    },
+    {
+      "name": "thread",
+      "value": "12-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

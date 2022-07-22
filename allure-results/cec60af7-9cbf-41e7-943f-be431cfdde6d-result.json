@@ -1,1 +1,67 @@
-{"name": "Основная страница. Сравнить отображаемый VK_ID с реальным положеним", "status": "passed", "description": "\n          Тестирование: Основная страница. Сравнить отображаемый VK_ID с реальным положеним\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Через UI посмотреть содержимое в VK_ID: ...\n          Ожидаемый результат:\n          1. Будет отображена надпись VK_ID: 10 рандомных цифр (+)\n          Фактический результат:\n          1. Будет отображена надпись VK_ID: 10 рандомных цифр\n        ", "steps": [{"name": "Ждем существования и видимости элемента", "status": "passed", "parameters": [{"name": "locator", "value": "('xpath', \"//li[contains(text(), 'VK')]\")"}, {"name": "timeout", "value": "None"}], "start": 1653990329789, "stop": 1653990329818}], "start": 1653990329788, "stop": 1653990329838, "uuid": "16aebeb7-cf8f-4e7a-aafd-bce55ac0f0d3", "historyId": "36e0d14dab5049415f438c9452a9f140", "testCaseId": "299f1415de60968db963822fd92760c5", "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_vk_id_text", "labels": [{"name": "tag", "value": "UI"}, {"name": "parentSuite", "value": "code.ui_myapp.tests"}, {"name": "suite", "value": "test_ui"}, {"name": "subSuite", "value": "TestUIAuthorizedUserWelcomePage"}, {"name": "host", "value": "aec94debdbbd"}, {"name": "thread", "value": "8-MainThread"}, {"name": "framework", "value": "pytest"}, {"name": "language", "value": "cpython3"}, {"name": "package", "value": "code.ui_myapp.tests.test_ui"}]}
+{
+  "name": "Основная страница. Сравнить отображаемый VK_ID с реальным положеним",
+  "status": "passed",
+  "description": "\n          Тестирование: Основная страница. Сравнить отображаемый VK_ID с реальным положеним\n          Предусловия: Пользователь авторизован\n          Шаги:\n          1. Через UI посмотреть содержимое в VK_ID: ...\n          Ожидаемый результат:\n          1. Будет отображена надпись VK_ID: 10 рандомных цифр (+)\n          Фактический результат:\n          1. Будет отображена надпись VK_ID: 10 рандомных цифр\n        ",
+  "steps": [
+    {
+      "name": "Ждем существования и видимости элемента",
+      "status": "passed",
+      "parameters": [
+        {
+          "name": "locator",
+          "value": "('xpath', \"//li[contains(text(), 'VK')]\")"
+        },
+        {
+          "name": "timeout",
+          "value": "None"
+        }
+      ],
+      "start": 1653990329789,
+      "stop": 1653990329818
+    }
+  ],
+  "start": 1653990329788,
+  "stop": 1653990329838,
+  "uuid": "16aebeb7-cf8f-4e7a-aafd-bce55ac0f0d3",
+  "historyId": "36e0d14dab5049415f438c9452a9f140",
+  "testCaseId": "299f1415de60968db963822fd92760c5",
+  "fullName": "code.ui_myapp.tests.test_ui.TestUIAuthorizedUserWelcomePage#test_welcome_page_vk_id_text",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "UI"
+    },
+    {
+      "name": "parentSuite",
+      "value": "code.ui_myapp.tests"
+    },
+    {
+      "name": "suite",
+      "value": "test_ui"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestUIAuthorizedUserWelcomePage"
+    },
+    {
+      "name": "host",
+      "value": "aec94debdbbd"
+    },
+    {
+      "name": "thread",
+      "value": "8-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "code.ui_myapp.tests.test_ui"
+    }
+  ]
+}

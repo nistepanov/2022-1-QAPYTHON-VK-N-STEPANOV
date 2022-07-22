@@ -1,1 +1,34 @@
-{"uuid": "cbd9e74b-cb70-4ab1-8b97-6208c5e25aa0", "children": ["3597fae2-1af5-4667-aad0-a6cb32ff8981"], "befores": [{"name": "temp_dir", "status": "passed", "steps": [{"name": "Создаем директорию для логов", "status": "passed", "parameters": [{"name": "request", "value": "<SubRequest 'temp_dir' for <Function test_put_change_password_on_already_exist_password>>"}, {"name": "base_temp_dir", "value": "'/tmp/tests'"}], "start": 1653990191213, "stop": 1653990191213}], "start": 1653990191213, "stop": 1653990191213}], "start": 1653990191213, "stop": 1653990191349}
+{
+  "uuid": "cbd9e74b-cb70-4ab1-8b97-6208c5e25aa0",
+  "children": [
+    "3597fae2-1af5-4667-aad0-a6cb32ff8981"
+  ],
+  "befores": [
+    {
+      "name": "temp_dir",
+      "status": "passed",
+      "steps": [
+        {
+          "name": "Создаем директорию для логов",
+          "status": "passed",
+          "parameters": [
+            {
+              "name": "request",
+              "value": "<SubRequest 'temp_dir' for <Function test_put_change_password_on_already_exist_password>>"
+            },
+            {
+              "name": "base_temp_dir",
+              "value": "'/tmp/tests'"
+            }
+          ],
+          "start": 1653990191213,
+          "stop": 1653990191213
+        }
+      ],
+      "start": 1653990191213,
+      "stop": 1653990191213
+    }
+  ],
+  "start": 1653990191213,
+  "stop": 1653990191349
+}

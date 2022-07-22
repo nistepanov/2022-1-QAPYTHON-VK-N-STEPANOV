@@ -1,5 +1,5 @@
-import sys
 import json
+import sys
 
 from Exceptions import InvalidArgvException
 from base_parser import BaseParser

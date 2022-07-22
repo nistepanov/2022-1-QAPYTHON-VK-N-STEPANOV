@@ -1,14 +1,13 @@
 import os
-import sys
 import shutil
+import sys
 
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
-from homework2.ui.pages import LoginPage, AuthInvalidPage, MainPage, CampaignPage, SegmentsPage
 from homework2.ui.data.user_data.static import URL
-from homework2.conftest import config, temp_dir
+from homework2.ui.pages import LoginPage, AuthInvalidPage, MainPage, CampaignPage, SegmentsPage
 
 
 @pytest.fixture(scope='session')

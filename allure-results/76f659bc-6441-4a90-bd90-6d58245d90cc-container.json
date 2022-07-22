@@ -1,1 +1,13 @@
-{"uuid": "bfacfe86-6eb0-42c2-8bba-892446828ea9", "befores": [{"name": "password", "status": "passed", "start": 1653294459090, "stop": 1653294459090}], "start": 1653294459090, "stop": 1653294459117}
+{
+  "uuid": "bfacfe86-6eb0-42c2-8bba-892446828ea9",
+  "befores": [
+    {
+      "name": "password",
+      "status": "passed",
+      "start": 1653294459090,
+      "stop": 1653294459090
+    }
+  ],
+  "start": 1653294459090,
+  "stop": 1653294459117
+}
