@@ -1,12 +1,11 @@
 import logging
 
-from final_project.code.settings.config import APP_HOST, APP_PORT
 from homework2.ui.fixtures import *
 
 
 def pytest_addoption(parser):
     parser.addoption('--browser', default='chrome')
-    parser.addoption('--url', default=f'http://{APP_HOST}:{APP_PORT}/')
+    parser.addoption('--url', default='https://target.my.com/')
     parser.addoption('--debug_log', action='store_true')
     parser.addoption('--selenoid', action='store_true')
     parser.addoption('--vnc', action='store_true')
